@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Game Plus | دانلود بازی</title>
+    <title>Game Plus | مرکز بازی</title>
 
     <meta name="description"
-          content="Game Plus مرجع معرفی و دانلود بازی‌های موبایل و کامپیوتر">
+        content="Game Plus؛ معرفی و دریافت بازی‌های منتخب موبایل و کامپیوتر">
 
     <style>
 
@@ -17,32 +18,59 @@
             box-sizing: border-box;
         }
 
+        :root {
+            --bg: #080b16;
+            --bg2: #0d1121;
+            --card: #11172a;
+            --card2: #151c32;
+            --blue: #4c8dff;
+            --blue2: #6aa5ff;
+            --purple: #875cff;
+            --text: #ffffff;
+            --muted: #9ba7bd;
+            --border: rgba(255,255,255,0.08);
+        }
+
         html {
             scroll-behavior: smooth;
         }
 
         body {
             font-family: Tahoma, Arial, sans-serif;
-            background: #05070c;
-            color: #ffffff;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(76,141,255,0.12), transparent 25%),
+                radial-gradient(circle at 85% 25%, rgba(135,92,255,0.12), transparent 28%),
+                var(--bg);
+            color: var(--text);
             line-height: 1.8;
+            overflow-x: hidden;
         }
 
-        /* Header */
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* HEADER */
 
         header {
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 1000;
-
+            left: 0;
             width: 100%;
+            z-index: 999;
 
-            background: rgba(5, 7, 12, 0.88);
-            backdrop-filter: blur(15px);
+            padding: 16px 6%;
 
-            border-bottom: 1px solid #1b2433;
+            background: rgba(8,11,22,0.78);
+            backdrop-filter: blur(18px);
 
-            padding: 18px 7%;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+            max-width: 1250px;
+            margin: auto;
 
             display: flex;
             align-items: center;
@@ -53,724 +81,1147 @@
             font-size: 25px;
             font-weight: 900;
             letter-spacing: 2px;
-            color: #4da3ff;
+
+            background: linear-gradient(
+                90deg,
+                #4c8dff,
+                #875cff
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        nav {
+        .nav-links {
             display: flex;
-            gap: 28px;
+            align-items: center;
+            gap: 30px;
         }
 
-        nav a {
-            color: #b9c2d0;
-            text-decoration: none;
+        .nav-links a {
+            color: #b8c2d5;
             font-size: 14px;
             transition: 0.3s;
         }
 
-        nav a:hover {
-            color: #4da3ff;
+        .nav-links a:hover {
+            color: white;
         }
 
-        /* Hero */
+        .nav-download {
+            padding: 9px 17px;
+            border-radius: 9px;
+
+            background: linear-gradient(
+                135deg,
+                var(--blue),
+                var(--purple)
+            );
+
+            color: white !important;
+        }
+
+        /* HERO */
 
         .hero {
-            min-height: 620px;
-
-            display: flex;
-            align-items: center;
-
-            padding: 80px 7%;
+            min-height: 720px;
+            padding: 150px 6% 80px;
 
             position: relative;
             overflow: hidden;
 
-            background:
-                radial-gradient(
-                    circle at 80% 30%,
-                    rgba(39, 126, 255, 0.20),
-                    transparent 35%
-                ),
-                radial-gradient(
-                    circle at 20% 80%,
-                    rgba(0, 183, 255, 0.08),
-                    transparent 30%
-                ),
-                #05070c;
-        }
-
-        .hero-content {
-            max-width: 720px;
-        }
-
-        .hero-small {
-            color: #4da3ff;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .hero h1 {
-            font-size: clamp(42px, 7vw, 78px);
-            line-height: 1.1;
-            margin-bottom: 25px;
-            font-weight: 900;
-        }
-
-        .hero h1 span {
-            color: #4da3ff;
-        }
-
-        .hero p {
-            color: #aab4c5;
-            font-size: 18px;
-            max-width: 650px;
-            margin-bottom: 35px;
-        }
-
-        .hero-buttons {
             display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            display: inline-flex;
             align-items: center;
-            justify-content: center;
-
-            min-width: 170px;
-
-            padding: 14px 24px;
-
-            border-radius: 10px;
-
-            text-decoration: none;
-            font-weight: bold;
-
-            transition: 0.3s;
         }
 
-        .button-primary {
-            background: #1976ff;
-            color: white;
+        .hero::before {
+            content: "";
 
-            box-shadow:
-                0 10px 30px rgba(25, 118, 255, 0.25);
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(76,141,255,0.15);
+
+            filter: blur(100px);
+
+            border-radius: 50%;
+
+            top: 120px;
+            right: -150px;
         }
 
-        .button-primary:hover {
-            background: #0f63dd;
-            transform: translateY(-3px);
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 400px;
+            height: 400px;
+
+            background: rgba(135,92,255,0.13);
+
+            filter: blur(100px);
+
+            border-radius: 50%;
+
+            bottom: -200px;
+            left: -100px;
         }
 
-        .button-secondary {
-            background: #111722;
-            color: #dce5f3;
-            border: 1px solid #263247;
-        }
-
-        .button-secondary:hover {
-            border-color: #4da3ff;
-            color: #4da3ff;
-        }
-
-        /* Main */
-
-        main {
+        .hero-container {
             max-width: 1250px;
-            margin: auto;
-        }
-
-        .section {
-            padding: 80px 7%;
-        }
-
-        .section-header {
-            margin-bottom: 35px;
-        }
-
-        .section-label {
-            color: #4da3ff;
-            font-size: 13px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .section-title {
-            font-size: 35px;
-            margin-top: 5px;
-        }
-
-        .section-description {
-            color: #8995a8;
-            margin-top: 8px;
-        }
-
-        /* Game Card */
-
-        .game-card {
-            background: #0c111a;
-
-            border: 1px solid #202b3c;
-
-            border-radius: 22px;
-
-            overflow: hidden;
-
-            box-shadow:
-                0 25px 70px rgba(0,0,0,0.35);
-        }
-
-        .game-cover {
             width: 100%;
-            height: 460px;
+            margin: auto;
 
-            display: block;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
 
-            object-fit: cover;
+            gap: 70px;
 
-            background: #111722;
+            align-items: center;
+
+            position: relative;
+            z-index: 2;
         }
 
-        .game-content {
-            padding: 35px;
+        .hero-text {
+            animation: fadeUp 0.8s ease;
         }
 
-        .game-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
+        .hero-badge {
+            display: inline-block;
 
-            gap: 20px;
+            padding: 7px 13px;
+
+            border-radius: 30px;
+
+            background: rgba(76,141,255,0.1);
+
+            border: 1px solid rgba(76,141,255,0.25);
+
+            color: #83b5ff;
+
+            font-size: 13px;
 
             margin-bottom: 20px;
         }
 
-        .game-name {
-            font-size: 38px;
+        .hero h1 {
+            font-size: clamp(45px, 6vw, 75px);
+
+            line-height: 1.05;
+
             font-weight: 900;
-        }
-
-        .game-version {
-            background: #111b2b;
-            color: #6fb4ff;
-
-            border: 1px solid #263a55;
-
-            padding: 7px 12px;
-
-            border-radius: 8px;
-
-            font-size: 13px;
-        }
-
-        .game-description {
-            color: #aeb8c8;
-            font-size: 16px;
-
-            max-width: 900px;
 
             margin-bottom: 25px;
         }
 
-        /* Tags */
+        .hero h1 span {
+            background: linear-gradient(
+                90deg,
+                #4c8dff,
+                #a277ff
+            );
 
-        .tags {
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 590px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
             display: flex;
-            flex-wrap: wrap;
-            gap: 9px;
-
-            margin-bottom: 30px;
-        }
-
-        .tag {
-            padding: 7px 13px;
-
-            background: #111722;
-
-            border: 1px solid #263247;
-
-            border-radius: 8px;
-
-            color: #b9c7da;
-
-            font-size: 13px;
-        }
-
-        /* Info */
-
-        .game-info {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
             gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-width: 160px;
+
+            padding: 13px 22px;
+
+            border-radius: 11px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: linear-gradient(
+                135deg,
+                var(--blue),
+                var(--purple)
+            );
+
+            box-shadow:
+                0 12px 35px rgba(76,141,255,0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 16px 40px rgba(76,141,255,0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.04);
+
+            border-color: var(--border);
+
+            color: #d7deeb;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* HERO IMAGE */
+
+        .hero-image {
+            position: relative;
+
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+
+            max-height: 450px;
+
+            object-fit: cover;
+
+            border-radius: 24px;
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            box-shadow:
+                0 30px 90px rgba(0,0,0,0.45),
+                0 0 80px rgba(76,141,255,0.12);
+        }
+
+        .image-glow {
+            position: absolute;
+
+            inset: -20px;
+
+            z-index: -1;
+
+            background: linear-gradient(
+                135deg,
+                rgba(76,141,255,0.22),
+                rgba(135,92,255,0.2)
+            );
+
+            filter: blur(45px);
+
+            border-radius: 40px;
+        }
+
+        /* GENERAL */
+
+        .section {
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 90px 6%;
+        }
+
+        .section-heading {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: end;
+
+            gap: 20px;
 
             margin-bottom: 30px;
         }
 
-        .info-box {
-            background: #080c13;
-
-            border: 1px solid #1c2635;
-
-            padding: 18px;
-
-            border-radius: 12px;
-        }
-
-        .info-title {
-            color: #718096;
+        .section-label {
+            color: #6ca5ff;
 
             font-size: 12px;
 
-            margin-bottom: 4px;
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 5px;
         }
 
-        .info-value {
+        .section-title {
+            font-size: 34px;
+
+            font-weight: 900;
+        }
+
+        .section-description {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            max-width: 500px;
+        }
+
+        /* SEARCH */
+
+        .search-box {
+            margin-bottom: 30px;
+
+            display: flex;
+
+            gap: 10px;
+        }
+
+        .search-box input {
+            width: 100%;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
             color: white;
 
-            font-size: 15px;
+            outline: none;
 
-            font-weight: bold;
+            padding: 15px 18px;
+
+            border-radius: 12px;
+
+            font-size: 14px;
         }
 
-        /* Download */
+        .search-box input:focus {
+            border-color: rgba(76,141,255,0.6);
+        }
 
-        .download-area {
+        /* GAME CARD */
+
+        .games-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 24px;
+        }
+
+        .game-card {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.035),
+                    rgba(255,255,255,0.015)
+                );
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            transition: 0.35s;
+
+            position: relative;
+        }
+
+        .game-card:hover {
+            transform: translateY(-7px);
+
+            border-color: rgba(76,141,255,0.35);
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.25);
+        }
+
+        .game-image {
+            width: 100%;
+
+            height: 300px;
+
+            object-fit: cover;
+
+            display: block;
+
+            background: #171d30;
+        }
+
+        .game-body {
+            padding: 24px;
+        }
+
+        .game-top {
+            display: flex;
+
+            align-items: start;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            margin-bottom: 12px;
+        }
+
+        .game-title {
+            font-size: 25px;
+
+            font-weight: 900;
+        }
+
+        .platform {
+            color: #79adff;
+
+            background: rgba(76,141,255,0.1);
+
+            border: 1px solid rgba(76,141,255,0.18);
+
+            border-radius: 7px;
+
+            padding: 5px 9px;
+
+            font-size: 11px;
+
+            white-space: nowrap;
+        }
+
+        .game-text {
+            color: #929db1;
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+        .game-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 22px;
+        }
+
+        .game-tag {
+            background: #161d31;
+
+            border: 1px solid var(--border);
+
+            color: #9eabc0;
+
+            padding: 5px 9px;
+
+            border-radius: 6px;
+
+            font-size: 11px;
+        }
+
+        .game-footer {
             display: flex;
 
             align-items: center;
 
             justify-content: space-between;
 
-            gap: 20px;
+            gap: 10px;
 
-            padding-top: 25px;
+            border-top: 1px solid var(--border);
 
-            border-top: 1px solid #1c2635;
+            padding-top: 18px;
         }
 
-        .download-text h3 {
-            font-size: 18px;
-            margin-bottom: 4px;
+        .game-meta {
+            color: #718096;
+
+            font-size: 12px;
         }
 
-        .download-text p {
-            color: #758196;
+        .game-button {
+            padding: 10px 17px;
+
+            border-radius: 9px;
+
+            background: linear-gradient(
+                135deg,
+                var(--blue),
+                var(--purple)
+            );
+
             font-size: 13px;
+
+            font-weight: bold;
         }
 
-        /* Future games */
+        /* FUTURE */
 
-        .future-box {
-            margin-top: 40px;
+        .future {
+            margin-top: 25px;
 
-            padding: 45px 25px;
+            padding: 35px;
 
             text-align: center;
-
-            border: 1px dashed #29364a;
 
             border-radius: 18px;
 
-            background: #090d14;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(76,141,255,0.07),
+                    rgba(135,92,255,0.07)
+                );
+
+            border: 1px dashed #293550;
         }
 
-        .future-box h3 {
+        .future h3 {
             font-size: 22px;
+
+            margin-bottom: 5px;
+        }
+
+        .future p {
+            color: #7e8ba0;
+
+            font-size: 14px;
+        }
+
+        /* FEATURES */
+
+        .features {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .feature {
+            padding: 25px;
+
+            background: var(--card);
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            transition: 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(76,141,255,0.25);
+        }
+
+        .feature-line {
+            width: 35px;
+
+            height: 3px;
+
+            background: linear-gradient(
+                90deg,
+                var(--blue),
+                var(--purple)
+            );
+
+            margin-bottom: 18px;
+
+            border-radius: 10px;
+        }
+
+        .feature h3 {
+            font-size: 18px;
 
             margin-bottom: 8px;
         }
 
-        .future-box p {
-            color: #78869a;
+        .feature p {
+            color: #8793a8;
+
+            font-size: 13px;
         }
 
-        /* About */
+        /* ABOUT */
 
         .about {
-            background: #080c13;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(76,141,255,0.07),
+                    rgba(135,92,255,0.05)
+                );
 
-            border-top: 1px solid #151e2b;
-            border-bottom: 1px solid #151e2b;
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
         }
 
-        .about-content {
+        .about-inner {
             max-width: 850px;
         }
 
-        .about-content p {
-            color: #9da8b9;
-            font-size: 16px;
+        .about p {
+            color: #98a4b8;
+
+            font-size: 15px;
         }
 
-        /* Footer */
+        /* FOOTER */
 
         footer {
+            padding: 45px 6%;
+
             text-align: center;
 
-            padding: 40px 20px;
+            background: #070914;
 
-            background: #05070c;
+            border-top: 1px solid var(--border);
 
-            color: #687588;
-
-            border-top: 1px solid #151e2b;
+            color: #657188;
         }
 
         .footer-logo {
-            color: #4da3ff;
-
-            font-size: 22px;
+            font-size: 23px;
 
             font-weight: 900;
 
-            margin-bottom: 8px;
+            color: #659eff;
+
+            margin-bottom: 7px;
         }
 
-        /* Mobile */
+        /* ANIMATIONS */
 
-        @media (max-width: 750px) {
+        @keyframes fadeUp {
 
-            header {
-                padding: 15px 5%;
+            from {
+                opacity: 0;
+                transform: translateY(25px);
             }
 
-            nav {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        @keyframes float {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .nav-links a:not(.nav-download) {
                 display: none;
             }
 
-            .hero {
-                min-height: 560px;
-
-                padding: 70px 5%;
+            .hero-container {
+                grid-template-columns: 1fr;
 
                 text-align: center;
-            }
 
-            .hero-content {
-                margin: auto;
+                gap: 45px;
             }
 
             .hero p {
-                font-size: 15px;
+                margin-left: auto;
+                margin-right: auto;
             }
 
             .hero-buttons {
                 justify-content: center;
             }
 
-            .button {
+            .hero-image {
+                max-width: 650px;
+                margin: auto;
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                flex-direction: column;
+
+                align-items: start;
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            header {
+                padding: 14px 5%;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+            .hero {
+                padding: 125px 5% 60px;
+
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
                 width: 100%;
             }
 
+            .hero-image img {
+                height: 260px;
+            }
+
             .section {
-                padding: 55px 5%;
+                padding: 60px 5%;
             }
 
             .section-title {
                 font-size: 28px;
             }
 
-            .game-cover {
-                height: 250px;
+            .game-image {
+                height: 230px;
             }
 
-            .game-content {
-                padding: 22px;
+            .game-body {
+                padding: 19px;
             }
 
-            .game-top {
-                flex-direction: column;
-            }
-
-            .game-name {
-                font-size: 30px;
-            }
-
-            .game-info {
-                grid-template-columns: 1fr;
-            }
-
-            .download-area {
-                flex-direction: column;
+            .game-footer {
                 align-items: stretch;
+
+                flex-direction: column;
             }
 
-            .download-area .button {
-                width: 100%;
+            .game-button {
+                text-align: center;
+
+                padding: 12px;
             }
+
+            .future {
+                padding: 30px 18px;
+            }
+
         }
 
     </style>
 </head>
 
+
 <body>
+
+
+<!-- HEADER -->
 
 <header>
 
-    <div class="logo">
-        GAME PLUS
-    </div>
+    <div class="nav">
 
-    <nav>
-        <a href="#games">بازی‌ها</a>
-        <a href="#about">درباره Game Plus</a>
-    </nav>
+        <a href="#" class="logo">
+            GAME PLUS
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="#games">
+                بازی‌ها
+            </a>
+
+            <a href="#features">
+                امکانات
+            </a>
+
+            <a href="#about">
+                درباره ما
+            </a>
+
+            <a href="#games" class="nav-download">
+                مشاهده بازی‌ها
+            </a>
+
+        </nav>
+
+    </div>
 
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
-    <div class="hero-content">
-
-        <div class="hero-small">
-            GAME PLUS
-        </div>
-
-        <h1>
-            دنیای بازی‌ها
-            <span>اینجاست</span>
-        </h1>
-
-        <p>
-            Game Plus یک سایت گیمینگ برای معرفی بازی‌ها،
-            ارائه اطلاعات و دسترسی ساده به بازی‌های منتخب است.
-            بازی‌های جدید در آینده به سایت اضافه خواهند شد.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#games" class="button button-primary">
-                مشاهده بازی
-            </a>
-
-            <a
-                href="https://openfront.io/"
-                target="_blank"
-                rel="noopener"
-                class="button button-secondary"
-            >
-                اجرای OpenFront
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
+    <div class="hero-container">
 
 
-<main>
+        <div class="hero-text">
 
-<section class="section" id="games">
-
-    <div class="section-header">
-
-        <div class="section-label">
-            GAME LIBRARY
-        </div>
-
-        <h2 class="section-title">
-            بازی‌های موجود
-        </h2>
-
-        <p class="section-description">
-            در حال حاضر اولین بازی Game Plus آماده دریافت است.
-        </p>
-
-    </div>
-
-
-    <article class="game-card">
-
-        <!--
-            عکس بازی:
-            فایل openfront.jpg را کنار index.html قرار بده
-        -->
-
-        <img
-            src="openfront.jpg"
-            alt="OpenFront"
-            class="game-cover"
-        >
-
-
-        <div class="game-content">
-
-            <div class="game-top">
-
-                <div>
-
-                    <h2 class="game-name">
-                        OpenFront
-                    </h2>
-
-                </div>
-
-                <div class="game-version">
-                    نسخه موبایل
-                </div>
-
+            <div class="hero-badge">
+                GAME PLUS GAMING PLATFORM
             </div>
 
+            <h1>
+                بازی بعدی
+                <br>
+                <span>اینجاست</span>
+            </h1>
 
-            <p class="game-description">
-
-                OpenFront یک بازی استراتژی آنلاین است که در آن
-                بازیکنان برای گسترش قلمرو، مدیریت نیروها و رقابت
-                روی نقشه‌های مختلف با یکدیگر بازی می‌کنند.
-
-                بازی دارای حالت‌های مختلف از جمله Solo،
-                Tutorial و Lobby است و نسخه مرورگری رسمی آن
-                در OpenFront.io در دسترس است.
-
+            <p>
+                Game Plus یک مرجع مدرن برای معرفی بازی‌ها،
+                مشاهده اطلاعات بازی و دسترسی ساده به نسخه‌های
+                موجود است. بازی‌های جدید به‌صورت منظم به
+                کتابخانه Game Plus اضافه خواهند شد.
             </p>
 
-
-            <div class="tags">
-
-                <span class="tag">
-                    Android
-                </span>
-
-                <span class="tag">
-                    Strategy
-                </span>
-
-                <span class="tag">
-                    Online
-                </span>
-
-                <span class="tag">
-                    Multiplayer
-                </span>
-
-            </div>
-
-
-            <div class="game-info">
-
-                <div class="info-box">
-
-                    <div class="info-title">
-                        پلتفرم
-                    </div>
-
-                    <div class="info-value">
-                        موبایل
-                    </div>
-
-                </div>
-
-
-                <div class="info-box">
-
-                    <div class="info-title">
-                        سبک
-                    </div>
-
-                    <div class="info-value">
-                        استراتژی
-                    </div>
-
-                </div>
-
-
-                <div class="info-box">
-
-                    <div class="info-title">
-                        حالت
-                    </div>
-
-                    <div class="info-value">
-                        آنلاین
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="download-area">
-
-                <div class="download-text">
-
-                    <h3>
-                        دریافت بازی
-                    </h3>
-
-                    <p>
-                        برای دریافت فایل روی دکمه دانلود بزنید.
-                    </p>
-
-                </div>
-
+            <div class="hero-buttons">
 
                 <a
-                    href="https://drive.google.com/uc?export=download&id=14z4wfhUOatg90eGlI7v7n9afqq-7MDXn"
+                    href="#games"
+                    class="btn btn-primary"
+                >
+                    مشاهده بازی‌ها
+                </a>
+
+                <a
+                    href="https://openfront.io/"
                     target="_blank"
                     rel="noopener"
-                    class="button button-primary"
+                    class="btn btn-secondary"
                 >
-                    دانلود بازی
+                    اجرای OpenFront
                 </a>
 
             </div>
 
         </div>
 
-    </article>
+
+        <div class="hero-image">
+
+            <div class="image-glow"></div>
+
+            <img
+                src="openfront.jpg"
+                alt="OpenFront"
+            >
+
+        </div>
 
 
-    <div class="future-box">
+    </div>
+
+</section>
+
+
+<!-- GAMES -->
+
+<section class="section" id="games">
+
+    <div class="section-heading">
+
+        <div>
+
+            <div class="section-label">
+                GAME LIBRARY
+            </div>
+
+            <h2 class="section-title">
+                بازی‌های Game Plus
+            </h2>
+
+        </div>
+
+        <p class="section-description">
+            بازی موردنظرت را پیدا کن و اطلاعات آن را مشاهده کن.
+        </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="جستجوی بازی..."
+            onkeyup="searchGames()"
+        >
+
+    </div>
+
+
+    <!-- GAME GRID -->
+
+    <div class="games-grid" id="gamesGrid">
+
+
+        <!-- GAME 1 -->
+
+        <article
+            class="game-card"
+            data-name="openfront"
+        >
+
+            <img
+                src="openfront.jpg"
+                alt="OpenFront"
+                class="game-image"
+            >
+
+
+            <div class="game-body">
+
+                <div class="game-top">
+
+                    <h3 class="game-title">
+                        OpenFront
+                    </h3>
+
+                    <span class="platform">
+                        MOBILE
+                    </span>
+
+                </div>
+
+
+                <p class="game-text">
+
+                    یک بازی استراتژی آنلاین که در آن بازیکنان
+                    قلمرو خود را گسترش می‌دهند و با دیگر بازیکنان
+                    رقابت می‌کنند.
+
+                </p>
+
+
+                <div class="game-tags">
+
+                    <span class="game-tag">
+                        Strategy
+                    </span>
+
+                    <span class="game-tag">
+                        Online
+                    </span>
+
+                    <span class="game-tag">
+                        Multiplayer
+                    </span>
+
+                    <span class="game-tag">
+                        Android
+                    </span>
+
+                </div>
+
+
+                <div class="game-footer">
+
+                    <div class="game-meta">
+                        نسخه موبایل
+                    </div>
+
+                    <a
+                        href="https://drive.google.com/uc?export=download&id=14z4wfhUOatg90eGlI7v7n9afqq-7MDXn"
+                        target="_blank"
+                        rel="noopener"
+                        class="game-button"
+                    >
+                        دانلود بازی
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+    <!-- FUTURE GAMES -->
+
+    <div class="future">
 
         <h3>
             بازی‌های جدید به‌زودی
         </h3>
 
         <p>
-            بازی‌های بیشتری در آینده به Game Plus اضافه می‌شوند.
+            این بخش برای اضافه‌شدن بازی‌های بعدی Game Plus آماده است.
         </p>
 
     </div>
 
+
 </section>
 
 
-<section class="section about" id="about">
+<!-- FEATURES -->
 
-    <div class="about-content">
+<section class="section" id="features">
 
-        <div class="section-label">
-            ABOUT GAME PLUS
+    <div class="section-heading">
+
+        <div>
+
+            <div class="section-label">
+                WHY GAME PLUS
+            </div>
+
+            <h2 class="section-title">
+                یک تجربه ساده برای گیمرها
+            </h2>
+
         </div>
 
-        <h2 class="section-title">
-            درباره Game Plus
-        </h2>
+    </div>
 
-        <p>
-            Game Plus یک پلتفرم گیمینگ برای معرفی بازی‌ها و
-            دسترسی آسان کاربران به محتوای مربوط به بازی‌هاست.
 
-            هدف این سایت این است که هر بازی صفحه اختصاصی،
-            تصویر، توضیحات، مشخصات و لینک دریافت خودش را داشته باشد.
+    <div class="features">
 
-            در آینده بازی‌های بیشتری به کتابخانه Game Plus اضافه خواهند شد.
-        </p>
+
+        <div class="feature">
+
+            <div class="feature-line"></div>
+
+            <h3>
+                معرفی کامل بازی
+            </h3>
+
+            <p>
+                اطلاعات مهم هر بازی در یک صفحه مرتب
+                و ساده نمایش داده می‌شود.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-line"></div>
+
+            <h3>
+                طراحی سریع
+            </h3>
+
+            <p>
+                سایت برای استفاده راحت روی گوشی،
+                تبلت و کامپیوتر طراحی شده است.
+            </p>
+
+        </div>
+
+
+        <div class="feature">
+
+            <div class="feature-line"></div>
+
+            <h3>
+                بازی‌های بیشتر
+            </h3>
+
+            <p>
+                ساختار سایت آماده است تا در آینده
+                بازی‌های بیشتری به آن اضافه شوند.
+            </p>
+
+        </div>
+
 
     </div>
 
 </section>
 
-</main>
 
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <div class="section">
+
+        <div class="about-inner">
+
+            <div class="section-label">
+                ABOUT GAME PLUS
+            </div>
+
+            <h2 class="section-title">
+                درباره Game Plus
+            </h2>
+
+            <p>
+
+                Game Plus یک پروژه گیمینگ برای معرفی و ارائه
+                بازی‌های منتخب است. هدف این است که کاربران
+                بتوانند بازی‌ها را با ظاهر حرفه‌ای، توضیحات
+                کامل و مسیر ساده برای دریافت یا اجرای آن‌ها
+                مشاهده کنند.
+
+                در آینده بازی‌های بیشتری به این مجموعه اضافه
+                خواهند شد.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -789,5 +1240,43 @@
 </footer>
 
 
+<script>
+
+    function searchGames() {
+
+        const input =
+            document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase();
+
+        const games =
+            document.querySelectorAll(".game-card");
+
+        games.forEach(function(game) {
+
+            const name =
+                game
+                .getAttribute("data-name")
+                .toLowerCase();
+
+            if (name.includes(input)) {
+
+                game.style.display = "block";
+
+            } else {
+
+                game.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+</script>
+
+
 </body>
-</html>
+
+                </html>
