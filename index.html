@@ -2,27 +2,12 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>Game Plus | دانلود بازی اندروید</title>
-
-<meta name="description" content="گیم پلاس؛ مرجع معرفی و دانلود بازی‌های اندروید و کامپیوتر">
+<title>Game Plus | دانلود بازی موبایل</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
-
-:root{
-    --bg:#f4f6fa;
-    --white:#ffffff;
-    --text:#18202d;
-    --muted:#737b89;
-    --primary:#3158d8;
-    --primary2:#663ee8;
-    --border:#e8ebf1;
-    --green:#20a86b;
-    --shadow:0 8px 30px rgba(20,30,60,.07);
-    --radius:18px;
-}
 
 *{
     box-sizing:border-box;
@@ -36,9 +21,9 @@ html{
 
 body{
     font-family:"Vazirmatn",Tahoma,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.8;
+    background:#f4f6fa;
+    color:#18202d;
+    overflow-x:hidden;
 }
 
 a{
@@ -53,213 +38,165 @@ input{
 
 /* ================= HEADER ================= */
 
-.topbar{
-    background:#fff;
-    border-bottom:1px solid var(--border);
-}
-
 .header{
-    max-width:1250px;
-    margin:auto;
-    min-height:76px;
+    height:65px;
+    background:#fff;
+    border-bottom:1px solid #e6e9ef;
     display:flex;
     align-items:center;
-    gap:25px;
-    padding:0 20px;
+    gap:10px;
+    padding:0 13px;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
 .logo{
     display:flex;
     align-items:center;
-    gap:10px;
-    font-size:23px;
+    gap:7px;
+    font-size:17px;
     font-weight:900;
     white-space:nowrap;
 }
 
 .logo-icon{
-    width:42px;
-    height:42px;
-    border-radius:13px;
-    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    width:35px;
+    height:35px;
+    border-radius:10px;
+    background:linear-gradient(135deg,#3158d8,#683ee8);
+    color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    color:white;
-    font-weight:900;
-    box-shadow:0 8px 20px rgba(49,88,216,.25);
+    font-size:12px;
 }
 
 .logo span{
-    color:var(--primary);
+    color:#3158d8;
 }
 
-.main-nav{
-    display:flex;
-    align-items:center;
-    gap:5px;
+.search{
     flex:1;
-}
-
-.main-nav a{
-    padding:10px 13px;
-    border-radius:10px;
-    color:#555d6c;
-    font-size:14px;
-    font-weight:600;
-    transition:.2s;
-}
-
-.main-nav a:hover{
-    background:#f0f3ff;
-    color:var(--primary);
-}
-
-.header-search{
     position:relative;
-    width:245px;
 }
 
-.header-search input{
+.search input{
     width:100%;
-    height:43px;
-    border:1px solid var(--border);
-    border-radius:12px;
+    height:40px;
+    border:1px solid #e2e5eb;
+    border-radius:11px;
+    background:#f7f8fa;
     outline:none;
-    padding:0 43px 0 13px;
-    background:#f7f8fb;
-    font-size:13px;
-}
-
-.header-search input:focus{
-    border-color:#b9c5f7;
-    background:white;
+    padding:0 37px 0 10px;
+    font-size:12px;
 }
 
 .search-icon{
     position:absolute;
-    right:14px;
-    top:9px;
-    color:#89909e;
+    right:12px;
+    top:8px;
+    color:#777;
     font-size:18px;
 }
 
 /* ================= HERO ================= */
 
 .hero{
-    max-width:1250px;
-    margin:25px auto 0;
-    padding:0 20px;
+    width:100%;
+    padding:12px;
 }
 
 .hero-box{
-    min-height:300px;
-    border-radius:25px;
+    width:100%;
+    height:240px;
+    border-radius:18px;
     overflow:hidden;
     position:relative;
-    display:flex;
-    align-items:center;
     background:
-        linear-gradient(90deg,rgba(18,25,49,.98) 10%,rgba(26,34,65,.86) 52%,rgba(35,45,80,.30)),
+        linear-gradient(
+            0deg,
+            rgba(10,16,35,.95),
+            rgba(10,16,35,.15)
+        ),
         url("openfront.jpg") center/cover;
-    box-shadow:var(--shadow);
 }
 
 .hero-content{
-    max-width:650px;
-    padding:45px;
+    position:absolute;
+    bottom:20px;
+    right:18px;
+    left:18px;
     color:white;
 }
 
 .hero-label{
     display:inline-block;
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.15);
-    padding:5px 12px;
-    border-radius:30px;
-    font-size:12px;
-    margin-bottom:12px;
+    background:rgba(255,255,255,.15);
+    padding:4px 9px;
+    border-radius:7px;
+    font-size:9px;
+    margin-bottom:6px;
 }
 
 .hero h1{
-    font-size:34px;
-    line-height:1.35;
-    margin-bottom:12px;
+    font-size:25px;
+    font-weight:900;
 }
 
 .hero p{
     color:#d8dbea;
-    font-size:14px;
-    margin-bottom:20px;
+    font-size:11px;
+    margin-top:3px;
+    line-height:1.8;
 }
 
 .hero-btn{
-    display:inline-flex;
-    background:white;
-    color:#243b99;
-    padding:10px 20px;
-    border-radius:11px;
-    font-size:14px;
+    display:inline-block;
+    background:#fff;
+    color:#2945a8;
+    margin-top:10px;
+    padding:8px 14px;
+    border-radius:9px;
+    font-size:11px;
     font-weight:800;
 }
 
-/* ================= CONTAINER ================= */
+/* ================= MAIN ================= */
 
 .container{
-    max-width:1250px;
-    margin:auto;
-    padding:0 20px;
+    width:100%;
+    padding:0 12px;
 }
-
-.page-layout{
-    display:grid;
-    grid-template-columns:minmax(0,1fr) 310px;
-    gap:25px;
-    margin-top:28px;
-}
-
-/* ================= SECTION ================= */
 
 .section{
-    margin-bottom:28px;
-}
-
-.section-head{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    margin-bottom:15px;
+    margin-bottom:23px;
 }
 
 .section-title{
+    font-size:17px;
+    font-weight:900;
+    margin-bottom:12px;
     display:flex;
     align-items:center;
-    gap:10px;
-    font-size:20px;
-    font-weight:900;
+    gap:8px;
 }
 
 .section-title::before{
     content:"";
-    width:5px;
-    height:25px;
+    width:4px;
+    height:21px;
     border-radius:5px;
-    background:linear-gradient(var(--primary),var(--primary2));
-}
-
-.more{
-    color:var(--primary);
-    font-size:13px;
-    font-weight:700;
+    background:linear-gradient(#3158d8,#683ee8);
 }
 
 /* ================= CATEGORIES ================= */
 
 .categories{
     display:flex;
-    gap:9px;
-    overflow:auto;
-    padding-bottom:5px;
+    gap:7px;
+    overflow-x:auto;
+    padding-bottom:4px;
 }
 
 .categories::-webkit-scrollbar{
@@ -267,51 +204,42 @@ input{
 }
 
 .category{
-    white-space:nowrap;
+    flex-shrink:0;
+    border:1px solid #e1e5ec;
     background:white;
-    border:1px solid var(--border);
-    padding:9px 17px;
-    border-radius:12px;
-    color:#5d6573;
-    font-size:13px;
-    cursor:pointer;
-    transition:.2s;
+    color:#626a78;
+    padding:8px 13px;
+    border-radius:9px;
+    font-size:10px;
 }
 
-.category:hover,
 .category.active{
+    background:#3158d8;
     color:white;
-    border-color:var(--primary);
-    background:linear-gradient(135deg,var(--primary),var(--primary2));
+    border-color:#3158d8;
 }
 
-/* ================= GAME GRID ================= */
+/* ================= GAMES ================= */
 
-.games-grid{
+.games{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:17px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:11px;
 }
 
-.game-card{
+.game{
     background:white;
-    border:1px solid var(--border);
-    border-radius:var(--radius);
+    border:1px solid #e5e8ee;
+    border-radius:14px;
     overflow:hidden;
-    box-shadow:0 5px 20px rgba(20,30,60,.035);
-    transition:.25s;
-}
-
-.game-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 12px 35px rgba(20,30,60,.11);
+    box-shadow:0 4px 15px rgba(20,30,60,.04);
 }
 
 .game-image{
-    height:185px;
+    width:100%;
+    height:135px;
     position:relative;
-    overflow:hidden;
-    background:#dfe3ec;
+    background:#dfe3eb;
 }
 
 .game-image img{
@@ -319,171 +247,134 @@ input{
     height:100%;
     object-fit:cover;
     display:block;
-    transition:.4s;
-}
-
-.game-card:hover .game-image img{
-    transform:scale(1.05);
 }
 
 .platform{
     position:absolute;
-    right:11px;
-    top:11px;
-    background:rgba(20,25,40,.85);
+    top:7px;
+    right:7px;
+    background:rgba(15,20,35,.82);
     color:white;
-    padding:4px 9px;
-    border-radius:8px;
-    font-size:11px;
+    padding:3px 6px;
+    border-radius:5px;
+    font-size:8px;
 }
 
 .game-body{
-    padding:15px;
+    padding:10px;
 }
 
 .game-title{
-    font-size:16px;
+    font-size:13px;
     font-weight:800;
-    margin-bottom:5px;
 }
 
-.game-desc{
-    color:var(--muted);
-    font-size:12px;
-    height:45px;
+.game-description{
+    color:#777f8d;
+    font-size:9px;
+    line-height:1.8;
+    height:34px;
     overflow:hidden;
+    margin-top:3px;
 }
 
-.game-meta{
+.tags{
     display:flex;
-    gap:7px;
-    margin-top:12px;
-    flex-wrap:wrap;
+    gap:4px;
+    margin-top:7px;
 }
 
-.meta{
-    background:#f4f6fa;
-    color:#626b7b;
-    border-radius:7px;
-    padding:3px 8px;
-    font-size:10px;
+.tag{
+    background:#f0f2f7;
+    color:#687080;
+    border-radius:5px;
+    padding:2px 5px;
+    font-size:7px;
 }
 
-.game-button{
+.download{
     display:block;
-    margin-top:14px;
-    background:#f0f3ff;
-    color:var(--primary);
+    background:#3158d8;
+    color:white;
     text-align:center;
-    padding:9px;
-    border-radius:10px;
-    font-size:12px;
+    padding:8px;
+    border-radius:8px;
+    margin-top:9px;
+    font-size:10px;
     font-weight:800;
 }
 
-.game-button:hover{
-    background:var(--primary);
-    color:white;
-}
+/* ================= UPDATE ================= */
 
-/* ================= SIDEBAR ================= */
-
-.sidebar{
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-}
-
-.side-box{
+.update{
     background:white;
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    padding:18px;
-    box-shadow:0 5px 20px rgba(20,30,60,.035);
+    border:1px solid #e5e8ee;
+    border-radius:13px;
+    padding:12px;
 }
 
-.side-title{
-    font-size:16px;
-    font-weight:900;
-    margin-bottom:14px;
-    padding-bottom:11px;
-    border-bottom:1px solid var(--border);
-}
-
-.side-list{
-    display:flex;
-    flex-direction:column;
-    gap:9px;
-}
-
-.side-item{
+.update-item{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:9px 10px;
-    background:#f7f8fb;
-    border-radius:10px;
-    font-size:12px;
-    color:#5d6573;
+    padding:10px;
+    background:#f7f8fa;
+    border-radius:9px;
+    font-size:10px;
+    margin-bottom:7px;
 }
 
-.side-item:hover{
-    color:var(--primary);
+.update-item:last-child{
+    margin-bottom:0;
 }
 
-.side-number{
-    width:25px;
-    height:25px;
-    border-radius:7px;
-    background:#e9edff;
-    color:var(--primary);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:800;
+.update-name{
+    font-weight:700;
 }
 
-.social-box{
-    background:linear-gradient(135deg,#283f9c,#683be0);
+.update-date{
+    color:#7b8390;
+}
+
+/* ================= SOCIAL ================= */
+
+.social{
+    background:linear-gradient(135deg,#2c48a4,#683de2);
     color:white;
-    border-radius:var(--radius);
-    padding:20px;
+    border-radius:15px;
+    padding:18px;
 }
 
-.social-box h3{
+.social h3{
     font-size:17px;
-    margin-bottom:6px;
 }
 
-.social-box p{
-    font-size:12px;
-    color:#e0e3ff;
-    margin-bottom:14px;
+.social p{
+    color:#e0e4ff;
+    font-size:10px;
+    margin:4px 0 12px;
 }
 
-.social-button{
+.social a{
     display:block;
-    text-align:center;
     background:white;
-    color:#3347a2;
+    color:#3148a3;
+    text-align:center;
+    border-radius:9px;
     padding:9px;
-    border-radius:10px;
-    font-size:12px;
+    font-size:10px;
     font-weight:800;
 }
 
-/* ================= GAME DETAIL MODAL ================= */
+/* ================= MODAL ================= */
 
 .modal{
     position:fixed;
     inset:0;
-    background:rgba(12,17,30,.72);
-    backdrop-filter:blur(6px);
+    background:rgba(8,12,25,.75);
+    z-index:500;
     display:none;
-    align-items:center;
-    justify-content:center;
-    z-index:1000;
-    padding:20px;
+    align-items:flex-end;
 }
 
 .modal.show{
@@ -491,21 +382,20 @@ input{
 }
 
 .modal-box{
-    background:#fff;
-    width:min(900px,100%);
-    max-height:92vh;
+    width:100%;
+    max-height:94vh;
     overflow:auto;
-    border-radius:22px;
-    box-shadow:0 30px 100px rgba(0,0,0,.25);
+    background:white;
+    border-radius:20px 20px 0 0;
 }
 
-.modal-top{
-    height:310px;
+.modal-image{
+    width:100%;
+    height:220px;
     position:relative;
-    overflow:hidden;
 }
 
-.modal-top img{
+.modal-image img{
     width:100%;
     height:100%;
     object-fit:cover;
@@ -514,82 +404,79 @@ input{
 .modal-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(0deg,rgba(10,15,30,.85),transparent 70%);
+    background:linear-gradient(0deg,rgba(10,15,30,.85),transparent);
 }
 
 .close{
     position:absolute;
-    top:14px;
-    left:14px;
-    width:38px;
-    height:38px;
+    top:12px;
+    left:12px;
+    z-index:3;
+    width:36px;
+    height:36px;
     border:0;
     border-radius:50%;
     background:rgba(0,0,0,.5);
     color:white;
-    cursor:pointer;
     font-size:20px;
-    z-index:2;
 }
 
 .modal-title{
     position:absolute;
-    right:25px;
-    bottom:20px;
+    bottom:15px;
+    right:15px;
     color:white;
 }
 
 .modal-title h2{
-    font-size:28px;
+    font-size:23px;
 }
 
 .modal-content{
-    padding:25px;
-}
-
-.info-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    margin-bottom:25px;
+    padding:17px;
 }
 
 .info{
-    background:#f6f7fa;
-    padding:12px;
-    border-radius:11px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:7px;
+}
+
+.info-item{
+    background:#f5f6f9;
+    border-radius:9px;
+    padding:9px;
     text-align:center;
 }
 
-.info small{
+.info-item small{
     display:block;
-    color:#89909c;
+    color:#858d9a;
+    font-size:8px;
+}
+
+.info-item strong{
     font-size:10px;
 }
 
-.info strong{
-    font-size:12px;
-}
-
 .description{
-    color:#626a78;
-    font-size:13px;
-    margin-bottom:22px;
+    color:#687080;
+    font-size:10px;
+    line-height:2;
+    margin:15px 0;
 }
-
-/* ================= DOWNLOAD ================= */
 
 .download-box{
+    background:#f2f5ff;
     border:1px solid #dce4ff;
-    background:#f5f7ff;
-    border-radius:16px;
-    padding:20px;
+    border-radius:13px;
+    padding:13px;
 }
 
 .download-box h3{
-    color:#263eaa;
-    font-size:18px;
-    margin-bottom:13px;
+    color:#2945a8;
+    font-size:14px;
+    margin-bottom:8px;
 }
 
 .download-row{
@@ -597,261 +484,117 @@ input{
     align-items:center;
     justify-content:space-between;
     background:white;
-    padding:13px;
-    border-radius:11px;
-    margin-top:9px;
-    border:1px solid var(--border);
+    border:1px solid #e5e8ee;
+    border-radius:9px;
+    padding:9px;
 }
 
 .download-row span{
-    font-size:12px;
+    font-size:9px;
 }
 
-.download-btn{
-    background:var(--primary);
+.download-button{
+    background:#3158d8;
     color:white;
-    padding:7px 15px;
-    border-radius:8px;
-    font-size:11px;
+    padding:7px 12px;
+    border-radius:7px;
+    font-size:9px;
     font-weight:800;
 }
 
-.download-btn:hover{
-    background:#2448bd;
-}
-
-/* ================= SCREENSHOTS ================= */
-
-.screenshots{
+.gallery{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:10px;
-    margin-top:15px;
+    gap:6px;
+    margin-top:10px;
 }
 
-.screenshot{
-    height:150px;
-    border-radius:12px;
-    overflow:hidden;
-    background:#ddd;
-}
-
-.screenshot img{
+.gallery img{
     width:100%;
-    height:100%;
+    height:90px;
     object-fit:cover;
-}
-
-/* ================= EMPTY ================= */
-
-.empty{
-    display:none;
-    background:white;
-    border:1px solid var(--border);
-    border-radius:18px;
-    text-align:center;
-    padding:40px;
-    color:#777;
-    grid-column:1/-1;
+    border-radius:8px;
 }
 
 /* ================= FOOTER ================= */
 
 footer{
+    margin-top:30px;
     background:#151a27;
-    color:#c5c9d3;
-    margin-top:50px;
+    color:#aab0bc;
+    padding:25px 15px 15px;
 }
 
-.footer-inner{
-    max-width:1250px;
-    margin:auto;
-    padding:40px 20px;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:35px;
-}
-
-.footer-brand h2{
+.footer-title{
     color:white;
-    margin-bottom:8px;
+    font-size:18px;
+    font-weight:900;
 }
 
-.footer-brand p{
-    font-size:12px;
-    color:#9298a6;
-    max-width:400px;
+.footer-text{
+    font-size:9px;
+    line-height:2;
+    margin-top:7px;
 }
 
-.footer-col h4{
-    color:white;
-    margin-bottom:12px;
-    font-size:14px;
+.footer-links{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+    margin-top:14px;
 }
 
-.footer-col a{
-    display:block;
-    font-size:12px;
-    color:#969cab;
-    margin:7px 0;
-}
-
-.footer-col a:hover{
-    color:white;
+.footer-links a{
+    background:#202637;
+    padding:7px 10px;
+    border-radius:7px;
+    font-size:9px;
 }
 
 .copyright{
-    border-top:1px solid rgba(255,255,255,.08);
     text-align:center;
-    padding:17px;
-    color:#777f90;
-    font-size:11px;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin-top:20px;
+    padding-top:12px;
+    font-size:8px;
+    color:#737b89;
 }
 
-/* ================= MOBILE ================= */
+/* ================= VERY SMALL PHONES ================= */
 
-.mobile-menu{
-    display:none;
-    border:0;
-    background:#f0f2f7;
-    width:42px;
-    height:42px;
-    border-radius:11px;
-    cursor:pointer;
-    font-size:20px;
-}
-
-@media(max-width:1000px){
-
-    .main-nav{
-        display:none;
-    }
-
-    .header-search{
-        margin-right:auto;
-    }
-
-    .page-layout{
-        grid-template-columns:1fr;
-    }
-
-    .sidebar{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .footer-inner{
-        grid-template-columns:2fr 1fr 1fr;
-    }
-}
-
-@media(max-width:700px){
+@media(max-width:360px){
 
     .header{
-        gap:10px;
-    }
-
-    .mobile-menu{
-        display:block;
-    }
-
-    .header-search{
-        width:auto;
-        flex:1;
+        padding:0 8px;
     }
 
     .logo{
-        font-size:18px;
+        font-size:15px;
     }
 
     .logo-icon{
-        width:37px;
-        height:37px;
+        width:31px;
+        height:31px;
     }
 
-    .hero{
-        padding:0 12px;
-    }
-
-    .hero-box{
-        min-height:340px;
-    }
-
-    .hero-content{
-        padding:25px;
-        align-self:flex-end;
-    }
-
-    .hero h1{
-        font-size:25px;
-    }
-
-    .container{
-        padding:0 12px;
-    }
-
-    .games-grid{
-        grid-template-columns:repeat(2,1fr);
-        gap:12px;
+    .games{
+        gap:8px;
     }
 
     .game-image{
-        height:145px;
+        height:120px;
     }
 
     .game-body{
-        padding:11px;
+        padding:8px;
     }
 
     .game-title{
-        font-size:14px;
+        font-size:12px;
     }
 
-    .game-desc{
-        font-size:11px;
-    }
-
-    .sidebar{
-        grid-template-columns:1fr;
-    }
-
-    .footer-inner{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .footer-brand{
-        grid-column:1/-1;
-    }
-
-    .info-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .modal-top{
-        height:230px;
-    }
-
-    .screenshots{
-        grid-template-columns:1fr 1fr;
-    }
-}
-
-@media(max-width:430px){
-
-    .games-grid{
-        grid-template-columns:1fr;
-    }
-
-    .game-image{
-        height:190px;
-    }
-
-    .footer-inner{
-        grid-template-columns:1fr;
-    }
-
-    .footer-brand{
-        grid-column:auto;
+    .hero-box{
+        height:225px;
     }
 }
 </style>
@@ -859,41 +602,28 @@ footer{
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- HEADER -->
 
-<header class="topbar">
+<header class="header">
 
-    <div class="header">
+    <a href="#" class="logo">
+        <div class="logo-icon">GP</div>
+        GAME <span>PLUS</span>
+    </a>
 
-        <a href="#" class="logo">
-            <div class="logo-icon">GP</div>
-            GAME <span>PLUS</span>
-        </a>
-
-        <nav class="main-nav">
-            <a href="#games">بازی‌ها</a>
-            <a href="#categories">دسته‌بندی</a>
-            <a href="#latest">آخرین‌ها</a>
-            <a href="#mods">مودها</a>
-            <a href="#about">درباره ما</a>
-        </nav>
-
-        <div class="header-search">
-            <span class="search-icon">⌕</span>
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="جستجوی بازی..."
-            >
-        </div>
-
-        <button class="mobile-menu" onclick="toggleMenu()">☰</button>
-
+    <div class="search">
+        <span class="search-icon">⌕</span>
+        <input
+            id="search"
+            type="text"
+            placeholder="جستجوی بازی..."
+        >
     </div>
 
 </header>
 
-<!-- ================= HERO ================= -->
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -901,16 +631,23 @@ footer{
 
         <div class="hero-content">
 
-            <span class="hero-label">بازی منتخب گیم پلاس</span>
+            <span class="hero-label">
+                بازی منتخب
+            </span>
 
-            <h1>OpenFront</h1>
+            <h1>
+                OpenFront
+            </h1>
 
             <p>
-                یک بازی استراتژی آنلاین که در آن باید قلمرو خود را گسترش
-                دهید، منابع را مدیریت کنید و با بازیکنان دیگر رقابت کنید.
+                یک بازی استراتژی آنلاین برای موبایل
             </p>
 
-            <a href="javascript:void(0)" class="hero-btn" onclick="openGame()">
+            <a
+                href="javascript:void(0)"
+                class="hero-btn"
+                onclick="openGame()"
+            >
                 مشاهده بازی
             </a>
 
@@ -920,396 +657,209 @@ footer{
 
 </section>
 
-<!-- ================= MAIN ================= -->
 
 <main class="container">
 
-    <div class="page-layout">
+    <!-- CATEGORIES -->
 
-        <!-- CONTENT -->
+    <section class="section">
 
-        <div>
+        <h2 class="section-title">
+            دسته‌بندی بازی‌ها
+        </h2>
 
-            <!-- CATEGORIES -->
+        <div class="categories">
 
-            <section class="section" id="categories">
+            <button class="category active" data-filter="all">
+                همه
+            </button>
 
-                <div class="section-head">
-                    <h2 class="section-title">دسته‌بندی بازی‌ها</h2>
-                </div>
+            <button class="category" data-filter="action">
+                اکشن
+            </button>
 
-                <div class="categories">
+            <button class="category" data-filter="strategy">
+                استراتژی
+            </button>
 
-                    <button class="category active" data-filter="all">
-                        همه
-                    </button>
+            <button class="category" data-filter="online">
+                آنلاین
+            </button>
 
-                    <button class="category" data-filter="android">
-                        اندروید
-                    </button>
+            <button class="category" data-filter="offline">
+                آفلاین
+            </button>
 
-                    <button class="category" data-filter="action">
-                        اکشن
-                    </button>
-
-                    <button class="category" data-filter="strategy">
-                        استراتژی
-                    </button>
-
-                    <button class="category" data-filter="online">
-                        آنلاین
-                    </button>
-
-                    <button class="category" data-filter="offline">
-                        آفلاین
-                    </button>
-
-                    <button class="category" data-filter="pc">
-                        کامپیوتر
-                    </button>
-
-                    <button class="category" data-filter="mods">
-                        مود
-                    </button>
-
-                </div>
-
-            </section>
-
-
-            <!-- LATEST GAMES -->
-
-            <section class="section" id="games">
-
-                <div class="section-head">
-
-                    <h2 class="section-title">
-                        آخرین بازی‌ها
-                    </h2>
-
-                    <a href="#" class="more">
-                        مشاهده همه
-                    </a>
-
-                </div>
-
-
-                <div class="games-grid" id="gamesGrid">
-
-                    <!-- GAME 1 -->
-
-                    <article
-                        class="game-card"
-                        data-name="openfront"
-                        data-category="android strategy online"
-                    >
-
-                        <div class="game-image">
-
-                            <img
-                                src="openfront.jpg"
-                                alt="تصویر بازی OpenFront"
-                                onerror="this.src='https://placehold.co/800x450/202b50/ffffff?text=OpenFront'"
-                            >
-
-                            <span class="platform">
-                                Android
-                            </span>
-
-                        </div>
-
-                        <div class="game-body">
-
-                            <h3 class="game-title">
-                                OpenFront
-                            </h3>
-
-                            <p class="game-desc">
-                                بازی استراتژی آنلاین با تمرکز بر گسترش
-                                قلمرو و رقابت با بازیکنان.
-                            </p>
-
-                            <div class="game-meta">
-                                <span class="meta">استراتژی</span>
-                                <span class="meta">آنلاین</span>
-                                <span class="meta">اندروید</span>
-                            </div>
-
-                            <a
-                                href="javascript:void(0)"
-                                class="game-button"
-                                onclick="openGame()"
-                            >
-                                مشاهده و دانلود
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- نمونه کارت آینده -->
-
-                    <article
-                        class="game-card"
-                        data-name="game plus"
-                        data-category="pc action"
-                        style="display:none;"
-                    >
-
-                        <div class="game-image">
-                            <img src="game2.jpg" alt="بازی جدید">
-                            <span class="platform">PC</span>
-                        </div>
-
-                        <div class="game-body">
-
-                            <h3 class="game-title">
-                                بازی جدید
-                            </h3>
-
-                            <p class="game-desc">
-                                توضیحات بازی در این قسمت قرار می‌گیرد.
-                            </p>
-
-                            <div class="game-meta">
-                                <span class="meta">اکشن</span>
-                                <span class="meta">PC</span>
-                            </div>
-
-                            <a href="#" class="game-button">
-                                مشاهده و دانلود
-                            </a>
-
-                        </div>
-
-                    </article>
-
-
-                    <div class="empty" id="empty">
-                        بازی موردنظر پیدا نشد.
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- LAST UPDATES -->
-
-            <section class="section" id="latest">
-
-                <div class="section-head">
-
-                    <h2 class="section-title">
-                        آخرین بروزرسانی‌ها
-                    </h2>
-
-                </div>
-
-                <div class="side-box">
-
-                    <div class="side-list">
-
-                        <a href="javascript:void(0)" onclick="openGame()" class="side-item">
-
-                            <span>
-                                OpenFront
-                            </span>
-
-                            <span>
-                                بروزرسانی جدید
-                            </span>
-
-                        </a>
-
-                        <a href="#" class="side-item">
-
-                            <span>
-                                بازی‌های جدید
-                            </span>
-
-                            <span>
-                                به‌زودی
-                            </span>
-
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- MODS -->
-
-            <section class="section" id="mods">
-
-                <div class="section-head">
-
-                    <h2 class="section-title">
-                        بازی‌های مود
-                    </h2>
-
-                </div>
-
-                <div class="social-box">
-
-                    <h3>
-                        بخش مود گیم پلاس
-                    </h3>
-
-                    <p>
-                        نسخه‌های مود و تغییر یافته بازی‌ها در این بخش
-                        قرار خواهند گرفت.
-                    </p>
-
-                    <a href="#" class="social-button">
-                        مشاهده بازی‌های مود
-                    </a>
-
-                </div>
-
-            </section>
+            <button class="category" data-filter="mods">
+                مود
+            </button>
 
         </div>
 
+    </section>
 
-        <!-- SIDEBAR -->
 
-        <aside class="sidebar">
+    <!-- GAMES -->
 
-            <div class="side-box">
+    <section class="section">
 
-                <h3 class="side-title">
-                    محبوب‌ترین بازی‌ها
-                </h3>
+        <h2 class="section-title">
+            آخرین بازی‌ها
+        </h2>
 
-                <div class="side-list">
+        <div class="games" id="games">
 
-                    <a href="javascript:void(0)" onclick="openGame()" class="side-item">
-                        <span>OpenFront</span>
-                        <span class="side-number">1</span>
-                    </a>
+            <article
+                class="game"
+                data-name="openfront"
+                data-category="strategy online"
+            >
 
-                    <a href="#" class="side-item">
-                        <span>بازی جدید</span>
-                        <span class="side-number">2</span>
-                    </a>
+                <div class="game-image">
 
-                    <a href="#" class="side-item">
-                        <span>به‌زودی</span>
-                        <span class="side-number">3</span>
-                    </a>
+                    <img
+                        src="openfront.jpg"
+                        alt="OpenFront"
+                        onerror="this.src='https://placehold.co/800x500/29355c/ffffff?text=OpenFront'"
+                    >
 
-                    <a href="#" class="side-item">
-                        <span>به‌زودی</span>
-                        <span class="side-number">4</span>
-                    </a>
+                    <span class="platform">
+                        Android
+                    </span>
 
-                    <a href="#" class="side-item">
-                        <span>به‌زودی</span>
-                        <span class="side-number">5</span>
+                </div>
+
+                <div class="game-body">
+
+                    <h3 class="game-title">
+                        OpenFront
+                    </h3>
+
+                    <p class="game-description">
+                        بازی استراتژی آنلاین با تمرکز بر گسترش قلمرو.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">استراتژی</span>
+                        <span class="tag">آنلاین</span>
+                    </div>
+
+                    <a
+                        href="javascript:void(0)"
+                        class="download"
+                        onclick="openGame()"
+                    >
+                        مشاهده و دانلود
                     </a>
 
                 </div>
 
-            </div>
+            </article>
+
+        </div>
+
+    </section>
 
 
-            <div class="side-box">
+    <!-- UPDATE -->
 
-                <h3 class="side-title">
-                    دسته‌بندی‌ها
-                </h3>
+    <section class="section">
 
-                <div class="side-list">
+        <h2 class="section-title">
+            آخرین بروزرسانی‌ها
+        </h2>
 
-                    <a href="#" class="side-item">
-                        <span>بازی اندروید</span>
-                        <span>1</span>
-                    </a>
+        <div class="update">
 
-                    <a href="#" class="side-item">
-                        <span>بازی کامپیوتر</span>
-                        <span>0</span>
-                    </a>
+            <div class="update-item">
 
-                    <a href="#" class="side-item">
-                        <span>بازی آنلاین</span>
-                        <span>1</span>
-                    </a>
+                <span class="update-name">
+                    OpenFront
+                </span>
 
-                    <a href="#" class="side-item">
-                        <span>بازی آفلاین</span>
-                        <span>0</span>
-                    </a>
-
-                    <a href="#" class="side-item">
-                        <span>بازی مود</span>
-                        <span>0</span>
-                    </a>
-
-                </div>
+                <span class="update-date">
+                    جدید
+                </span>
 
             </div>
 
+            <div class="update-item">
 
-            <div class="social-box">
+                <span class="update-name">
+                    بازی‌های جدید
+                </span>
 
-                <h3>
-                    گیم پلاس
-                </h3>
-
-                <p>
-                    اخبار، معرفی بازی، آموزش و دانلود بازی.
-                </p>
-
-                <a
-                    href="https://t.me/GamePlus_Official"
-                    target="_blank"
-                    class="social-button"
-                >
-                    کانال تلگرام
-                </a>
+                <span class="update-date">
+                    به‌زودی
+                </span>
 
             </div>
 
-        </aside>
+        </div>
 
-    </div>
+    </section>
+
+
+    <!-- SOCIAL -->
+
+    <section class="section">
+
+        <div class="social">
+
+            <h3>
+                GAME PLUS
+            </h3>
+
+            <p>
+                معرفی و دانلود بازی‌های موبایلی
+            </p>
+
+            <a
+                href="https://t.me/GamePlus_Official"
+                target="_blank"
+            >
+                کانال تلگرام گیم پلاس
+            </a>
+
+        </div>
+
+    </section>
 
 </main>
 
 
-<!-- ================= GAME MODAL ================= -->
+<!-- GAME MODAL -->
 
-<div class="modal" id="gameModal">
+<div class="modal" id="modal">
 
     <div class="modal-box">
 
-        <div class="modal-top">
+        <div class="modal-image">
 
-            <button class="close" onclick="closeGame()">
+            <button
+                class="close"
+                onclick="closeGame()"
+            >
                 ×
             </button>
 
             <img
                 src="openfront.jpg"
                 alt="OpenFront"
-                onerror="this.src='https://placehold.co/1000x500/202b50/ffffff?text=OpenFront'"
+                onerror="this.src='https://placehold.co/900x500/29355c/ffffff?text=OpenFront'"
             >
 
             <div class="modal-overlay"></div>
 
             <div class="modal-title">
 
-                <h2>OpenFront</h2>
+                <h2>
+                    OpenFront
+                </h2>
 
-                <div>
-                    بازی استراتژی آنلاین
-                </div>
+                <span>
+                    بازی استراتژی موبایل
+                </span>
 
             </div>
 
@@ -1318,24 +868,24 @@ footer{
 
         <div class="modal-content">
 
-            <div class="info-grid">
+            <div class="info">
 
-                <div class="info">
+                <div class="info-item">
                     <small>پلتفرم</small>
                     <strong>Android</strong>
                 </div>
 
-                <div class="info">
+                <div class="info-item">
                     <small>سبک</small>
                     <strong>Strategy</strong>
                 </div>
 
-                <div class="info">
+                <div class="info-item">
                     <small>حالت</small>
                     <strong>Online</strong>
                 </div>
 
-                <div class="info">
+                <div class="info-item">
                     <small>نسخه</small>
                     <strong>1.0</strong>
                 </div>
@@ -1343,15 +893,12 @@ footer{
             </div>
 
 
-            <h3 class="section-title">
-                معرفی بازی
-            </h3>
-
             <p class="description">
-                OpenFront یک بازی استراتژی آنلاین است که بازیکن در آن
-                باید قلمرو خود را گسترش دهد، منابع را مدیریت کند و برای
-                پیروزی با دیگر بازیکنان رقابت کند.
-                این قسمت بعداً می‌تواند با توضیحات کامل بازی پر شود.
+
+                OpenFront یک بازی استراتژی آنلاین است که
+                بازیکن باید قلمرو خود را گسترش دهد و
+                با بازیکنان دیگر رقابت کند.
+
             </p>
 
 
@@ -1368,7 +915,7 @@ footer{
                     </span>
 
                     <a
-                        class="download-btn"
+                        class="download-button"
                         href="https://drive.google.com/uc?export=download&id=14z4wfhUOatg90eGlI7v7n9afqq-7MDXn"
                         target="_blank"
                     >
@@ -1382,33 +929,17 @@ footer{
 
             <br>
 
-
             <h3 class="section-title">
                 تصاویر بازی
             </h3>
 
-            <div class="screenshots">
+            <div class="gallery">
 
-                <div class="screenshot">
-                    <img
-                        src="openfront.jpg"
-                        alt="OpenFront"
-                    >
-                </div>
+                <img src="openfront.jpg" alt="OpenFront">
 
-                <div class="screenshot">
-                    <img
-                        src="openfront.jpg"
-                        alt="OpenFront"
-                    >
-                </div>
+                <img src="openfront.jpg" alt="OpenFront">
 
-                <div class="screenshot">
-                    <img
-                        src="openfront.jpg"
-                        alt="OpenFront"
-                    >
-                </div>
+                <img src="openfront.jpg" alt="OpenFront">
 
             </div>
 
@@ -1419,86 +950,50 @@ footer{
 </div>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
-<footer id="about">
+<footer>
 
-    <div class="footer-inner">
+    <div class="footer-title">
+        GAME PLUS
+    </div>
 
-        <div class="footer-brand">
+    <p class="footer-text">
+        مرجع معرفی و دانلود بازی‌های موبایلی.
+    </p>
 
-            <h2>
-                GAME PLUS
-            </h2>
+    <div class="footer-links">
 
-            <p>
-                گیم پلاس یک پروژه گیمینگ برای معرفی بازی‌ها،
-                اخبار، آموزش و ارائه لینک‌های دانلود است.
-            </p>
+        <a href="#">
+            بازی‌ها
+        </a>
 
-        </div>
+        <a href="#">
+            مودها
+        </a>
 
+        <a href="#">
+            اخبار
+        </a>
 
-        <div class="footer-col">
+        <a
+            href="https://t.me/GamePlus_Official"
+            target="_blank"
+        >
+            تلگرام
+        </a>
 
-            <h4>
-                بازی‌ها
-            </h4>
-
-            <a href="#games">بازی‌های اندروید</a>
-            <a href="#games">بازی‌های کامپیوتر</a>
-            <a href="#games">بازی‌های آنلاین</a>
-            <a href="#mods">بازی‌های مود</a>
-
-        </div>
-
-
-        <div class="footer-col">
-
-            <h4>
-                گیم پلاس
-            </h4>
-
-            <a href="#latest">آخرین بازی‌ها</a>
-            <a href="#categories">دسته‌بندی‌ها</a>
-            <a href="#about">درباره ما</a>
-
-        </div>
-
-
-        <div class="footer-col">
-
-            <h4>
-                شبکه‌های اجتماعی
-            </h4>
-
-            <a
-                href="https://t.me/GamePlus_Official"
-                target="_blank"
-            >
-                تلگرام
-            </a>
-
-            <a
-                href="https://www.instagram.com/babakkazemi_1358/"
-                target="_blank"
-            >
-                اینستاگرام
-            </a>
-
-            <a href="#">
-                روبیکا
-            </a>
-
-        </div>
+        <a
+            href="https://www.instagram.com/babakkazemi_1358/"
+            target="_blank"
+        >
+            اینستاگرام
+        </a>
 
     </div>
 
-
     <div class="copyright">
-
-        © 2026 Game Plus — تمامی حقوق محفوظ است.
-
+        © 2026 Game Plus
     </div>
 
 </footer>
@@ -1506,169 +1001,121 @@ footer{
 
 <script>
 
-/* ================= GAME MODAL ================= */
-
-const modal = document.getElementById("gameModal");
+/* باز کردن صفحه بازی */
 
 function openGame(){
-    modal.classList.add("show");
-    document.body.style.overflow = "hidden";
+
+    document
+        .getElementById("modal")
+        .classList.add("show");
+
+    document.body.style.overflow="hidden";
 }
+
+
+/* بستن صفحه بازی */
 
 function closeGame(){
-    modal.classList.remove("show");
-    document.body.style.overflow = "";
+
+    document
+        .getElementById("modal")
+        .classList.remove("show");
+
+    document.body.style.overflow="";
 }
 
-modal.addEventListener("click", function(e){
 
-    if(e.target === modal){
+/* بستن با کلیک بیرون */
+
+document
+.getElementById("modal")
+.addEventListener("click",function(e){
+
+    if(e.target===this){
         closeGame();
     }
 
 });
 
-document.addEventListener("keydown", function(e){
 
-    if(e.key === "Escape"){
+/* بستن با دکمه برگشت/ESC */
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="Escape"){
         closeGame();
     }
 
 });
 
 
-/* ================= SEARCH ================= */
+/* جستجو */
 
-const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".game-card");
-const empty = document.getElementById("empty");
+document
+.getElementById("search")
+.addEventListener("input",function(){
 
-searchInput.addEventListener("input", function(){
+    let value=this.value.toLowerCase();
 
-    const value = this.value.trim().toLowerCase();
+    document
+    .querySelectorAll(".game")
+    .forEach(function(card){
 
-    let found = 0;
+        let name=card.dataset.name;
 
-    cards.forEach(card => {
-
-        const name =
-            card.dataset.name.toLowerCase();
-
-        const category =
-            card.dataset.category.toLowerCase();
-
-        if(
-            name.includes(value) ||
-            category.includes(value)
-        ){
-
-            if(card.style.display !== "none" || value === ""){
-                card.style.display = "";
-            }
-
-            found++;
-
+        if(name.includes(value)){
+            card.style.display="";
         }else{
-
-            card.style.display = "none";
-
+            card.style.display="none";
         }
 
     });
 
-    empty.style.display =
-        found === 0 ? "block" : "none";
-
 });
 
 
-/* ================= CATEGORY FILTER ================= */
+/* دسته‌بندی */
 
-const categoryButtons =
-    document.querySelectorAll(".category");
+document
+.querySelectorAll(".category")
+.forEach(function(button){
 
-categoryButtons.forEach(button => {
+    button.addEventListener("click",function(){
 
-    button.addEventListener("click", function(){
-
-        categoryButtons.forEach(btn =>
-            btn.classList.remove("active")
-        );
+        document
+        .querySelectorAll(".category")
+        .forEach(function(btn){
+            btn.classList.remove("active");
+        });
 
         this.classList.add("active");
 
-        const filter = this.dataset.filter;
+        let filter=this.dataset.filter;
 
-        let found = 0;
-
-        cards.forEach(card => {
-
-            const categories =
-                card.dataset.category.split(" ");
+        document
+        .querySelectorAll(".game")
+        .forEach(function(card){
 
             if(
-                filter === "all" ||
-                categories.includes(filter)
+                filter==="all" ||
+                card.dataset.category.includes(filter)
             ){
 
-                /*
-                 کارت‌های آینده که display:none دارند
-                 با انتخاب دسته هم نمایش داده نمی‌شوند.
-                */
-                if(card.dataset.name !== "game plus"){
-                    card.style.display = "";
-                    found++;
-                }
+                card.style.display="";
 
             }else{
 
-                card.style.display = "none";
+                card.style.display="none";
 
             }
 
         });
 
-        empty.style.display =
-            found === 0 ? "block" : "none";
-
-        searchInput.value = "";
-
     });
 
 });
 
-
-/* ================= MOBILE MENU ================= */
-
-function toggleMenu(){
-
-    const nav =
-        document.querySelector(".main-nav");
-
-    if(nav.style.display === "flex"){
-
-        nav.style.display = "";
-
-    }else{
-
-        nav.style.display = "flex";
-        nav.style.position = "absolute";
-        nav.style.top = "76px";
-        nav.style.right = "10px";
-        nav.style.left = "10px";
-        nav.style.background = "#fff";
-        nav.style.padding = "10px";
-        nav.style.border = "1px solid #e8ebf1";
-        nav.style.borderRadius = "14px";
-        nav.style.flexDirection = "column";
-        nav.style.boxShadow =
-            "0 15px 40px rgba(20,30,60,.12)";
-        nav.style.zIndex = "999";
-    }
-
-}
-
 </script>
 
 </body>
-                    </html>
+    </html>
