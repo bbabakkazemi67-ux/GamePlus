@@ -1,139 +1,629 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Age of Persia V11</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #10131a;
-      color: white;
-      text-align: center;
+<title>Age of Persia V11 | GAME PLUS</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:"Vazirmatn",sans-serif;
+    background:#080b12;
+    color:#fff;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:#0d111b;
+    border-bottom:1px solid #202735;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+}
+
+.logo span{
+    color:#4f8cff;
+}
+
+.back{
+    background:#151b27;
+    border:1px solid #293244;
+    padding:10px 17px;
+    border-radius:10px;
+    color:#c6cfdd;
+}
+
+.back:hover{
+    background:#4f8cff;
+    color:white;
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px 60px;
+}
+
+/* HERO */
+
+.game-hero{
+    background:#10151f;
+    border:1px solid #242d3d;
+    border-radius:22px;
+    overflow:hidden;
+}
+
+.cover{
+    width:100%;
+    height:420px;
+    background:linear-gradient(135deg,#17110b,#71451f,#15100b);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+
+.cover svg{
+    width:100%;
+    height:100%;
+}
+
+.game-title{
+    padding:28px;
+}
+
+.game-title h1{
+    font-size:36px;
+    margin-bottom:12px;
+}
+
+.game-title p{
+    color:#9faabd;
+    line-height:2;
+}
+
+.tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:18px;
+}
+
+.tag{
+    background:#182131;
+    color:#b9c5d7;
+    padding:7px 12px;
+    border-radius:8px;
+    font-size:13px;
+}
+
+/* INFO */
+
+.info-section{
+    margin-top:25px;
+    background:#10151f;
+    border:1px solid #242d3d;
+    border-radius:17px;
+    padding:25px;
+}
+
+.section-title{
+    font-size:24px;
+    margin-bottom:18px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.info-box{
+    background:#171e2b;
+    border:1px solid #293448;
+    border-radius:11px;
+    padding:15px;
+    color:#b8c2d1;
+}
+
+.info-box strong{
+    color:#fff;
+}
+
+/* SCREENSHOTS */
+
+.screenshots{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+}
+
+.screenshot{
+    height:190px;
+    border-radius:12px;
+    overflow:hidden;
+    background:#171e2b;
+    border:1px solid #293448;
+}
+
+.screenshot img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* PLACEHOLDER */
+
+.placeholder{
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#718096;
+    padding:15px;
+}
+
+/* DESCRIPTION */
+
+.description{
+    color:#aeb8c8;
+    line-height:2.2;
+    font-size:15px;
+}
+
+/* DOWNLOAD */
+
+.download-box{
+    margin-top:25px;
+    background:linear-gradient(135deg,#111c32,#10151f);
+    border:1px solid #315ca8;
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+}
+
+.download-box h2{
+    font-size:26px;
+    margin-bottom:10px;
+}
+
+.download-box p{
+    color:#9faabd;
+    margin-bottom:22px;
+}
+
+.download-button{
+    display:block;
+    width:100%;
+    max-width:500px;
+    margin:auto;
+    padding:16px;
+    background:#4f8cff;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:800;
+}
+
+.download-button:hover{
+    background:#3c79e8;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #202735;
+    text-align:center;
+    padding:25px;
+    color:#7f8a9c;
+    font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:750px){
+
+    .cover{
+        height:300px;
     }
 
-    .container {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 20px;
+    .game-title h1{
+        font-size:28px;
     }
 
-    .cover {
-      width: 100%;
-      max-width: 650px;
-      height: 330px;
-      margin: auto;
-      border-radius: 18px;
-      overflow: hidden;
-      background: linear-gradient(135deg, #171717, #7a3b12, #d19a38);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 35px rgba(0,0,0,.5);
+    .info-grid{
+        grid-template-columns:1fr;
     }
 
-    .cover svg {
-      width: 100%;
-      height: 100%;
+    .screenshots{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    h1 {
-      margin-top: 25px;
-      font-size: 32px;
+    .screenshot{
+        height:160px;
     }
 
-    .version {
-      color: #bbb;
-      margin-bottom: 25px;
+}
+
+@media(max-width:450px){
+
+    .screenshots{
+        grid-template-columns:1fr;
     }
 
-    .download {
-      display: inline-block;
-      background: #e59b2f;
-      color: #111;
-      padding: 15px 35px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
+    .screenshot{
+        height:200px;
     }
 
-    .download:hover {
-      background: #ffb84d;
-    }
-  </style>
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="container">
+<!-- HEADER -->
 
-    <!-- تصویر بازی -->
+<header>
+
+    <div class="nav">
+
+        <div class="logo">
+            GAME <span>PLUS</span>
+        </div>
+
+        <a class="back" href="index.html">
+            بازگشت به بازی‌ها
+        </a>
+
+    </div>
+
+</header>
+
+
+<main class="container">
+
+
+<!-- GAME HERO -->
+
+<section class="game-hero">
+
     <div class="cover">
-      <svg viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
 
-        <defs>
-          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stop-color="#111"/>
-            <stop offset="55%" stop-color="#573016"/>
-            <stop offset="100%" stop-color="#d09a3b"/>
-          </linearGradient>
-        </defs>
+        <svg
+            viewBox="0 0 1200 650"
+            xmlns="http://www.w3.org/2000/svg"
+        >
 
-        <rect width="900" height="450" fill="url(#bg)"/>
+            <defs>
 
-        <!-- کوه‌ها -->
-        <polygon points="0,390 180,180 330,390" fill="#191919"/>
-        <polygon points="230,390 470,130 700,390" fill="#242424"/>
-        <polygon points="500,390 720,190 900,390" fill="#151515"/>
+                <linearGradient
+                    id="background"
+                    x1="0"
+                    y1="0"
+                    x2="1"
+                    y2="1"
+                >
 
-        <!-- خورشید -->
-        <circle cx="700" cy="120" r="65"
-                fill="#e4a83d" opacity="0.9"/>
+                    <stop
+                        offset="0%"
+                        stop-color="#17110b"
+                    />
 
-        <!-- جنگجو -->
-        <circle cx="450" cy="170" r="42" fill="#171717"/>
-        <path d="M390 390 Q450 210 510 390 Z" fill="#101010"/>
-        <rect x="438" y="195" width="24" height="130" fill="#b9b9b9"/>
-        <polygon points="450,125 420,195 480,195" fill="#333"/>
+                    <stop
+                        offset="50%"
+                        stop-color="#71451f"
+                    />
 
-        <!-- نوشته -->
-        <text x="450" y="65"
-              text-anchor="middle"
-              font-size="42"
-              font-family="Arial"
-              font-weight="bold"
-              fill="#ffffff">
-          AGE OF PERSIA
-        </text>
+                    <stop
+                        offset="100%"
+                        stop-color="#100c08"
+                    />
 
-        <text x="450" y="425"
-              text-anchor="middle"
-              font-size="30"
-              font-family="Arial"
-              font-weight="bold"
-              fill="#f0b84b">
-          V11
-        </text>
+                </linearGradient>
 
-      </svg>
+                <radialGradient id="light">
+
+                    <stop
+                        offset="0%"
+                        stop-color="#e7b45a"
+                        stop-opacity=".65"
+                    />
+
+                    <stop
+                        offset="100%"
+                        stop-color="#e7b45a"
+                        stop-opacity="0"
+                    />
+
+                </radialGradient>
+
+            </defs>
+
+            <rect
+                width="1200"
+                height="650"
+                fill="url(#background)"
+            />
+
+            <circle
+                cx="930"
+                cy="170"
+                r="250"
+                fill="url(#light)"
+            />
+
+            <circle
+                cx="250"
+                cy="500"
+                r="220"
+                fill="#000"
+                opacity=".25"
+            />
+
+            <text
+                x="600"
+                y="280"
+                text-anchor="middle"
+                fill="#f0c36a"
+                font-size="88"
+                font-weight="900"
+                font-family="Arial"
+            >
+                AGE OF PERSIA
+            </text>
+
+            <text
+                x="600"
+                y="365"
+                text-anchor="middle"
+                fill="#ffffff"
+                font-size="52"
+                font-weight="700"
+                font-family="Arial"
+            >
+                V11
+            </text>
+
+            <text
+                x="600"
+                y="430"
+                text-anchor="middle"
+                fill="#d7d7d7"
+                font-size="25"
+                font-family="Arial"
+            >
+                ANDROID GAME
+            </text>
+
+        </svg>
+
     </div>
 
-    <h1>Age of Persia V11</h1>
 
-    <div class="version">
-      نسخه V11
+    <div class="game-title">
+
+        <h1>Age of Persia V11</h1>
+
+        <p>
+            معرفی و دانلود نسخه V11 بازی Age of Persia
+            برای دستگاه‌های اندرویدی.
+        </p>
+
+        <div class="tags">
+
+            <span class="tag">Android</span>
+
+            <span class="tag">اکشن</span>
+
+            <span class="tag">آفلاین</span>
+
+            <span class="tag">V11</span>
+
+        </div>
+
     </div>
 
-    <a class="download"
-       href="https://drive.google.com/FILE-LINK-HERE"
-       target="_blank">
-      دانلود بازی
+</section>
+
+
+
+<!-- INFORMATION -->
+
+<section class="info-section">
+
+    <h2 class="section-title">
+        اطلاعات بازی
+    </h2>
+
+    <div class="info-grid">
+
+        <div class="info-box">
+            نام بازی:
+            <strong>Age of Persia</strong>
+        </div>
+
+        <div class="info-box">
+            نسخه:
+            <strong>V11</strong>
+        </div>
+
+        <div class="info-box">
+            سیستم عامل:
+            <strong>Android</strong>
+        </div>
+
+        <div class="info-box">
+            سبک:
+            <strong>Action</strong>
+        </div>
+
+        <div class="info-box">
+            حالت:
+            <strong>Offline</strong>
+        </div>
+
+        <div class="info-box">
+            منبع دانلود:
+            <strong>Google Drive</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SCREENSHOTS -->
+
+<section class="info-section">
+
+    <h2 class="section-title">
+        تصاویر بازی
+    </h2>
+
+    <div class="screenshots">
+
+        <!-- عکس اول -->
+        <div class="screenshot">
+            <div class="placeholder">
+                تصویر بازی ۱
+            </div>
+        </div>
+
+        <!-- عکس دوم -->
+        <div class="screenshot">
+            <div class="placeholder">
+                تصویر بازی ۲
+            </div>
+        </div>
+
+        <!-- عکس سوم -->
+        <div class="screenshot">
+            <div class="placeholder">
+                تصویر بازی ۳
+            </div>
+        </div>
+
+        <!-- عکس چهارم -->
+        <div class="screenshot">
+            <div class="placeholder">
+                تصویر بازی ۴
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- DESCRIPTION -->
+
+<section class="info-section">
+
+    <h2 class="section-title">
+        توضیحات بازی
+    </h2>
+
+    <div class="description">
+
+        <p>
+            Age of Persia V11 یک بازی اندرویدی با حال‌وهوای
+            تاریخی و ماجراجویی است که می‌توانید آن را روی
+            دستگاه اندرویدی خود تجربه کنید.
+        </p>
+
+        <br>
+
+        <p>
+            در این صفحه می‌توانید مشخصات بازی، تصاویر،
+            نسخه بازی و اطلاعات مربوط به دانلود را مشاهده کنید.
+        </p>
+
+        <br>
+
+        <p>
+            قبل از نصب، مطمئن شوید که فضای کافی روی دستگاه
+            خود دارید و نسخه اندروید دستگاه با بازی سازگار است.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- DOWNLOAD -->
+
+<section class="download-box">
+
+    <h2>
+        دانلود Age of Persia V11
+    </h2>
+
+    <p>
+        برای شروع دانلود روی دکمه زیر بزنید.
+    </p>
+
+    <!-- لینک Google Drive خودت را اینجا قرار بده -->
+
+    <a
+        class="download-button"
+        href="YOUR_GOOGLE_DRIVE_DOWNLOAD_LINK"
+        target="_blank"
+    >
+        دانلود بازی
     </a>
 
-  </div>
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+    GAME PLUS © 2026
+
+</footer>
+
 
 </body>
-</html>
+              </html>
