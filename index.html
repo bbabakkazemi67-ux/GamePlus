@@ -2,26 +2,25 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAME PLUS | دانلود و معرفی بازی</title>
 
-<title>Game Plus | دانلود بازی موبایل</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
-
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
-html{scroll-behavior:smooth;}
-
 body{
-    font-family:"Vazirmatn",Tahoma,sans-serif;
-    background:#f4f6fa;
-    color:#18202d;
-    overflow-x:hidden;
+    font-family:"Vazirmatn",sans-serif;
+    background:#080b12;
+    color:#fff;
+    min-height:100vh;
 }
 
 a{
@@ -29,651 +28,660 @@ a{
     color:inherit;
 }
 
-button,input{font-family:inherit;}
-
-.header{
-    height:65px;
-    background:#fff;
-    border-bottom:1px solid #e6e9ef;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    padding:0 13px;
+header{
     position:sticky;
     top:0;
     z-index:100;
+    background:#0d111b;
+    border-bottom:1px solid #202735;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    padding:16px 20px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:7px;
-    font-size:17px;
+    font-size:25px;
     font-weight:900;
-    white-space:nowrap;
+    color:#fff;
 }
 
-.logo-icon{
-    width:35px;
-    height:35px;
-    border-radius:10px;
-    background:linear-gradient(135deg,#3158d8,#683ee8);
-    color:white;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
+.logo span{
+    color:#4f8cff;
 }
-
-.logo span{color:#3158d8;}
 
 .search{
-    flex:1;
-    position:relative;
+    width:320px;
+    max-width:55%;
 }
 
 .search input{
     width:100%;
-    height:40px;
-    border:1px solid #e2e5eb;
-    border-radius:11px;
-    background:#f7f8fa;
+    background:#151b27;
+    border:1px solid #293244;
+    color:#fff;
+    padding:12px 16px;
+    border-radius:12px;
     outline:none;
-    padding:0 37px 0 10px;
-    font-size:12px;
+    font-family:inherit;
 }
 
-.search-icon{
-    position:absolute;
-    right:12px;
-    top:8px;
-    color:#777;
-    font-size:18px;
+.search input:focus{
+    border-color:#4f8cff;
 }
 
 .hero{
-    width:100%;
-    padding:12px;
+    max-width:1200px;
+    margin:30px auto;
+    padding:0 20px;
 }
 
 .hero-box{
-    width:100%;
-    height:240px;
-    border-radius:18px;
+    min-height:330px;
+    border-radius:22px;
+    padding:35px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    background:linear-gradient(135deg,#111827,#0b1220);
+    border:1px solid #263044;
     overflow:hidden;
-    position:relative;
-    background:
-        linear-gradient(0deg,rgba(10,16,35,.95),rgba(10,16,35,.15)),
-        url("openfront.jpg") center/cover;
 }
 
-.hero-content{
-    position:absolute;
-    bottom:20px;
-    right:18px;
-    left:18px;
-    color:white;
+.hero-text{
+    max-width:580px;
 }
 
-.hero-label{
+.hero-text h1{
+    font-size:42px;
+    margin-bottom:14px;
+}
+
+.hero-text p{
+    color:#aeb8c8;
+    line-height:2;
+    margin-bottom:22px;
+}
+
+.btn{
     display:inline-block;
-    background:rgba(255,255,255,.15);
-    padding:4px 9px;
-    border-radius:7px;
-    font-size:9px;
-    margin-bottom:6px;
+    background:#4f8cff;
+    color:#fff;
+    padding:13px 23px;
+    border-radius:11px;
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
 }
 
-.hero h1{
-    font-size:25px;
-    font-weight:900;
+.btn:hover{
+    background:#3c79e8;
 }
 
-.hero p{
-    color:#d8dbea;
-    font-size:11px;
-    margin-top:3px;
-    line-height:1.8;
-}
-
-.hero-btn{
-    display:inline-block;
-    background:#fff;
-    color:#2945a8;
-    margin-top:10px;
-    padding:8px 14px;
-    border-radius:9px;
-    font-size:11px;
-    font-weight:800;
+.hero-cover{
+    width:330px;
+    height:220px;
+    border-radius:18px;
+    object-fit:cover;
+    border:1px solid #303b50;
 }
 
 .container{
-    width:100%;
-    padding:0 12px;
-}
-
-.section{margin-bottom:23px;}
-
-.section-title{
-    font-size:17px;
-    font-weight:900;
-    margin-bottom:12px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-}
-
-.section-title::before{
-    content:"";
-    width:4px;
-    height:21px;
-    border-radius:5px;
-    background:linear-gradient(#3158d8,#683ee8);
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px 50px;
 }
 
 .categories{
     display:flex;
-    gap:7px;
-    overflow-x:auto;
-    padding-bottom:4px;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
 }
-
-.categories::-webkit-scrollbar{display:none;}
 
 .category{
-    flex-shrink:0;
-    border:1px solid #e1e5ec;
-    background:white;
-    color:#626a78;
-    padding:8px 13px;
-    border-radius:9px;
-    font-size:10px;
+    background:#141a26;
+    border:1px solid #293244;
+    color:#b9c3d2;
+    padding:10px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-family:inherit;
 }
 
-.category.active{
-    background:#3158d8;
-    color:white;
-    border-color:#3158d8;
+.category.active,
+.category:hover{
+    background:#4f8cff;
+    border-color:#4f8cff;
+    color:#fff;
+}
+
+.section-title{
+    font-size:25px;
+    margin-bottom:20px;
 }
 
 .games{
     display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:11px;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
 }
 
-.game{
-    background:white;
-    border:1px solid #e5e8ee;
-    border-radius:14px;
+.game-card{
+    background:#10151f;
+    border:1px solid #242d3d;
+    border-radius:17px;
     overflow:hidden;
-    box-shadow:0 4px 15px rgba(20,30,60,.04);
+    transition:.2s;
 }
 
-.game-image{
-    width:100%;
-    height:135px;
-    position:relative;
-    background:#dfe3eb;
+.game-card:hover{
+    transform:translateY(-4px);
+    border-color:#4f8cff;
 }
 
-.game-image img{
+.game-cover{
     width:100%;
-    height:100%;
+    height:210px;
     object-fit:cover;
     display:block;
 }
 
-.platform{
-    position:absolute;
-    top:7px;
-    right:7px;
-    background:rgba(15,20,35,.82);
-    color:white;
-    padding:3px 6px;
-    border-radius:5px;
-    font-size:8px;
+.game-info{
+    padding:17px;
 }
 
-.game-body{padding:10px;}
-
-.game-title{
-    font-size:13px;
-    font-weight:800;
-}
-
-.game-description{
-    color:#777f8d;
-    font-size:9px;
-    line-height:1.8;
-    height:34px;
-    overflow:hidden;
-    margin-top:3px;
+.game-info h3{
+    font-size:20px;
+    margin-bottom:10px;
 }
 
 .tags{
     display:flex;
-    gap:4px;
-    margin-top:7px;
+    flex-wrap:wrap;
+    gap:7px;
+    margin-bottom:15px;
 }
 
 .tag{
-    background:#f0f2f7;
-    color:#687080;
-    border-radius:5px;
-    padding:2px 5px;
-    font-size:7px;
+    font-size:12px;
+    background:#182131;
+    color:#aebbd0;
+    padding:5px 9px;
+    border-radius:7px;
 }
 
-.download{
-    display:block;
-    background:#3158d8;
-    color:white;
+.game-btn{
+    width:100%;
     text-align:center;
-    padding:8px;
-    border-radius:8px;
-    margin-top:9px;
-    font-size:10px;
-    font-weight:800;
+    display:block;
+    padding:11px;
+    border-radius:10px;
+    background:#4f8cff;
+    font-weight:700;
+    cursor:pointer;
+    border:none;
+    color:white;
+    font-family:inherit;
 }
 
-.update{
-    background:white;
-    border:1px solid #e5e8ee;
-    border-radius:13px;
-    padding:12px;
+.game-btn:hover{
+    background:#3c79e8;
+}
+
+.update-box{
+    margin-top:45px;
+    background:#10151f;
+    border:1px solid #242d3d;
+    border-radius:17px;
+    padding:25px;
 }
 
 .update-item{
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    padding:10px;
-    background:#f7f8fa;
-    border-radius:9px;
-    font-size:10px;
-    margin-bottom:7px;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #222b39;
 }
 
-.update-item:last-child{margin-bottom:0;}
+.update-item:last-child{
+    border-bottom:none;
+}
 
-.update-name{font-weight:700;}
-.update-date{color:#7b8390;}
+.update-item span{
+    color:#9eabbf;
+    font-size:13px;
+}
 
 .social{
-    background:linear-gradient(135deg,#2c48a4,#683de2);
-    color:white;
-    border-radius:15px;
-    padding:18px;
+    margin-top:25px;
+    background:#10151f;
+    border:1px solid #242d3d;
+    border-radius:17px;
+    padding:25px;
 }
-
-.social h3{font-size:17px;}
 
 .social p{
-    color:#e0e4ff;
-    font-size:10px;
-    margin:4px 0 12px;
+    color:#aeb8c8;
+    line-height:2;
+    margin:10px 0 18px;
 }
 
-.social a{
-    display:block;
-    background:white;
-    color:#3148a3;
-    text-align:center;
+.social-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.social-links a{
+    background:#182131;
+    border:1px solid #293448;
+    padding:10px 15px;
     border-radius:9px;
-    padding:9px;
-    font-size:10px;
-    font-weight:800;
 }
 
 footer{
-    margin-top:30px;
-    background:#151a27;
-    color:#aab0bc;
-    padding:25px 15px 15px;
-}
-
-.footer-title{
-    color:white;
-    font-size:18px;
-    font-weight:900;
-}
-
-.footer-text{
-    font-size:9px;
-    line-height:2;
-    margin-top:7px;
-}
-
-.footer-links{
-    display:flex;
-    gap:7px;
-    flex-wrap:wrap;
-    margin-top:14px;
-}
-
-.footer-links a{
-    background:#202637;
-    padding:7px 10px;
-    border-radius:7px;
-    font-size:9px;
-}
-
-.copyright{
+    border-top:1px solid #202735;
     text-align:center;
-    border-top:1px solid rgba(255,255,255,.08);
-    margin-top:20px;
-    padding-top:12px;
-    font-size:8px;
-    color:#737b89;
+    padding:25px 15px;
+    color:#7f8a9c;
+    font-size:13px;
 }
 
-@media(max-width:360px){
-    .header{padding:0 8px;}
-    .logo{font-size:15px;}
-    .logo-icon{
-        width:31px;
-        height:31px;
+/* MODAL */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:500;
+    background:rgba(0,0,0,.78);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-content{
+    width:100%;
+    max-width:700px;
+    max-height:90vh;
+    overflow-y:auto;
+    background:#10151f;
+    border:1px solid #2b3548;
+    border-radius:20px;
+    padding:25px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    left:18px;
+    top:15px;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    border:1px solid #354055;
+    background:#171e2b;
+    color:#fff;
+    font-size:20px;
+    cursor:pointer;
+}
+
+.modal-cover{
+    width:100%;
+    max-height:300px;
+    object-fit:cover;
+    border-radius:14px;
+    margin-bottom:20px;
+}
+
+.modal-content h2{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.modal-description{
+    color:#b4bfce;
+    line-height:2;
+    margin:15px 0 20px;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.info{
+    background:#171e2b;
+    border:1px solid #263044;
+    border-radius:10px;
+    padding:12px;
+    color:#aeb8c8;
+}
+
+.download{
+    display:block;
+    width:100%;
+    text-align:center;
+    background:#4f8cff;
+    padding:14px;
+    border-radius:11px;
+    font-weight:800;
+    margin-top:10px;
+}
+
+.download:hover{
+    background:#3c79e8;
+}
+
+.no-result{
+    display:none;
+    padding:30px;
+    text-align:center;
+    color:#8f9bad;
+    background:#10151f;
+    border-radius:15px;
+    border:1px solid #242d3d;
+}
+
+@media(max-width:850px){
+    .games{
+        grid-template-columns:repeat(2,1fr);
     }
-    .games{gap:8px;}
-    .game-image{height:120px;}
-    .game-body{padding:8px;}
-    .game-title{font-size:12px;}
-    .hero-box{height:225px;}
+
+    .hero-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .hero-cover{
+        width:100%;
+        height:220px;
+    }
+}
+
+@media(max-width:600px){
+    .nav{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .search{
+        max-width:100%;
+        width:100%;
+    }
+
+    .hero-text h1{
+        font-size:31px;
+    }
+
+    .games{
+        grid-template-columns:1fr;
+    }
+
+    .hero-box{
+        padding:25px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header class="header">
+<header>
+    <div class="nav">
+        <div class="logo">GAME <span>PLUS</span></div>
 
-    <a href="#" class="logo">
-        <div class="logo-icon">GP</div>
-        GAME <span>PLUS</span>
-    </a>
-
-    <div class="search">
-        <span class="search-icon">⌕</span>
-        <input id="search" type="text" placeholder="جستجوی بازی...">
+        <div class="search">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="جستجوی بازی..."
+                oninput="searchGames()"
+            >
+        </div>
     </div>
-
 </header>
 
-
 <section class="hero">
-
     <div class="hero-box">
 
-        <div class="hero-content">
+        <div class="hero-text">
+            <h1>GAME PLUS</h1>
 
-            <span class="hero-label">بازی منتخب</span>
+            <p>
+                مرجع معرفی و دانلود بازی‌های موبایل.
+                بازی‌های جدید را پیدا کن، مشخصاتشان را ببین
+                و وارد صفحه دانلود شو.
+            </p>
 
-            <h1>OpenFront</h1>
-
-            <p>یک بازی استراتژی آنلاین برای موبایل</p>
-
-            <a href="javascript:void(0)"
-               class="hero-btn"
-               onclick="openGame('openfront')">
-                مشاهده بازی
-            </a>
-
+            <button class="btn" onclick="openGame('openfront')">
+                مشاهده OpenFront
+            </button>
         </div>
 
+        <img
+            class="hero-cover"
+            src="openfront.jpg"
+            alt="OpenFront"
+        >
     </div>
-
 </section>
-
 
 <main class="container">
 
-    <section class="section">
+    <div class="categories">
+        <button class="category active" onclick="filterGames('all',this)">همه</button>
+        <button class="category" onclick="filterGames('action',this)">اکشن</button>
+        <button class="category" onclick="filterGames('strategy',this)">استراتژی</button>
+        <button class="category" onclick="filterGames('online',this)">آنلاین</button>
+        <button class="category" onclick="filterGames('offline',this)">آفلاین</button>
+        <button class="category" onclick="filterGames('mod',this)">مود</button>
+    </div>
 
-        <h2 class="section-title">
-            دسته‌بندی بازی‌ها
-        </h2>
+    <h2 class="section-title">بازی‌ها</h2>
 
-        <div class="categories">
+    <div class="games" id="games">
 
-            <button class="category active" data-filter="all">همه</button>
-            <button class="category" data-filter="action">اکشن</button>
-            <button class="category" data-filter="strategy">استراتژی</button>
-            <button class="category" data-filter="online">آنلاین</button>
-            <button class="category" data-filter="offline">آفلاین</button>
-            <button class="category" data-filter="mods">مود</button>
+        <!-- OPENFRONT -->
 
-        </div>
+        <article
+            class="game-card"
+            data-name="openfront"
+            data-category="strategy online"
+        >
 
-    </section>
-
-
-    <section class="section">
-
-        <h2 class="section-title">
-            آخرین بازی‌ها
-        </h2>
-
-        <div class="games" id="games">
-
-
-            <!-- OPENFRONT -->
-
-            <article
-                class="game"
-                data-name="openfront"
-                data-category="strategy online"
+            <img
+                class="game-cover"
+                src="openfront.jpg"
+                alt="OpenFront"
             >
 
-                <div class="game-image">
+            <div class="game-info">
 
-                    <img
-                        src="openfront.jpg"
-                        alt="OpenFront"
-                        onerror="this.src='https://placehold.co/800x500/29355c/ffffff?text=OpenFront'"
-                    >
+                <h3>OpenFront</h3>
 
-                    <span class="platform">
-                        Android
-                    </span>
-
+                <div class="tags">
+                    <span class="tag">Android</span>
+                    <span class="tag">استراتژی</span>
+                    <span class="tag">آنلاین</span>
                 </div>
 
-                <div class="game-body">
+                <button
+                    class="game-btn"
+                    onclick="openGame('openfront')"
+                >
+                    مشاهده و دانلود
+                </button>
 
-                    <h3 class="game-title">
-                        OpenFront
-                    </h3>
+            </div>
+        </article>
 
-                    <p class="game-description">
-                        بازی استراتژی آنلاین با تمرکز بر گسترش قلمرو.
-                    </p>
 
-                    <div class="tags">
-                        <span class="tag">استراتژی</span>
-                        <span class="tag">آنلاین</span>
-                    </div>
+        <!-- AGE OF PERSIA -->
 
-                    <a
-                        href="javascript:void(0)"
-                        class="download"
-                        onclick="openGame('openfront')"
+        <article
+            class="game-card"
+            data-name="age of persia"
+            data-category="action offline"
+        >
+
+            <div class="game-cover" style="height:210px;background:#151b28;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+
+                <svg
+                    width="100%"
+                    height="100%"
+                    viewBox="0 0 800 450"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+
+                    <defs>
+                        <linearGradient id="apg" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0%" stop-color="#16110b"/>
+                            <stop offset="55%" stop-color="#70421d"/>
+                            <stop offset="100%" stop-color="#15100b"/>
+                        </linearGradient>
+                    </defs>
+
+                    <rect width="800" height="450" fill="url(#apg)"/>
+
+                    <circle
+                        cx="650"
+                        cy="115"
+                        r="90"
+                        fill="#d9a441"
+                        opacity=".22"
+                    />
+
+                    <text
+                        x="400"
+                        y="190"
+                        text-anchor="middle"
+                        fill="#f0c36a"
+                        font-size="60"
+                        font-weight="bold"
+                        font-family="Arial"
                     >
-                        مشاهده و دانلود
-                    </a>
+                        AGE OF PERSIA
+                    </text>
 
+                    <text
+                        x="400"
+                        y="250"
+                        text-anchor="middle"
+                        fill="#ffffff"
+                        font-size="35"
+                        font-weight="bold"
+                        font-family="Arial"
+                    >
+                        V11
+                    </text>
+
+                    <text
+                        x="400"
+                        y="315"
+                        text-anchor="middle"
+                        fill="#d6d6d6"
+                        font-size="22"
+                        font-family="Arial"
+                    >
+                        ANDROID
+                    </text>
+
+                </svg>
+
+            </div>
+
+            <div class="game-info">
+
+                <h3>Age of Persia V11</h3>
+
+                <div class="tags">
+                    <span class="tag">Android</span>
+                    <span class="tag">اکشن</span>
+                    <span class="tag">آفلاین</span>
                 </div>
 
-            </article>
+                <a
+                    class="game-btn"
+                    href="age-of-persia.html"
+                >
+                    مشاهده و دانلود
+                </a>
+
+            </div>
+        </article>
+
+    </div>
+
+    <div class="no-result" id="noResult">
+        بازی موردنظر پیدا نشد.
+    </div>
 
 
-            <!-- AGE OF PERSIA -->
+    <!-- UPDATES -->
 
-            <article
-                class="game"
-                data-name="age of persia"
-                data-category="action offline"
-            >
+    <section class="update-box">
 
-                <div class="game-image">
+        <h2 class="section-title">آخرین بروزرسانی‌ها</h2>
 
-                    <svg
-                        viewBox="0 0 800 450"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style="width:100%;height:100%;display:block;"
-                    >
+        <div class="update-item">
+            <strong>Age of Persia V11</strong>
+            <span>جدید</span>
+        </div>
 
-                        <defs>
-                            <linearGradient id="persiaBg" x1="0" y1="0" x2="1" y2="1">
-                                <stop offset="0%" stop-color="#111111"/>
-                                <stop offset="55%" stop-color="#633515"/>
-                                <stop offset="100%" stop-color="#d49a3b"/>
-                            </linearGradient>
-                        </defs>
-
-                        <rect width="800" height="450" fill="url(#persiaBg)"/>
-
-                        <circle
-                            cx="650"
-                            cy="115"
-                            r="65"
-                            fill="#e5aa43"
-                        />
-
-                        <polygon
-                            points="0,400 170,190 320,400"
-                            fill="#181818"
-                        />
-
-                        <polygon
-                            points="210,400 420,140 650,400"
-                            fill="#242424"
-                        />
-
-                        <polygon
-                            points="500,400 680,190 800,400"
-                            fill="#111111"
-                        />
-
-                        <circle
-                            cx="400"
-                            cy="190"
-                            r="38"
-                            fill="#111111"
-                        />
-
-                        <path
-                            d="M345 410 Q400 215 455 410 Z"
-                            fill="#0b0b0b"
-                        />
-
-                        <rect
-                            x="390"
-                            y="205"
-                            width="20"
-                            height="135"
-                            fill="#c6c6c6"
-                        />
-
-                        <text
-                            x="400"
-                            y="75"
-                            text-anchor="middle"
-                            font-size="45"
-                            font-family="Arial"
-                            font-weight="bold"
-                            fill="white">
-                            AGE OF PERSIA
-                        </text>
-
-                        <text
-                            x="400"
-                            y="425"
-                            text-anchor="middle"
-                            font-size="32"
-                            font-family="Arial"
-                            font-weight="bold"
-                            fill="#f0b84b">
-                            V11
-                        </text>
-
-                    </svg>
-
-                    <span class="platform">
-                        Android
-                    </span>
-
-                </div>
-
-                <div class="game-body">
-
-                    <h3 class="game-title">
-                        Age of Persia V11
-                    </h3>
-
-                    <p class="game-description">
-                        بازی جدید Age of Persia نسخه V11.
-                    </p>
-
-                    <div class="tags">
-                        <span class="tag">اکشن</span>
-                        <span class="tag">آفلاین</span>
-                    </div>
-
-                    <a
-                        href="age-of-persia.html"
-                        class="download"
-                    >
-                        مشاهده و دانلود
-                    </a>
-
-                </div>
-
-            </article>
-
+        <div class="update-item">
+            <strong>OpenFront</strong>
+            <span>بروزرسانی شده</span>
         </div>
 
     </section>
 
 
-    <section class="section">
+    <!-- SOCIAL -->
 
-        <h2 class="section-title">
-            آخرین بروزرسانی‌ها
-        </h2>
+    <section class="social">
 
-        <div class="update">
+        <h2 class="section-title">GAME PLUS</h2>
 
-            <div class="update-item">
-                <span class="update-name">Age of Persia V11</span>
-                <span class="update-date">جدید</span>
-            </div>
+        <p>
+            برای دریافت اخبار بازی‌ها، معرفی بازی‌های جدید
+            و اطلاع از بروزرسانی‌ها ما را دنبال کنید.
+        </p>
 
-            <div class="update-item">
-                <span class="update-name">OpenFront</span>
-                <span class="update-date">جدید</span>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <div class="social">
-
-            <h3>GAME PLUS</h3>
-
-            <p>
-                معرفی و دانلود بازی‌های موبایلی
-            </p>
+        <div class="social-links">
 
             <a
                 href="https://t.me/GamePlus_Official"
                 target="_blank"
             >
-                کانال تلگرام گیم پلاس
+                Telegram
+            </a>
+
+            <a
+                href="https://www.instagram.com/babakkazemi_1358/"
+                target="_blank"
+            >
+                Instagram
             </a>
 
         </div>
@@ -684,42 +692,77 @@ footer{
 
 
 <footer>
-
-    <div class="footer-title">
-        GAME PLUS
-    </div>
-
-    <p class="footer-text">
-        مرجع معرفی و دانلود بازی‌های موبایلی.
-    </p>
-
-    <div class="footer-links">
-
-        <a href="#">بازی‌ها</a>
-        <a href="#">مودها</a>
-        <a href="#">اخبار</a>
-
-        <a
-            href="https://t.me/GamePlus_Official"
-            target="_blank"
-        >
-            تلگرام
-        </a>
-
-        <a
-            href="https://www.instagram.com/babakkazemi_1358/"
-            target="_blank"
-        >
-            اینستاگرام
-        </a>
-
-    </div>
-
-    <div class="copyright">
-        © 2026 Game Plus
-    </div>
-
+    GAME PLUS © 2026
 </footer>
+
+
+<!-- OPENFRONT MODAL -->
+
+<div
+    class="modal"
+    id="modal"
+    onclick="closeOutside(event)"
+>
+
+    <div class="modal-content">
+
+        <button
+            class="close"
+            onclick="closeGame()"
+        >
+            ×
+        </button>
+
+        <img
+            class="modal-cover"
+            src="openfront.jpg"
+            alt="OpenFront"
+        >
+
+        <h2>OpenFront</h2>
+
+        <div class="tags">
+            <span class="tag">Android</span>
+            <span class="tag">استراتژی</span>
+            <span class="tag">آنلاین</span>
+        </div>
+
+        <p class="modal-description">
+            OpenFront یک بازی استراتژی آنلاین است که در آن
+            باید قلمرو خود را مدیریت کنید و برای پیروزی
+            در میدان نبرد تصمیم‌های درست بگیرید.
+        </p>
+
+        <div class="info-grid">
+
+            <div class="info">
+                سیستم عامل: Android
+            </div>
+
+            <div class="info">
+                سبک: Strategy
+            </div>
+
+            <div class="info">
+                حالت: Online
+            </div>
+
+            <div class="info">
+                منبع دانلود: Google Drive
+            </div>
+
+        </div>
+
+        <a
+            class="download"
+            href="https://drive.google.com/uc?export=download&id=14z4wfhUOatg90eGlI7v7n9afqq-7MDXn"
+            target="_blank"
+        >
+            دانلود OpenFront
+        </a>
+
+    </div>
+</div>
 
 
 <script>
@@ -727,80 +770,122 @@ footer{
 function openGame(game){
 
     if(game === "openfront"){
-
-        alert("صفحه دانلود OpenFront");
-
+        document.getElementById("modal").classList.add("show");
+        document.body.style.overflow = "hidden";
     }
 
 }
 
 
-document
-.getElementById("search")
-.addEventListener("input",function(){
+function closeGame(){
 
-    let value=this.value.toLowerCase();
+    document.getElementById("modal").classList.remove("show");
+    document.body.style.overflow = "";
 
-    document
-    .querySelectorAll(".game")
-    .forEach(function(card){
+}
 
-        let name=card.dataset.name;
 
-        if(name.includes(value)){
-            card.style.display="";
+function closeOutside(event){
+
+    if(event.target.id === "modal"){
+        closeGame();
+    }
+
+}
+
+
+document.addEventListener("keydown", function(event){
+
+    if(event.key === "Escape"){
+        closeGame();
+    }
+
+});
+
+
+function searchGames(){
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .trim()
+        .toLowerCase();
+
+    const cards =
+        document.querySelectorAll(".game-card");
+
+    let found = false;
+
+    cards.forEach(card => {
+
+        const name =
+            card.dataset.name.toLowerCase();
+
+        if(name.includes(search)){
+
+            card.style.display = "";
+
+            found = true;
+
         }else{
-            card.style.display="none";
+
+            card.style.display = "none";
+
         }
 
     });
 
-});
+    document.getElementById("noResult").style.display =
+        found ? "none" : "block";
+
+}
 
 
-document
-.querySelectorAll(".category")
-.forEach(function(button){
+function filterGames(category, button){
 
-    button.addEventListener("click",function(){
-
-        document
+    document
         .querySelectorAll(".category")
-        .forEach(function(btn){
-            btn.classList.remove("active");
-        });
+        .forEach(btn => btn.classList.remove("active"));
 
-        this.classList.add("active");
+    button.classList.add("active");
 
-        let filter=this.dataset.filter;
+    const cards =
+        document.querySelectorAll(".game-card");
 
-        document
-        .querySelectorAll(".game")
-        .forEach(function(card){
+    let found = false;
 
-            if(
-                filter==="all" ||
-                card.dataset.category.includes(filter)
-            ){
+    cards.forEach(card => {
 
-                card.style.display="";
+        const categories =
+            card.dataset.category
+            .toLowerCase()
+            .split(" ");
 
-            }else{
+        if(
+            category === "all" ||
+            categories.includes(category)
+        ){
 
-                card.style.display="none";
+            card.style.display = "";
+            found = true;
 
-            }
+        }else{
 
-        });
+            card.style.display = "none";
+
+        }
 
     });
 
-});
+    document.getElementById("noResult").style.display =
+        found ? "none" : "block";
+
+    document.getElementById("searchInput").value = "";
+
+}
 
 </script>
 
 </body>
-</html>
-
-
-
+    </html>
