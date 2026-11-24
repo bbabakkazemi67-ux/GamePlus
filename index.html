@@ -3,301 +3,229 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101827">
-<title>گیم‌پلاس | سامانه آموزشی کلاس ۷.۲</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>گیم‌پلاس | آموزش ۱۰۰۰ مرحله‌ای</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
-
-:root{
-  --bg:#0b1220;--panel:#121d30;--panel2:#18263d;
-  --text:#f4f7ff;--muted:#9baac2;--line:#263650;
-  --blue:#568cff;--cyan:#38c9d8;--green:#42d6a0;
-}
+:root{--bg:#0a1020;--panel:#131e32;--panel2:#1b2a44;--line:#2a3d5b;--text:#f4f7ff;--muted:#9baac2;--blue:#568cff;--cyan:#3bd1d5;--green:#43d6a1}
 *{box-sizing:border-box}
-body{
-  margin:0;background:var(--bg);color:var(--text);
-  font-family:Vazirmatn,Tahoma,sans-serif;min-height:100vh;
-}
-button,input{font:inherit}
-button{cursor:pointer}
-header{
-  position:sticky;top:0;z-index:10;
-  background:#0b1220ed;backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--line);
-}
-.nav{
-  max-width:1200px;margin:auto;padding:15px 22px;
-  display:flex;align-items:center;justify-content:space-between;gap:15px;
-}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{
-  width:44px;height:44px;border-radius:14px;
-  display:grid;place-items:center;font-weight:900;font-size:20px;
-  background:linear-gradient(135deg,#568cff,#38c9d8);
-  color:white;box-shadow:0 6px 25px #568cff40;
-}
-.brand-name{font-size:19px;font-weight:900}
-.brand-sub{font-size:11px;color:var(--muted)}
-.class-tag{
-  border:1px solid #38517a;background:#172944;
-  color:#a9c8ff;padding:8px 13px;border-radius:30px;font-size:12px;
-}
-main{max-width:1200px;margin:auto;padding:28px 22px 60px}
-.hero{
-  position:relative;overflow:hidden;padding:36px;
-  border:1px solid #2b4770;border-radius:26px;
-  background:linear-gradient(115deg,#172c4b,#17233b 60%,#123744);
-}
-.hero:before{
-  content:"";position:absolute;width:260px;height:260px;
-  border-radius:50%;background:#568cff20;left:-70px;top:-120px;
-}
-.hero-content{position:relative;z-index:1}
-.eyebrow{color:#7edce7;font-size:12px;font-weight:700}
-.hero h1{font-size:clamp(25px,4vw,39px);margin:12px 0 8px;font-weight:900}
-.hero p{color:#c0cce0;max-width:620px;line-height:2;margin:0}
-.hero-bottom{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
-.info-chip{
-  background:#ffffff12;border:1px solid #ffffff20;
-  padding:9px 14px;border-radius:12px;font-size:12px;color:#e4edff;
-}
-.section-head{
-  display:flex;align-items:end;justify-content:space-between;
-  gap:15px;margin:32px 0 17px;
-}
-.section-head h2{font-size:21px;margin:0}
-.section-head p{font-size:12px;color:var(--muted);margin:5px 0 0}
-.search{
-  width:min(100%,300px);background:var(--panel);
-  border:1px solid var(--line);border-radius:12px;
-  padding:12px 15px;color:white;outline:none;
-}
-.search:focus{border-color:var(--blue)}
-.subjects{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:15px;
-}
-.subject{
-  text-align:right;color:white;background:var(--panel);
-  border:1px solid var(--line);border-radius:18px;
-  padding:19px;min-height:145px;transition:.2s;
-}
-.subject:hover{
-  transform:translateY(-4px);border-color:#568cff;
-  background:var(--panel2);box-shadow:0 12px 30px #0003;
-}
-.subject-top{display:flex;align-items:center;justify-content:space-between}
-.subject-icon{
-  width:43px;height:43px;border-radius:13px;
-  display:grid;place-items:center;font-size:20px;
-  background:#568cff20;color:#91b5ff;
-}
-.arrow{color:#8295b3;font-size:20px}
-.subject h3{font-size:15px;margin:14px 0 4px}
-.teacher{font-size:11px;color:var(--muted)}
-.count{font-size:10px;color:#78d8df;margin-top:10px}
-.notice{
-  margin-top:27px;padding:17px 19px;border-radius:15px;
-  background:#142b35;border:1px solid #24505a;
-  color:#b9eaf0;font-size:12px;line-height:2;
-}
-footer{
-  border-top:1px solid var(--line);text-align:center;
-  padding:25px;color:#8291a8;font-size:11px;line-height:2;
-}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,sans-serif}
+button,input{font:inherit}button{cursor:pointer}
+header{position:sticky;top:0;z-index:5;background:#0a1020ee;border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}
+.nav{max-width:1200px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px}
+.mark{width:43px;height:43px;border-radius:14px;background:linear-gradient(130deg,#568cff,#3bd1d5);display:grid;place-items:center}
+.userstats{font-size:12px;color:#c7d8f5;background:#172943;padding:9px 12px;border-radius:12px}
+main{max-width:1200px;margin:auto;padding:22px 18px 60px}
+.hero{padding:32px;border-radius:24px;border:1px solid #2d4c75;background:linear-gradient(115deg,#192f50,#14233d 65%,#123c43)}
+.hero small{color:#7de0e3;font-weight:700}
+h1{font-size:clamp(25px,4vw,38px);margin:12px 0}
+.hero p{color:#c5d1e3;line-height:2;margin:0}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.stats span{background:#ffffff12;border:1px solid #ffffff20;border-radius:10px;padding:9px 13px;font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:19px;margin-top:17px}
+.progress{height:9px;border-radius:20px;background:#293a55;overflow:hidden;margin-top:12px}
+.progress>div{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan))}
+.head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:30px 0 15px}
+.head h2{margin:0;font-size:21px}.head p{font-size:12px;color:var(--muted);margin:5px 0}
+input{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:12px;color:white;outline:none}
+.search{width:min(100%,300px)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;color:white;text-align:right;padding:17px;min-height:130px}
+.card:hover{border-color:var(--blue);background:var(--panel2);transform:translateY(-2px)}
+.card .ico{width:40px;height:40px;border-radius:12px;background:#568cff22;display:grid;place-items:center;font-size:20px;color:#a8c5ff}
+.card h3{font-size:15px;margin:12px 0 3px}
+.card small{font-size:11px;color:var(--muted)}
+.card .meta{font-size:10px;color:#75dfe1;margin-top:10px}
 .hidden{display:none!important}
-.back{
-  border:1px solid var(--line);background:var(--panel);
-  color:white;border-radius:11px;padding:10px 16px;
-}
-.page-title{
-  margin-top:28px;padding:25px;border-radius:20px;
-  background:linear-gradient(120deg,#172c4b,#142d37);
-  border:1px solid #2b4770;
-}
-.page-title h2{margin:0 0 7px;font-size:25px}
-.page-title p{margin:0;color:#b6c6dc;font-size:13px}
-.lesson-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:14px;margin-top:20px;
-}
-.lesson{
-  text-align:right;padding:19px;border-radius:15px;
-  border:1px solid var(--line);background:var(--panel);color:white;
-}
-.lesson:hover{border-color:var(--cyan);background:var(--panel2)}
-.lesson strong{display:block;margin-bottom:7px}
-.lesson small{color:var(--muted)}
-.empty{
-  margin-top:18px;padding:22px;border:1px dashed #405574;
-  border-radius:15px;color:var(--muted);font-size:13px;line-height:2;
-}
-@media(max-width:850px){.subjects{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){
-  main{padding:18px 14px 40px}
-  .nav{padding:12px 14px}
-  .hero{padding:25px 20px}
-  .subjects{grid-template-columns:repeat(2,1fr);gap:10px}
-  .subject{padding:14px;min-height:135px}
-  .section-head{align-items:stretch;flex-direction:column}
-  .search{width:100%}
-  .lesson-grid{grid-template-columns:repeat(2,1fr)}
-}
-@media(max-width:370px){
-  .subjects,.lesson-grid{grid-template-columns:1fr}
-}
+.btn{background:var(--panel2);border:1px solid var(--line);border-radius:10px;color:white;padding:10px 15px}
+.primary{background:#376dc4;border-color:#568cff}
+.coursehead{padding:23px;border-radius:19px;background:linear-gradient(120deg,#192f50,#142e39);border:1px solid #2d4c75}
+.coursehead h2{margin:9px 0 5px}.coursehead p{color:#c5d1e3;font-size:13px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}
+.tab{background:var(--panel);color:#c4d0e4;border:1px solid var(--line);padding:10px 14px;border-radius:10px}
+.tab.active{background:#244879;border-color:var(--blue);color:white}
+.list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.lesson{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:17px;text-align:right;color:white}
+.lesson:hover{border-color:var(--cyan)}
+.lesson small{display:block;color:var(--muted);margin-top:7px}
+.content{background:var(--panel);border:1px solid var(--line);padding:22px;border-radius:17px;line-height:2}
+.step{background:#1c2d48;border-right:3px solid var(--cyan);padding:12px 14px;border-radius:9px;margin:10px 0}
+.example{background:#17352e;border:1px solid #28594c;border-radius:12px;padding:14px;margin:15px 0}
+.question{background:#101a2b;padding:17px;border-radius:13px;margin-top:17px}
+.answers{display:grid;gap:8px;margin-top:12px}
+.answer{background:var(--panel2);color:white;border:1px solid var(--line);border-radius:10px;padding:12px;text-align:right}
+.answer.correct{border-color:var(--green);background:#173c32}
+.answer.wrong{border-color:#ff7777;background:#40232b}
+.feedback{font-size:13px;margin-top:12px}
+.game{background:linear-gradient(130deg,#182e4c,#17353b);border:1px solid #315275;padding:22px;border-radius:18px}
+footer{text-align:center;border-top:1px solid var(--line);padding:25px;color:var(--muted);font-size:11px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:580px){main{padding:14px 12px 40px}.hero{padding:23px 18px}.grid{grid-template-columns:repeat(2,1fr);gap:9px}.card{padding:13px}.head{align-items:stretch;flex-direction:column}.search{width:100%}.list{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-
-<header>
-  <div class="nav">
-    <div class="brand">
-      <div class="logo">G+</div>
-      <div>
-        <div class="brand-name">گیم‌پلاس</div>
-        <div class="brand-sub">سامانه هوشمند آموزش</div>
-      </div>
-    </div>
-    <div class="class-tag">مدرسه شهید کلاهدوز | کلاس ۷.۲</div>
-  </div>
-</header>
-
+<header><div class="nav">
+<div class="logo"><div class="mark">G+</div><div>گیم‌پلاس<small style="display:block;font-size:10px;color:#9baac2;font-weight:400">سامانه آموزشی ۷.۲</small></div></div>
+<div class="userstats" id="userStats">۰ امتیاز | سطح ۱</div>
+</div></header>
 <main>
-  <section id="home">
-    <div class="hero">
-      <div class="hero-content">
-        <div class="eyebrow">سامانه آموزشی اختصاصی کلاس</div>
-        <h1>یادگیری، قدم‌به‌قدم تا موفقیت</h1>
-        <p>
-          به فضای آموزشی کلاس ۷.۲ خوش آمدید.
-          درس موردنظرتان را انتخاب کنید و برای یادگیری،
-          تمرین و آمادگی امتحان آماده شوید.
-        </p>
-        <div class="hero-bottom">
-          <div class="info-chip">مدرسه: شهید کلاهدوز</div>
-          <div class="info-chip">پایه: هفتم</div>
-          <div class="info-chip">کلاس: ۷.۲</div>
-          <div class="info-chip">۱۳ درس آموزشی</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section-head">
-      <div>
-        <h2>درس‌های کلاس</h2>
-        <p>برای ورود به صفحه هر درس، روی کارت آن بزنید.</p>
-      </div>
-      <input id="search" class="search" placeholder="جست‌وجوی نام درس..." oninput="filterSubjects()">
-    </div>
-
-    <div class="subjects" id="subjects"></div>
-
-    <div class="notice">
-      راهنمای سامانه: ابتدا درس موردنظر را انتخاب کنید. سپس می‌توانید از بخش درس‌ها،
-      موضوع موردنظر خود را مشخص کنید. محتوای آموزشی هر درس پس از انتخاب درس‌ها تکمیل می‌شود.
-    </div>
-  </section>
-
-  <section id="subjectPage" class="hidden">
-    <button class="back" onclick="goHome()">← بازگشت به فهرست درس‌ها</button>
-    <div class="page-title">
-      <div class="eyebrow">صفحه اختصاصی درس</div>
-      <h2 id="selectedName"></h2>
-      <p id="selectedTeacher"></p>
-    </div>
-    <div class="section-head">
-      <div>
-        <h2>انتخاب درس</h2>
-        <p>شماره درسی را که می‌خواهید مطالعه کنید انتخاب کنید.</p>
-      </div>
-    </div>
-    <div class="lesson-grid" id="lessonGrid"></div>
-    <div class="empty">
-      محتوای آموزشی، آموزش گام‌به‌گام، تمرین‌های تعاملی و نمونه‌سؤال‌های امتحانی
-      برای این درس در مرحله تکمیل قرار دارد.
-    </div>
-  </section>
+<section id="home">
+<div class="hero">
+<small>مدرسه شهید کلاهدوز • کلاس ۷.۲</small>
+<h1>۱۰۰۰ قدم تا یادگیری بهتر</h1>
+<p>درس انتخاب کن، آموزش ببین، تمرین کن و با بازی‌های آموزشی امتیاز جمع کن.</p>
+<div class="stats"><span>۱۳ درس</span><span>۱۰۰۰ جایگاه آموزشی</span><span>آزمون و بازی</span><span>ذخیره پیشرفت</span></div>
+</div>
+<div class="panel">
+<div style="display:flex;justify-content:space-between;gap:10px"><b>پیشرفت کلی</b><b id="percent">۰٪</b></div>
+<div class="progress"><div id="bar"></div></div>
+<p id="progressLabel" style="font-size:11px;color:var(--muted)">شروع کن و اولین آموزش را کامل کن.</p>
+</div>
+<div class="head"><div><h2>درس‌های کلاس</h2><p>درس موردنظر را انتخاب کن.</p></div><input id="search" class="search" placeholder="جست‌وجوی درس یا دبیر..." oninput="renderCourses()"></div>
+<div class="grid" id="courseGrid"></div>
+</section>
+<section id="course" class="hidden">
+<button class="btn" onclick="home()">← بازگشت</button>
+<div class="coursehead" style="margin-top:15px"><small style="color:#7de0e3">صفحه اختصاصی درس</small><h2 id="courseName"></h2><p id="teacher"></p><p id="courseInfo"></p></div>
+<div class="tabs">
+<button class="tab active" onclick="tab('lessons',this)">آموزش‌ها</button>
+<button class="tab" onclick="tab('game',this)">بازی اختصاصی</button>
+<button class="tab" onclick="tab('review',this)">مرور</button>
+</div>
+<div id="lessons"></div><div id="game" class="hidden"></div><div id="review" class="hidden"></div>
+<div id="reading" class="hidden"></div>
+</section>
 </main>
-
-<footer>
-  گیم‌پلاس | سامانه آموزشی کلاس ۷.۲<br>
-  مدرسه شهید کلاهدوز
-</footer>
-
+<footer>گیم‌پلاس | مدرسه شهید کلاهدوز | کلاس ۷.۲</footer>
 <script>
-const subjects = [
-  {name:"ریاضی",teacher:"حیدری",icon:"∑"},
-  {name:"فارسی",teacher:"خدایار",icon:"آ"},
-  {name:"عربی",teacher:"دهگانی",icon:"ع"},
-  {name:"ورزش",teacher:"یوسفی",icon:"⚽"},
-  {name:"دینی",teacher:"رستمی",icon:"✦"},
-  {name:"کار و فناوری",teacher:"طالبی",icon:"⌘"},
-  {name:"علوم تجربی",teacher:"صمدی",icon:"⚗"},
-  {name:"املا و انشا",teacher:"پیرای",icon:"✎"},
-  {name:"تفکر",teacher:"یامی",icon:"؟"},
-  {name:"هنر و طراحی",teacher:"شیرعلی‌پور",icon:"✧"},
-  {name:"زبان انگلیسی",teacher:"بهروزپور",icon:"A"},
-  {name:"مطالعات اجتماعی",teacher:"قنبری",icon:"◎"},
-  {name:"قرآن",teacher:"نام دبیر مشخص نشده",icon:"۞"}
+const teachers=[
+["ریاضی","حیدری","∑",100],["فارسی","خدایار","آ",100],["عربی","دهگانی","ع",80],
+["ورزش","یوسفی","⚽",60],["دینی","رستمی","✦",70],["کار و فناوری","طالبی","⌘",70],
+["علوم تجربی","صمدی","⚗",100],["املا و انشا","پیرای","✎",60],
+["تفکر","یامی","؟",50],["هنر و طراحی","شیرعلی‌پور","✧",60],
+["زبان انگلیسی","بهروزپور","A",100],["مطالعات اجتماعی","قنبری","◎",80],
+["قرآن","نام دبیر مشخص نشده","۞",70]
 ];
-
-const subjectBox=document.getElementById("subjects");
-
-function renderSubjects(list){
-  subjectBox.innerHTML="";
-  list.forEach((s)=>{
-    const card=document.createElement("button");
-    card.className="subject";
-    card.innerHTML=`
-      <div class="subject-top">
-        <div class="subject-icon">${s.icon}</div>
-        <span class="arrow">←</span>
-      </div>
-      <h3>${s.name}</h3>
-      <div class="teacher">دبیر: ${s.teacher}</div>
-      <div class="count">ورود به صفحه درس</div>`;
-    card.onclick=()=>openSubject(s);
-    subjectBox.appendChild(card);
-  });
+const lessons={
+"ریاضی":[
+["عددهای صحیح","عددهای صحیح شامل عددهای مثبت، منفی و صفر هستند.","۱. صفر نه مثبت است نه منفی.<br>۲. سمت راست صفر مثبت و سمت چپ آن منفی است.","دمای ۳- تا ۲+ پنج درجه افزایش دارد.","قرینه ۷ چیست؟",["۷","۷-","۰"],1,"قرینه عدد، همان فاصله را در سمت مخالف صفر دارد."],
+["کسرها","کسر بخشی از یک کل را نشان می‌دهد. صورت تعداد بخش‌های انتخابی و مخرج تعداد کل بخش‌های مساوی است.","۱. کسرهای هم‌مخرج را با جمع صورت‌ها جمع می‌کنیم.<br>۲. مخرج ثابت می‌ماند.","۱/۵ + ۲/۵ = ۳/۵","۲/۷ + ۳/۷ چند می‌شود؟",["۵/۷","۵/۱۴","۱/۷"],0,"مخرج‌ها برابرند؛ صورت‌ها را جمع می‌کنیم."]
+],
+"فارسی":[
+["معنی واژه و مفهوم متن","برای فهم متن، معنی واژه‌ها و ارتباط جمله‌ها را بررسی کن.","۱. واژه دشوار را پیدا کن.<br>۲. به جمله توجه کن.<br>۳. پیام اصلی را بیان کن.","متنی درباره تلاش می‌تواند پیام پشتکار داشته باشد.","مفهوم اصلی متن چیست؟",["پیام متن","قافیه","نشانه"],0,"پیام متن منظور اصلی نویسنده است."],
+["نهاد و گزاره","نهاد درباره کسی یا چیزی است که خبر می‌دهیم و گزاره خبر ما درباره نهاد است.","۱. فعل را پیدا کن.<br>۲. بپرس چه کسی یا چه چیزی؟<br>۳. نهاد را مشخص کن.","در «پرنده پرواز کرد»، پرنده نهاد است.","نهاد جمله «علی آمد» چیست؟",["آمد","علی","جمله"],1,"علی کسی است که درباره او خبر می‌دهیم."]
+],
+"عربی":[
+["اسم و فعل و حرف","کلمه‌های عربی در سه گروه اسم، فعل و حرف قرار می‌گیرند.","۱. اسم نام چیز یا شخص است.<br>۲. فعل انجام کار را نشان می‌دهد.<br>۳. حرف برای پیوند و ارتباط می‌آید.","کتاب اسم است و یذهب فعل است.","کدام گزینه اسم است؟",["یذهب","کتاب","من"],1,"کتاب نام یک چیز است."],
+["ضمیرها","ضمیر به جای اسم می‌آید؛ مانند أنا و أنتَ و هو.","۱. أنا یعنی من.<br>۲. أنتَ یعنی تو.<br>۳. هو یعنی او.","أنا طالب یعنی من دانش‌آموز هستم.","معنی أنا چیست؟",["تو","من","او"],1,"أنا یعنی من."]
+],
+"علوم تجربی":[
+["روش علمی","روش علمی روشی منظم برای پاسخ به پرسش‌های علمی است.","۱. پرسش مطرح کن.<br>۲. فرضیه بساز.<br>۳. آزمایش کن.<br>۴. نتیجه را بررسی کن.","برای بررسی اثر نور بر گیاه، شرایط دو گیاه را مقایسه می‌کنیم.","پس از فرضیه چه می‌کنیم؟",["آزمایش","نتیجه فوری","فراموشی"],0,"فرضیه را با آزمایش بررسی می‌کنیم."],
+["اندازه‌گیری","اندازه‌گیری مقایسه یک کمیت با یکای مشخص است.","۱. طول با متر.<br>۲. جرم با کیلوگرم.<br>۳. زمان با ثانیه.","طول میز را با متر اندازه می‌گیریم.","یکای زمان چیست؟",["متر","ثانیه","کیلوگرم"],1,"زمان با ثانیه اندازه‌گیری می‌شود."]
+],
+"زبان انگلیسی":[
+["معرفی خود","برای معرفی از عبارت‌های ساده استفاده می‌کنیم.","۱. Hello یعنی سلام.<br>۲. My name is یعنی نام من است.<br>۳. I am یعنی من هستم.","Hello. My name is Ali.","معنی My name is چیست؟",["نام من است","خداحافظ","صبح بخیر"],0,"برای معرفی نام استفاده می‌شود."],
+["ضمیرهای فاعلی","ضمیر فاعلی جای نام شخص یا چیز را می‌گیرد.","I یعنی من، You یعنی تو، He یعنی او برای مذکر، She یعنی او برای مؤنث.","She is a student.","معنی They چیست؟",["من","آن‌ها","او"],1,"They یعنی آن‌ها."]
+],
+"مطالعات اجتماعی":[
+["نقشه و جهت‌یابی","نقشه نمایش کوچک‌شده‌ای از سطح زمین یا بخشی از آن است.","۱. عنوان، موضوع نقشه را نشان می‌دهد.<br>۲. راهنما معنی نشانه‌ها را می‌گوید.<br>۳. مقیاس نسبت فاصله‌ها را نشان می‌دهد.","در مقیاس ۱ به ۱۰۰۰۰، یک سانتی‌متر برابر ۱۰۰۰۰ سانتی‌متر واقعی است.","راهنمای نقشه چه می‌کند؟",["معنی نشانه‌ها","دمای هوا","سن نقشه‌خوان"],0,"راهنما نشانه‌های نقشه را توضیح می‌دهد."],
+["زندگی اجتماعی","همکاری، قانون‌پذیری و احترام به حقوق دیگران زندگی اجتماعی را بهتر می‌کند.","۱. حقوق دیگران را رعایت کن.<br>۲. همکاری کن.<br>۳. قانون را بشناس.","رعایت نوبت نمونه احترام به حقوق دیگران است.","کدام رفتار بهتر است؟",["همکاری","بی‌قانونی","بی‌احترامی"],0,"همکاری و احترام مهم هستند."]
+]
+};
+const games={
+"ریاضی":"شکارچی عددها","فارسی":"کارآگاه واژه‌ها","عربی":"شکارچی ترجمه",
+"ورزش":"مربی قهرمان","دینی":"مسیر انتخاب درست","کار و فناوری":"مهندس خلاق",
+"علوم تجربی":"آزمایشگاه دانشمند","املا و انشا":"استاد قلم","تفکر":"کارآگاه فکر",
+"هنر و طراحی":"کارگاه هنرمند","زبان انگلیسی":"شکارچی کلمات",
+"مطالعات اجتماعی":"سفر در تاریخ","قرآن":"گنجینه آیات"
+};
+let active="",activeIndex=0,gameIndex=0,gameScore=0;
+let points=+(localStorage.gpPoints||0);
+let completed=JSON.parse(localStorage.gpCompleted||"{}");
+const $=x=>document.getElementById(x);
+const fa=n=>String(n).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
+function countLessons(name){return (lessons[name]||[]).length}
+function totalPublished(){return Object.values(lessons).reduce((a,x)=>a+x.length,0)}
+function save(){
+ localStorage.gpPoints=points;localStorage.gpCompleted=JSON.stringify(completed);stats();
 }
-
-function filterSubjects(){
-  const value=document.getElementById("search").value.trim();
-  renderSubjects(subjects.filter(s=>
-    s.name.includes(value)||s.teacher.includes(value)
-  ));
+function stats(){
+ $("userStats").textContent=fa(points)+" امتیاز | سطح "+fa(Math.floor(points/100)+1);
+ let n=Object.keys(completed).length,total=totalPublished(),p=total?Math.round(n/total*100):0;
+ $("bar").style.width=p+"%";$("percent").textContent=fa(p)+"٪";
+ $("progressLabel").textContent=fa(n)+" آموزش از "+fa(total)+" آموزش منتشرشده کامل شده است.";
 }
-
-function openSubject(subject){
-  document.getElementById("home").classList.add("hidden");
-  document.getElementById("subjectPage").classList.remove("hidden");
-  document.getElementById("selectedName").textContent=subject.name;
-  document.getElementById("selectedTeacher").textContent="دبیر: "+subject.teacher;
-
-  const grid=document.getElementById("lessonGrid");
-  grid.innerHTML="";
-  for(let i=1;i<=12;i++){
-    const item=document.createElement("button");
-    item.className="lesson";
-    item.innerHTML=`<strong>درس ${toPersian(i)}</strong><small>برای انتخاب این درس بزنید</small>`;
-    item.onclick=()=>alert("درس "+toPersian(i)+" از "+subject.name+" انتخاب شد. محتوای این درس باید تکمیل شود.");
-    grid.appendChild(item);
-  }
-  window.scrollTo({top:0,behavior:"smooth"});
+function renderCourses(){
+ let q=$("search").value||"";
+ $("courseGrid").innerHTML="";
+ teachers.filter(c=>c[0].includes(q)||c[1].includes(q)).forEach(c=>{
+ let b=document.createElement("button");b.className="card";
+ b.innerHTML=`<div class="ico">${c[2]}</div><h3>${c[0]}</h3><small>دبیر: ${c[1]}</small><div class="meta">${games[c[0]]} • ${fa(countLessons(c[0]))} آموزش منتشرشده از ${fa(c[3])}</div>`;
+ b.onclick=()=>openCourse(c[0]);$("courseGrid").appendChild(b);
+ });
 }
-
-function goHome(){
-  document.getElementById("subjectPage").classList.add("hidden");
-  document.getElementById("home").classList.remove("hidden");
-  window.scrollTo({top:0,behavior:"smooth"});
+function home(){$("course").classList.add("hidden");$("home").classList.remove("hidden");stats();renderCourses();window.scrollTo(0,0)}
+function openCourse(name){
+ active=name;$("home").classList.add("hidden");$("course").classList.remove("hidden");
+ let t=teachers.find(x=>x[0]===name);
+ $("courseName").textContent=name;$("teacher").textContent="دبیر: "+t[1]+" | مدرسه شهید کلاهدوز | کلاس ۷.۲";
+ $("courseInfo").textContent=games[name]+" | "+fa(countLessons(name))+" آموزش منتشرشده از "+fa(t[3])+" جایگاه برنامه‌ریزی‌شده";
+ showTab("lessons");renderLessons();renderGame();renderReview();window.scrollTo(0,0);
 }
-
-function toPersian(number){
-  return String(number).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
+function tab(id,btn){
+ ["lessons","game","review","reading"].forEach(x=>$(x).classList.toggle("hidden",x!==id));
+ document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+ if(btn)btn.classList.add("active");
 }
-
-renderSubjects(subjects);
+function showTab(id){tab(id,document.querySelectorAll(".tab")[["lessons","game","review"].indexOf(id)])}
+function renderLessons(){
+ $("lessons").innerHTML='<div class="list">'+(lessons[active]||[]).map((l,i)=>`<button class="lesson" onclick="readLesson(${i})"><b>${completed[active+"-"+i]?"✓ ":""}${fa(i+1)}. ${l[0]}</b><small>آموزش • مثال • تمرین • آزمون</small></button>`).join("")+'</div>';
+}
+function readLesson(i){
+ activeIndex=i;let l=lessons[active][i];
+ ["lessons","game","review"].forEach(x=>$(x).classList.add("hidden"));
+ let r=$("reading");r.classList.remove("hidden");
+ r.innerHTML=`<button class="btn" onclick="backLessons()">← فهرست آموزش‌ها</button><div class="content" style="margin-top:15px">
+ <small style="color:#75dfe1">${active} | آموزش ${fa(i+1)}</small><h2>${l[0]}</h2><p>${l[1]}</p>
+ <h3>مراحل یادگیری</h3>${l[2].split("<br>").map(s=>`<div class="step">${s}</div>`).join("")}
+ <div class="example"><b>مثال:</b><br>${l[3]}</div>
+ <div class="question"><b>آزمون یادگیری</b><p>${l[4]}</p><div class="answers">${l[5].map((a,j)=>`<button class="answer" onclick="check(${j},this)">${fa(j+1)}. ${a}</button>`).join("")}</div><div id="feedback" class="feedback"></div></div>
+ </div>`;window.scrollTo(0,0);
+}
+function backLessons(){$("reading").classList.add("hidden");$("lessons").classList.remove("hidden");renderLessons()}
+function check(a,b){
+ let l=lessons[active][activeIndex],buttons=document.querySelectorAll("#reading .answer");
+ buttons.forEach(x=>x.disabled=true);
+ if(a===l[6]){
+ b.classList.add("correct");$("feedback").textContent="آفرین! "+l[7];
+ if(!completed[active+"-"+activeIndex]){completed[active+"-"+activeIndex]=true;points+=10;save()}
+ }else{b.classList.add("wrong");buttons[l[6]].classList.add("correct");$("feedback").textContent="پاسخ صحیح: "+l[5][l[6]]+"؛ "+l[7]}
+ renderLessons();
+}
+function renderReview(){
+ $("review").innerHTML='<div class="panel"><h2>مرور '+active+'</h2>'+(lessons[active]||[]).map(l=>`<div class="step"><b>${l[0]}</b><br>${l[1]}</div>`).join("")+'</div>';
+}
+function renderGame(){
+ gameIndex=0;gameScore=0;
+ $("game").innerHTML=`<div class="game"><small style="color:#7de0e3">بازی اختصاصی ${active}</small><h2>${games[active]}</h2><p>به پرسش‌های درس پاسخ بده. هر جواب درست ۵ امتیاز دارد.</p><div id="gameArea"></div></div>`;
+ nextGame();
+}
+function nextGame(){
+ let ls=lessons[active]||[];
+ if(gameIndex>=ls.length){
+ $("gameArea").innerHTML=`<h2>پایان بازی!</h2><p>پاسخ درست: ${fa(gameScore)} از ${fa(ls.length)}</p><button class="btn primary" onclick="renderGame()">شروع دوباره</button>`;return;
+ }
+ let l=ls[gameIndex];
+ $("gameArea").innerHTML=`<div class="step">مرحله ${fa(gameIndex+1)} از ${fa(ls.length)}</div><h3>${l[4]}</h3><div class="answers">${l[5].map((a,j)=>`<button class="answer" onclick="gameAnswer(${j},this)">${a}</button>`).join("")}</div><div id="gameFeedback"></div>`;
+}
+function gameAnswer(a,b){
+ let l=lessons[active][gameIndex];document.querySelectorAll("#gameArea .answer").forEach(x=>x.disabled=true);
+ if(a===l[6]){b.classList.add("correct");gameScore++;points+=5;save();$("gameFeedback").textContent="درست بود! ۵ امتیاز گرفتی."}
+ else{b.classList.add("wrong");document.querySelectorAll("#gameArea .answer")[l[6]].classList.add("correct");$("gameFeedback").textContent="پاسخ درست: "+l[5][l[6]]}
+ let next=document.createElement("button");next.className="btn primary";next.style.marginTop="12px";next.textContent="مرحله بعد";next.onclick=()=>{gameIndex++;nextGame()};$("gameArea").appendChild(next);
+}
+renderCourses();stats();
 </script>
 </body>
 </html>
