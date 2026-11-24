@@ -3,632 +3,233 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101027">
-<title>گیم‌پلاس | دنیای بازی</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>گیم‌پلاس | کلاس ۷.۲</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
-:root{--bg:#0c0d20;--panel:#171831;--panel2:#20213e;--text:#f7f6ff;--muted:#a6a7c5;--a:#8b5cf6;--b:#21d4fd;--pink:#ff5ca8;--green:#39dfa0}
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at 10% 0%,#30205a 0,transparent 35%),radial-gradient(ellipse at 95% 15%,#123c5a 0,transparent 30%),var(--bg);color:var(--text);font-family:Vazirmatn,Tahoma,sans-serif;min-height:100vh}
-button,input{font:inherit}button{cursor:pointer;border:0;color:inherit}
-header{position:sticky;top:0;z-index:5;background:#101027eF;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff14}
-.nav{max-width:1250px;margin:auto;padding:13px 20px;display:flex;align-items:center;gap:18px}
-.logo{font-size:23px;font-weight:900;white-space:nowrap;background:linear-gradient(90deg,#fff,#a78bfa,#42d9ff);background-clip:text;color:transparent}
-.logo span{color:#ff65b2}
-.navlinks{display:flex;gap:7px;flex:1;flex-wrap:wrap}
-.navlinks button,.smallbtn{background:transparent;padding:9px 13px;border-radius:12px;color:var(--muted);font-weight:700}
-.navlinks button:hover,.navlinks button.active{background:#ffffff12;color:white}
-.wallet{display:flex;gap:8px;align-items:center;white-space:nowrap}
-.pill{background:#ffffff12;border:1px solid #ffffff18;padding:8px 11px;border-radius:13px;font-size:13px}
-main{max-width:1250px;margin:auto;padding:25px 20px 70px}
-.hero{position:relative;overflow:hidden;border:1px solid #ffffff20;border-radius:28px;padding:34px;background:linear-gradient(115deg,#5c35bd,#263c85 55%,#087e9c);min-height:245px;display:flex;align-items:center;justify-content:space-between;gap:20px;box-shadow:0 20px 60px #0005}
-.hero:after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:#ffffff12;left:10%;top:-160px}
-.hero h1{font-size:clamp(28px,5vw,48px);margin:0 0 8px;font-weight:900}
-.hero p{color:#e1e7ff;max-width:540px;line-height:2;margin:0 0 20px}
-.hero-art{font-size:clamp(85px,15vw,155px);filter:drop-shadow(0 15px 15px #10102788);z-index:1}
-.primary{background:linear-gradient(100deg,#ff5ca8,#8b5cf6);padding:12px 20px;border-radius:14px;font-weight:800;box-shadow:0 8px 25px #8b5cf655}
-.primary:hover{filter:brightness(1.12);transform:translateY(-1px)}
-.sectionhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:30px 0 15px}
-.sectionhead h2{font-size:21px;margin:0}
-.muted{color:var(--muted);font-size:13px}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:18px}
-.stat{background:#ffffff0c;border:1px solid #ffffff14;border-radius:18px;padding:15px}
-.stat b{display:block;font-size:21px;margin-top:5px}
-.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}
-.search{flex:1;min-width:190px;background:var(--panel);border:1px solid #ffffff18;border-radius:13px;padding:12px 15px;color:white;outline:none}
-.search:focus{border-color:var(--a)}
-.filters{display:flex;gap:7px;overflow:auto;padding-bottom:5px}
-.filters button{white-space:nowrap;background:var(--panel);padding:9px 13px;border-radius:12px;color:var(--muted)}
-.filters button.active{background:#7548d9;color:white}
-.games{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.game{background:linear-gradient(145deg,#ffffff12,#ffffff06);border:1px solid #ffffff16;border-radius:19px;overflow:hidden;transition:.2s;min-width:0}
-.game:hover{transform:translateY(-5px);border-color:#9b7aff88;box-shadow:0 12px 30px #0004}
-.cover{height:115px;display:grid;place-items:center;font-size:53px;position:relative}
-.cover small{position:absolute;top:9px;right:9px;background:#0005;border-radius:8px;padding:4px 7px;font-size:10px}
-.gameinfo{padding:12px}
-.gameinfo b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gameinfo p{font-size:11px;color:var(--muted);margin:5px 0 11px}
-.play{width:100%;background:#ffffff12;padding:9px;border-radius:10px;font-weight:700;font-size:12px}
-.play:hover{background:#7548d9}
-.panel{background:linear-gradient(145deg,#1d1e3b,#14152b);border:1px solid #ffffff18;border-radius:22px;padding:22px;margin-top:18px}
-.panel h2{margin:0 0 8px}
-.shopgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
-.themeitem{background:#ffffff0b;border:1px solid #ffffff17;border-radius:16px;padding:15px}
-.swatch{height:65px;border-radius:12px;margin-bottom:12px}
-.themeitem button{width:100%;padding:9px;border-radius:10px;background:#ffffff15;margin-top:10px;font-weight:700}
-.wheelwrap{display:grid;grid-template-columns:minmax(230px,340px) 1fr;gap:25px;align-items:center}
-.wheel{width:min(75vw,300px);aspect-ratio:1;border-radius:50%;margin:auto;border:9px solid #e4d6ff;box-shadow:0 0 0 5px #8b5cf6,0 15px 40px #0008;background:conic-gradient(#ff5ca8 0 45deg,#f9b84a 45deg 90deg,#36c9b5 90deg 135deg,#5477f5 135deg 180deg,#a36bff 180deg 225deg,#ff8b50 225deg 270deg,#48b8ed 270deg 315deg,#9cdb65 315deg);position:relative;transition:transform 4s cubic-bezier(.12,.7,.12,1)}
-.wheel:after{content:"گیم";position:absolute;inset:39%;background:#fff;color:#51349b;border-radius:50%;display:grid;place-items:center;font-weight:900;border:5px solid #e9dcff}
-.pointer{font-size:30px;text-align:center;margin-bottom:-10px;position:relative;z-index:1}
-.profileline{display:flex;align-items:center;gap:15px}
-.avatar{width:65px;height:65px;border-radius:20px;background:linear-gradient(140deg,#ff5ca8,#7653ed);display:grid;place-items:center;font-size:30px}
-.modal{position:fixed;inset:0;background:#080817d9;backdrop-filter:blur(8px);z-index:10;display:none;align-items:center;justify-content:center;padding:16px}
-.modal.show{display:flex}
-.dialog{width:min(560px,100%);max-height:90vh;overflow:auto;background:#191a36;border:1px solid #ffffff25;border-radius:23px;padding:22px;box-shadow:0 20px 70px #0009}
-.dialogtop{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.close{background:#ffffff16;border-radius:10px;padding:8px 12px}
-.gamearea{margin-top:18px;background:#101127;border-radius:16px;padding:20px;text-align:center;min-height:190px}
-.gamearea h2{margin-top:0}
-.bigbtn{background:linear-gradient(100deg,#7c4dff,#22bce5);padding:14px 24px;border-radius:13px;font-weight:900;margin:10px}
-.result{font-size:18px;font-weight:800;margin:12px}
-.hidden{display:none!important}
-footer{text-align:center;color:var(--muted);padding:30px 10px;font-size:12px}
-@media(max-width:950px){.games{grid-template-columns:repeat(4,1fr)}}
-@media(max-width:700px){.nav{flex-wrap:wrap;gap:8px}.navlinks{order:3;width:100%;overflow:auto;flex-wrap:nowrap}.wallet{margin-right:auto}.hero{padding:24px}.hero-art{font-size:85px}.games{grid-template-columns:repeat(2,minmax(0,1fr))}.shopgrid{grid-template-columns:repeat(2,1fr)}.wheelwrap{grid-template-columns:1fr}.stats{grid-template-columns:repeat(3,1fr)}main{padding:16px 13px 50px}}
+body{margin:0;background:#0b1020;color:#f5f6ff;font-family:Tahoma;line-height:1.9}
+header{padding:22px;background:#151f39;border-bottom:1px solid #34415e;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{font-size:25px;font-weight:bold;color:#9c8cff}
+button{cursor:pointer;border:0;border-radius:12px;padding:11px 17px;background:#7865ed;color:white;font-family:inherit}
+button:hover{filter:brightness(1.15)}
+.container{max-width:1100px;margin:auto;padding:20px}
+.hero{padding:35px 25px;border-radius:22px;background:linear-gradient(120deg,#4939a4,#087c83);margin:20px 0}
+.hero h1{font-size:32px;margin:0}
+.hero p{color:#e3e8ff}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
+.stat,.card,.panel{background:#151f36;border:1px solid #34415b;border-radius:17px;padding:17px}
+.stat strong{font-size:25px;display:block;color:#a99cff}
+h2,h3{margin-top:8px}
+.muted{color:#aab5ce}
+.subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.subject{background:#182440;border:1px solid #34415b;border-radius:17px;padding:17px;text-align:right;color:white}
+.subject:hover{border-color:#9b8aff;transform:translateY(-2px)}
+.subject span{font-size:25px;display:block}
+.subject small{color:#aab5ce}
+input{background:#151f36;color:white;border:1px solid #34415b;border-radius:12px;padding:12px;font-family:inherit;width:100%;margin:8px 0}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.tab{background:#263451}
+.tab.active{background:#7865ed}
+.hidden{display:none}
+.panel{margin:12px 0}
+.step{background:#202e4b;padding:13px;border-radius:12px;margin:10px 0}
+.option{display:block;width:100%;text-align:right;margin:8px 0;background:#273650}
+.option.correct{background:#147d65}
+.option.wrong{background:#a53c51}
+.notice{padding:14px;background:#42351d;color:#ffe1a0;border-radius:12px;margin:20px 0}
+footer{text-align:center;color:#8996b1;padding:30px}
+@media(max-width:650px){.subjects{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(3,1fr)}.hero h1{font-size:25px}}
 </style>
 </head>
 <body>
-<header><div class="nav">
-<div class="logo">GAME<span>PLUS</span> +</div>
-<div class="navlinks">
-<button class="active" data-page="home">خانه</button>
-<button data-page="games">بازی‌ها</button>
-<button data-page="wheel">گردونه</button>
-<button data-page="shop">فروشگاه</button>
-<button data-page="profile">پروفایل</button>
-</div>
-<div class="wallet"><span class="pill">🪙 <b id="coins">100</b></span><span class="pill">🎟️ <b id="tickets">1</b></span></div>
-</div></header>
-<main>
-<section id="home" class="page">
-<div class="hero">
-<div><h1>دنیای بازی، همین‌جاست!</h1><p>به گیم‌پلاس خوش آمدی؛ بازی کن، رکورد بزن، سکه جمع کن و ظاهر دنیای خودت را بساز.</p><button class="primary" onclick="showPage('games')">شروع ماجراجویی ←</button></div>
-<div class="hero-art">🎮</div>
-</div>
-<div class="stats">
-<div class="stat"><span class="muted">بازی‌های مجموعه</span><b>۵۰ 🎯</b></div>
-<div class="stat"><span class="muted">بازی‌های انجام‌شده</span><b id="played">۰</b></div>
-<div class="stat"><span class="muted">رکورد سکه</span><b id="best">۰</b></div>
-</div>
-<div class="sectionhead"><h2>⭐ بازی‌های پیشنهادی</h2><button class="smallbtn" onclick="showPage('games')">همه بازی‌ها ←</button></div>
-<div class="games" id="featured"></div>
-</section>
-<section id="games" class="page hidden">
-<div class="sectionhead"><div><h2>🎮 کتابخانه بازی‌ها</h2><div class="muted">بازی مورد علاقه‌ات را انتخاب کن</div></div></div>
-<div class="toolbar"><input id="search" class="search" placeholder="🔎 جست‌وجوی بازی..." autocomplete="off"></div>
-<div class="filters" id="filters"></div>
-<div class="games" id="allgames"></div>
-</section>
-<section id="wheel" class="page hidden">
-<div class="panel">
-<div class="sectionhead"><div><h2>🎡 گردونه شانس گیم‌پلاس</h2><div class="muted">هر دو ساعت یک بار یک چرخش رایگان داری.</div></div></div>
-<div class="wheelwrap">
-<div><div class="pointer">▼</div><div class="wheel" id="wheel"></div></div>
-<div><h2>جایزه‌ات را امتحان کن!</h2><p class="muted">با چرخش گردونه می‌توانی سکه یا بلیت مجازی بگیری. بلیت‌ها را از بازی‌ها به دست بیاور.</p><p>🎟️ بلیت‌های تو: <b id="ticketText">۱</b></p><button class="primary" id="spin">چرخاندن گردونه</button><p class="muted" id="cooldown">چرخش رایگان آماده است.</p><div class="result" id="wheelResult"></div></div>
-</div>
-</div>
-</section>
-<section id="shop" class="page hidden">
-<div class="panel"><h2>🛍️ فروشگاه تم‌ها</h2><p class="muted">تم دلخواهت را با سکه‌های بازی فعال کن.</p><div class="shopgrid" id="shopgrid"></div></div>
-</section>
-<section id="profile" class="page hidden">
-<div class="panel">
-<div class="profileline"><div class="avatar">😎</div><div><h2 id="profileName">بازیکن گیم‌پلاس</h2><div class="muted">عضو خانواده گیم‌پلاس</div></div></div>
-<div class="sectionhead"><h2>تنظیم پروفایل</h2></div>
-<input class="search" id="nameInput" maxlength="20" placeholder="نام نمایشی خودت را بنویس">
-<button class="primary" style="margin-top:10px" onclick="saveName()">ذخیره نام</button>
-<div class="stats"><div class="stat">🪙 سکه<b id="pCoins">100</b></div><div class="stat">🎟️ بلیت<b id="pTickets">1</b></div><div class="stat">🏆 بازی<b id="pPlayed">0</b></div></div>
-<p class="muted">اطلاعات این نسخه روی همین مرورگر ذخیره می‌شود و حساب آنلاین یا همگام‌سازی بین دستگاه‌ها ندارد.</p>
-</div>
-</section>
-</main>
-<footer>گیم‌پلاس | برای سرگرمی، یادگیری و ثبت رکوردهای تازه ساخته شده است ✨</footer>
-<div class="modal" id="modal"><div class="dialog">
-<div class="dialogtop"><h2 id="modalTitle">بازی</h2><button class="close" onclick="closeGame()">بستن ✕</button></div>
-<div class="gamearea" id="gamearea"></div>
-</div></div>
-<script>
-const gameNames=[
-["شکار ستاره","⭐","مهارتی","tap"],["سرعت واکنش","⚡","مهارتی","reaction"],["حدس عدد","🔢","فکری","guess"],["چالش ریاضی","➗","فکری","math"],["حافظه رنگی","🧠","فکری","memory"],
-["توپ جهنده","🏀","ورزشی","tap"],["شکار الماس","💎","مهارتی","tap"],["قهرمان سرعت","🏃","ورزشی","reaction"],["عدد مخفی","🎲","فکری","guess"],["مغز ریاضی","🧮","فکری","math"],
-["شکار سکه","🪙","مهارتی","tap"],["نورهای رنگی","🌈","فکری","memory"],["مسابقه برق‌آسا","🏁","ورزشی","reaction"],["رمزگشا","🔐","فکری","guess"],["ضرب سریع","✖️","فکری","math"],
-["فضانورد کوچک","🚀","ماجراجویی","tap"],["دنیای پازل","🧩","فکری","memory"],["پرش قهرمان","🦘","ورزشی","reaction"],["گنج پنهان","🗝️","ماجراجویی","guess"],["ذهن برتر","💡","فکری","math"],
-["سیاره آبی","🪐","ماجراجویی","tap"],["جواهرات رنگی","💠","فکری","memory"],["رکوردشکن","🏆","ورزشی","reaction"],["کد مرموز","👾","فکری","guess"],["جدول هوشمند","📊","فکری","math"],
-["ماجراجوی جنگل","🌳","ماجراجویی","tap"],["شکار پروانه","🦋","مهارتی","tap"],["مسابقه دو","👟","ورزشی","reaction"],["راز اعداد","🔮","فکری","guess"],["محاسبه‌گر","📐","فکری","math"],
-["دریای آبی","🐬","ماجراجویی","tap"],["جفت‌یاب","🎴","فکری","memory"],["سرعت نور","💫","مهارتی","reaction"],["پیدا کن","🔍","فکری","guess"],["چالش جمع","➕","فکری","math"],
-["شهر رنگی","🏙️","ماجراجویی","tap"],["شکار قلب","💖","مهارتی","tap"],["قهرمان پرش","🥇","ورزشی","reaction"],["عدد طلایی","🥇","فکری","guess"],["معمای هوش","🧠","فکری","math"],
-["دنیای یخی","❄️","ماجراجویی","tap"],["کارت‌های جادویی","🃏","فکری","memory"],["مسابقه سرعت","🚴","ورزشی","reaction"],["گنج‌یاب","🧭","ماجراجویی","guess"],["ذهن خلاق","🎨","فکری","math"],
-["کهکشان بازی","🌌","ماجراجویی","tap"],["شکار ماه","🌙","مهارتی","tap"],["چالش صاعقه","🌩️","مهارتی","reaction"],["رمز ستاره","🌟","فکری","guess"],["قهرمان گیم‌پلاس","👑","مهارتی","math"]
-];
-const colors=["linear-gradient(140deg,#5534a8,#1d79a9)","linear-gradient(140deg,#a62f75,#4a3c9d)","linear-gradient(140deg,#116c73,#263c88)","linear-gradient(140deg,#b15b29,#6b398f)","linear-gradient(140deg,#3751a3,#8c42a9)"];
-const categories=["همه","مهارتی","فکری","ورزشی","ماجراجویی"];
-const themes=[{name:"پیش‌فرض",price:0,colors:["#0c0d20","#8b5cf6","#21d4fd"]},{name:"اقیانوس",price:120,colors:["#071e32","#11a9cb","#75e5ff"]},{name:"غروب",price:160,colors:["#32152e","#ff6b6b","#ffbd69"]},{name:"جنگل",price:180,colors:["#10271e","#24a66a","#a3e635"]},{name:"کهکشانی",price:220,colors:["#17102e","#a855f7","#ec4899"]},{name:"یخی",price:250,colors:["#102535","#38bdf8","#d7f6ff"]}];
-const defaults={coins:100,tickets:1,played:0,best:0,name:"بازیکن گیم‌پلاس",theme:0,lastSpin:0,owned:[0]};
-let data;
-try{data={...defaults,...JSON.parse(localStorage.getItem("gameplus-data")||"{}")};}catch(e){data={...defaults};}
-function save(){try{localStorage.setItem("gameplus-data",JSON.stringify(data));}catch(e){}renderStats();}
-function renderStats(){
-document.getElementById("coins").textContent=data.coins;document.getElementById("tickets").textContent=data.tickets;
-document.getElementById("played").textContent=data.played;document.getElementById("best").textContent=data.best;
-document.getElementById("ticketText").textContent=data.tickets;document.getElementById("pCoins").textContent=data.coins;
-document.getElementById("pTickets").textContent=data.tickets;document.getElementById("pPlayed").textContent=data.played;
-document.getElementById("profileName").textContent=data.name;
-}
-function showPage(page){
-document.querySelectorAll(".page").forEach(x=>x.classList.add("hidden"));
-document.getElementById(page).classList.remove("hidden");
-document.querySelectorAll(".navlinks button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
-if(page==="shop")renderShop();
-if(page==="wheel")updateCooldown();
-window.scrollTo({top:0,behavior:"smooth"});
-}
-document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
-function card(g,i){return `<article class="game"><div class="cover" style="background:${colors[i%colors.length]}"><small>${g[2]}</small>${g[1]}</div><div class="gameinfo"><b>${g[0]}</b><p>🎮 بازی سرگرم‌کننده</p><button class="play" onclick="startGame(${i})">شروع بازی ←</button></div></article>`;}
-function renderGames(){
-const q=document.getElementById("search").value.trim();
-const active=document.querySelector("#filters button.active")?.dataset.cat||"همه";
-const list=gameNames.map((g,i)=>({g,i})).filter(x=>(active==="همه"||x.g[2]===active)&&x.g[0].includes(q));
-document.getElementById("allgames").innerHTML=list.map(x=>card(x.g,x.i)).join("")||'<p class="muted">بازی‌ای پیدا نشد.</p>';
-}
-document.getElementById("filters").innerHTML=categories.map((c,i)=>`<button data-cat="${c}" class="${i===0?"active":""}">${c}</button>`).join("");
-document.getElementById("filters").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;document.querySelectorAll("#filters button").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderGames();});
-document.getElementById("search").addEventListener("input",renderGames);
-document.getElementById("featured").innerHTML=[0,1,2,3,4].map(i=>card(gameNames[i],i)).join("");
-renderGames();renderStats();
 
-let gameTimer=null,gameDone=false;
-function closeGame(){clearInterval(gameTimer);document.getElementById("modal").classList.remove("show");}
-function openGame(title,html){clearInterval(gameTimer);gameDone=false;document.getElementById("modalTitle").textContent=title;document.getElementById("gamearea").innerHTML=html;document.getElementById("modal").classList.add("show");}
-function reward(points=10,ticket=false){
-if(gameDone)return;gameDone=true;data.played++;data.coins+=points;data.best=Math.max(data.best,data.coins);
-if(ticket)data.tickets++;save();
-document.getElementById("gamearea").insertAdjacentHTML("beforeend",`<div class="result">آفرین! ${points} سکه گرفتی ${ticket?"و یک بلیت هم بردی!":""} 🎉</div><button class="bigbtn" onclick="closeGame()">ادامه</button>`);
+<header>
+ <div>
+  <div class="logo">GAMEPLUS</div>
+  <small>سامانه آموزشی کلاس ۷.۲</small>
+ </div>
+ <button onclick="home()">صفحه اصلی</button>
+</header>
+
+<div class="container">
+<section id="homePage">
+ <div class="hero">
+  <h1>یاد بگیر، تمرین کن، پیشرفت کن!</h1>
+  <p>گیم‌پلاس؛ سامانه آموزشی اختصاصی کلاس ۷.۲ مدرسه شهید کلاهدوز</p>
+  <button onclick="document.getElementById('lessons').scrollIntoView({behavior:'smooth'})">شروع یادگیری</button>
+ </div>
+
+ <div class="stats">
+  <div class="stat"><strong>۱۳</strong><small>درس آموزشی</small></div>
+  <div class="stat"><strong id="done">۰</strong><small>پاسخ داده‌شده</small></div>
+  <div class="stat"><strong id="points">۰</strong><small>امتیاز</small></div>
+ </div>
+
+ <h2 id="lessons">درس‌های کلاس ۷.۲</h2>
+ <input id="search" placeholder="جست‌وجوی درس..." oninput="render()">
+ <div class="subjects" id="subjects"></div>
+
+ <div class="notice">
+  این سایت نسخه آموزشی آزمایشی است. برای بررسی و پیشنهادهای خود می‌توانید با مدیر سایت در ارتباط باشید.
+ </div>
+</section>
+
+<section id="lessonPage" class="hidden">
+ <button onclick="home()">← بازگشت به درس‌ها</button>
+ <div class="hero">
+  <h1 id="lessonTitle"></h1>
+  <p id="teacher"></p>
+ </div>
+ <div class="tabs">
+  <button class="tab active" onclick="tab('learn',this)">آموزش</button>
+  <button class="tab" onclick="tab('questions',this)">تمرین</button>
+  <button class="tab" onclick="tab('exam',this)">نمونه‌سؤال</button>
+  <button class="tab" onclick="tab('game',this)">بازی</button>
+ </div>
+ <div id="learn" class="panel"></div>
+ <div id="questions" class="panel hidden"></div>
+ <div id="exam" class="panel hidden"></div>
+ <div id="game" class="panel hidden"></div>
+</section>
+</div>
+
+<footer>گیم‌پلاس | ویژه کلاس ۷.۲ | مدرسه شهید کلاهدوز</footer>
+
+<script>
+const lessons=[
+["ریاضی","➗","حیدری","الگوها و عبارت‌های ریاضی",
+["الگو یعنی نظمی که بین عددها یا شکل‌ها تکرار می‌شود.","برای پیدا کردن قانون الگو، اختلاف بین جمله‌ها را بررسی کن.","در عبارت جبری، حروف می‌توانند نماینده عدد باشند."],
+"در الگوی ۳، ۶، ۹، ۱۲ هر بار ۳ واحد اضافه می‌شود؛ عدد بعدی ۱۵ است.",
+["عدد بعدی ۲، ۵، ۸، ۱۱ چیست؟","۱۲","۱۳","۱۴",2,"هر بار سه واحد اضافه می‌شود."],
+["الگوی ۴، ۸، ۱۲ را ادامه بده.","اگر x برابر ۴ باشد، x+3 چند می‌شود؟"]],
+["فارسی","📖","خدایار","درک مطلب و واژه‌آموزی",
+["متن را با دقت بخوان.","واژه‌های ناآشنا را از روی جمله بررسی کن.","پیام متن را با زبان خودت بیان کن."],
+"برای پاسخ به پرسش درک مطلب، به جمله‌های متن توجه کن.",
+["کدام واژه هم‌معنی کوشش است؟","تلاش","آرامش","خاموشی",0,"کوشش و تلاش هم‌معنی هستند."],
+["یک بند درباره دوستی بنویس.","برای واژه دانش یک هم‌خانواده بنویس."]],
+["عربی","🔤","دهگانی","واژه‌های عربی",
+["ابتدا واژه‌های آشنا را پیدا کن.","به ضمیرها توجه کن.","ترجمه را روان بنویس."],
+"أنا یعنی من و هو یعنی او.",
+["معنی أنا چیست؟","تو","من","او",1,"أنا یعنی من."],
+["معنی أنا را بنویس.","معنی أنت را بنویس."]],
+["ورزش","🏃","یوسفی","سلامت و آمادگی جسمانی",
+["پیش از ورزش بدن را گرم کن.","در طول فعالیت آب کافی بنوش.","پس از ورزش بدن را آرام کن."],
+"گرم کردن بدن برای فعالیت ورزشی اهمیت دارد.",
+["پیش از ورزش چه کاری مناسب است؟","گرم کردن","خوابیدن","بی‌حرکت ماندن",0,"گرم کردن بدن را آماده می‌کند."],
+["دو فایده ورزش را بنویس.","چرا گرم کردن مهم است؟"]],
+["دینی","🌙","رستمی","رفتارهای نیک",
+["به پیام اصلی درس توجه کن.","مفهوم درس را با زندگی روزمره مرتبط کن.","برای پاسخ خود دلیل بیاور."],
+"راست‌گویی باعث ایجاد اعتماد می‌شود.",
+["کدام رفتار پسندیده است؟","دروغ‌گویی","راست‌گویی","بدقولی",1,"راست‌گویی رفتار پسندیده‌ای است."],
+["دو رفتار نیک را نام ببر.","چرا راست‌گویی مهم است؟"]],
+["کاروفناوری","💻","طالبی","فناوری و حل مسئله",
+["ابتدا مسئله را بشناس.","راه‌حل‌های مختلف پیشنهاد بده.","بهترین راه‌حل را آزمایش کن."],
+"ساخت یک وسیله با شناخت نیاز و طراحی آغاز می‌شود.",
+["اولین گام حل مسئله چیست؟","تعریف مسئله","ارزیابی نهایی","فراموش کردن مسئله",0,"ابتدا باید مسئله را بشناسیم."],
+["فناوری را تعریف کن.","چرا آزمایش محصول مهم است؟"]],
+["علوم","🔬","صمدی","روش علمی",
+["مشاهده و پرسش را آغاز کن.","یک فرضیه پیشنهاد بده.","با آزمایش فرضیه را بررسی کن."],
+"در یک آزمایش منصفانه، بهتر است فقط عامل مورد بررسی تغییر کند.",
+["کدام مورد از مراحل روش علمی است؟","آزمایش","حدس بدون بررسی","نادیده گرفتن شواهد",0,"آزمایش به بررسی فرضیه کمک می‌کند."],
+["فرضیه چیست؟","سه مرحله روش علمی را بنویس."]],
+["املا و انشا","✍️","پیرای","درست‌نویسی و نوشتن",
+["به شکل درست واژه‌ها توجه کن.","برای انشا ابتدا ایده‌ها را مرتب کن.","نوشته را بازخوانی کن."],
+"یک نوشته منظم معمولاً مقدمه، بدنه و نتیجه‌گیری دارد.",
+["کدام شکل درست است؟","مسعولیت","مسئولیت","مسولیت",1,"شکل درست مسئولیت است."],
+["با مسئولیت یک جمله بنویس.","یک انشای کوتاه درباره کتاب بنویس."]],
+["تفکر","🧠","یامی","تصمیم‌گیری و پرسشگری",
+["اطلاعات را بررسی کن.","پیامد انتخاب‌ها را بسنج.","به نظر دیگران گوش بده."],
+"تفکر نقادانه یعنی بررسی دقیق دلیل‌ها و شواهد.",
+["کدام کار نشانه تفکر نقادانه است؟","بررسی دلیل‌ها","پذیرفتن هر حرف","قضاوت عجولانه",0,"بررسی دلیل‌ها اهمیت دارد."],
+["تفکر نقادانه چیست؟","چرا شنیدن نظر دیگران مفید است؟"]],
+["هنر و طراحی","🎨","شیرعلی‌پور","خط و ترکیب‌بندی",
+["با شکل‌های ساده طراحی را آغاز کن.","از خط‌ها برای ایجاد حس حرکت استفاده کن.","عناصر تصویر را هماهنگ بچین."],
+"ترکیب‌بندی یعنی چیدمان عناصر یک تصویر.",
+["ترکیب‌بندی چیست؟","چیدمان عناصر تصویر","پاک کردن طرح","اندازه کاغذ",0,"ترکیب‌بندی به چیدمان مربوط است."],
+["ترکیب‌بندی را تعریف کن.","دو نوع خط را نام ببر."]],
+["زبان انگلیسی","🌍","بهروزپور","واژگان پایه",
+["واژه و معنی آن را با هم تمرین کن.","ترتیب واژه‌ها در جمله مهم است.","مرور منظم انجام بده."],
+"I am a student یعنی من دانش‌آموز هستم.",
+["معنی Book چیست؟","مداد","کتاب","مدرسه",1,"Book یعنی کتاب."],
+["معنی School چیست؟","با Book یک جمله بساز."]],
+["اجتماعی","🌐","قنبری","جامعه و قانون",
+["جامعه محل زندگی و همکاری انسان‌هاست.","قانون برای حفظ نظم و حقوق افراد است.","شهروند مسئول به حقوق دیگران احترام می‌گذارد."],
+"رعایت نوبت نمونه‌ای از احترام به حقوق دیگران است.",
+["هدف قانون چیست؟","ایجاد نظم","بی‌نظمی","افزایش اختلاف",0,"قانون به حفظ نظم کمک می‌کند."],
+["چرا جامعه به قانون نیاز دارد؟","یک مسئولیت شهروندی بنویس."]],
+["قرآن","📗","نام دبیر مشخص نشده","آداب خواندن و فهم پیام",
+["با توجه و آرامش قرآن بخوان.","به معنی واژه‌ها توجه کن.","پیام آیه را در زندگی به کار ببر."],
+"فهم معنی و پیام آیات به درک بهتر قرآن کمک می‌کند.",
+["هنگام خواندن قرآن چه چیزی اهمیت دارد؟","توجه و درست‌خوانی","شتاب‌زدگی","بی‌دقتی",0,"توجه و درست‌خوانی اهمیت دارد."],
+["دو مورد از آداب خواندن قرآن را بنویس.","چرا فهم معنی آیات مهم است؟"]]
+];
+
+let current=0,score=0,done=0;
+function render(){
+ const q=document.getElementById('search').value.trim();
+ document.getElementById('subjects').innerHTML=lessons.map((l,i)=>({l,i}))
+ .filter(x=>x.l[0].includes(q)||x.l[2].includes(q))
+ .map(x=>`<button class="subject" onclick="openLesson(${x.i})"><span>${x.l[1]}</span><b>${x.l[0]}</b><small>دبیر: ${x.l[2]}</small></button>`).join('');
 }
-function startGame(i){
-const g=gameNames[i];let html="";
-if(g[3]==="tap"){
-html=`<h2>⭐ روی هدف بزن!</h2><p>در ۱۵ ثانیه تا می‌توانی امتیاز بگیر.</p><div class="result" id="score">۰</div><div id="timer">زمان: ۱۵</div><button class="bigbtn" id="target">⭐ بزن!</button>`;
-openGame(g[0],html);let score=0,time=15;
-document.getElementById("target").onclick=()=>{if(!gameDone){score++;document.getElementById("score").textContent=score;}};
-gameTimer=setInterval(()=>{time--;const t=document.getElementById("timer");if(t)t.textContent="زمان: "+time;if(time<=0){clearInterval(gameTimer);reward(Math.max(5,score*2),score>=10);}},1000);
-}else if(g[3]==="reaction"){
-html=`<h2>⚡ آزمون واکنش</h2><p id="reactText">وقتی دکمه سبز شد، سریع بزن!</p><button class="bigbtn" id="react" disabled>صبر کن...</button>`;
-openGame(g[0],html);let ready=false;let start=0;
-const delay=1200+Math.random()*2500;
-gameTimer=setTimeout(()=>{ready=true;start=Date.now();const b=document.getElementById("react");b.disabled=false;b.textContent="الان بزن!";b.style.background="#18a76c";},delay);
-document.getElementById("react").onclick=()=>{if(ready){const ms=Date.now()-start;document.getElementById("reactText").textContent="زمان واکنش تو: "+ms+" میلی‌ثانیه";reward(ms<450?25:15,ms<350);}};
-}else if(g[3]==="guess"){
-const answer=Math.floor(Math.random()*20)+1;
-html=`<h2>🔢 عدد مخفی</h2><p>یک عدد بین ۱ تا ۲۰ حدس بزن.</p><input class="search" id="guessInput" type="number" min="1" max="20" placeholder="عدد تو"><button class="bigbtn" id="guessBtn">بررسی</button><div id="guessMsg" class="result"></div>`;
-openGame(g[0],html);let tries=0;
-document.getElementById("guessBtn").onclick=()=>{const v=Number(document.getElementById("guessInput").value);if(!Number.isInteger(v)||v<1||v>20){document.getElementById("guessMsg").textContent="یک عدد معتبر وارد کن.";return;}tries++;if(v===answer){document.getElementById("guessMsg").textContent="درست حدس زدی!";reward(Math.max(8,25-tries*2),tries<=3);}else document.getElementById("guessMsg").textContent=v>answer?"کمتر حدس بزن!":"بیشتر حدس بزن!";};
-}else if(g[3]==="math"){
-const a=Math.floor(Math.random()*15)+3,b=Math.floor(Math.random()*12)+2,op=["+","-","×"][Math.floor(Math.random()*3)];
-const ans=op==="+"?a+b:op==="-"?a-b:a*b;
-html=`<h2>🧮 چالش ریاضی</h2><div class="result" style="font-size:30px">${a} ${op} ${b} = ؟</div><input class="search" id="mathInput" type="number" placeholder="جواب"><button class="bigbtn" id="mathBtn">بررسی جواب</button><div id="mathMsg"></div>`;
-openGame(g[0],html);document.getElementById("mathBtn").onclick=()=>{if(Number(document.getElementById("mathInput").value)===ans){document.getElementById("mathMsg").textContent="آفرین، جواب درست بود!";reward(20,true);}else document.getElementById("mathMsg").textContent="دوباره تلاش کن!";};
-}else{
-const seq=Array.from({length:4},()=>Math.floor(Math.random()*8)+1);
-html=`<h2>🧠 حافظه‌ات را امتحان کن</h2><p>این ترتیب را به خاطر بسپار:</p><div class="result" id="sequence" style="font-size:27px;letter-spacing:8px">${seq.join(" · ")}</div><button class="bigbtn" id="hideSeq">آماده‌ام</button><div id="memoryForm"></div>`;
-openGame(g[0],html);document.getElementById("hideSeq").onclick=()=>{document.getElementById("sequence").textContent="؟ · ؟ · ؟ · ؟";document.getElementById("memoryForm").innerHTML='<input class="search" id="memoryInput" placeholder="چهار عدد را به ترتیب بنویس"><button class="bigbtn" id="memoryCheck">بررسی</button>';document.getElementById("memoryCheck").onclick=()=>{const val=document.getElementById("memoryInput").value.replace(/[^0-9]/g,"");if(val===seq.join(""))reward(25,true);else document.getElementById("memoryForm").insertAdjacentHTML("beforeend",'<p>ترتیب درست نبود؛ دوباره بازی کن!</p>');};};
+function home(){
+ document.getElementById('homePage').classList.remove('hidden');
+ document.getElementById('lessonPage').classList.add('hidden');
+ window.scrollTo(0,0);
 }
+function openLesson(i){
+ current=i;
+ const l=lessons[i];
+ document.getElementById('homePage').classList.add('hidden');
+ document.getElementById('lessonPage').classList.remove('hidden');
+ document.getElementById('lessonTitle').textContent=l[0];
+ document.getElementById('teacher').textContent='مدرسه شهید کلاهدوز | کلاس ۷.۲ | دبیر: '+l[2];
+ document.getElementById('learn').innerHTML='<h2>آموزش گام‌به‌گام</h2>'+l[4].map((s,i)=>`<div class="step"><b>گام ${i+1}</b><br>${s}</div>`).join('')+`<div class="step"><b>مثال</b><br>${l[5]}</div>`;
+ document.getElementById('questions').innerHTML='<h2>تمرین درس</h2><div id="quiz"></div>';
+ document.getElementById('exam').innerHTML='<h2>نمونه‌سؤال</h2>'+l[10].map((s,i)=>`<div class="step">سؤال ${i+1}: ${s}</div>`).join('');
+ document.getElementById('game').innerHTML=`<h2>بازی آموزشی: ${['الگویاب','واژه‌چین','مترجم کوچک','ورزش‌یار','انتخاب درست','مهندس کوچک','آزمایشگاه‌یار','شکار غلط املایی','کارآگاه فکر','استاد ترکیب‌بندی','واژه‌گردان','شهروند هوشیار','پیام‌یاب قرآنی'][i]}</h2><p>با پاسخ دادن به پرسش این درس امتیاز بگیر.</p><button onclick="playGame()">شروع بازی</button><div id="gameResult"></div>`;
+ showTab('learn',document.querySelector('.tab'));
 }
-function saveName(){const n=document.getElementById("nameInput").value.trim();if(n){data.name=n;save();}document.getElementById("nameInput").value="";}
-function renderShop(){
-document.getElementById("shopgrid").innerHTML=themes.map((t,i)=>`<div class="themeitem"><div class="swatch" style="background:linear-gradient(120deg,${t.colors[1]},${t.colors[2]})"></div><b>${t.name}</b><p class="muted">${t.price===0?"رایگان":t.price+" سکه"}</p><button onclick="buyTheme(${i})">${data.theme===i?"فعال است":data.owned.includes(i)?"فعال‌سازی": "خرید تم"}</button></div>`).join("");
+function tab(id,btn){
+ document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+ btn.classList.add('active');
+ ['learn','questions','exam','game'].forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==id));
+ if(id==='questions')makeQuiz();
 }
-function buyTheme(i){
-const t=themes[i];if(!data.owned.includes(i)){if(data.coins<t.price){alert("سکه کافی نداری. چند بازی انجام بده و سکه جمع کن.");return;}data.coins-=t.price;data.owned.push(i);}
-data.theme=i;document.documentElement.style.setProperty("--bg",t.colors[0]);document.documentElement.style.setProperty("--a",t.colors[1]);document.documentElement.style.setProperty("--b",t.colors[2]);save();renderShop();
+function makeQuiz(){
+ const l=lessons[current];
+ document.getElementById('quiz').innerHTML=`<div class="step"><b>${l[6]}</b><div id="opts"></div><div id="feedback"></div></div>`;
+ document.getElementById('opts').innerHTML=[l[7],l[8],l[9]].map((x,i)=>`<button class="option" onclick="checkAnswer(${i})">${x}</button>`).join('');
 }
-let spinning=false;
-function spinWheel(){
-if(spinning)return;const now=Date.now(),free=now-data.lastSpin>=7200000;
-if(!free&&data.tickets<1){document.getElementById("wheelResult").textContent="فعلاً بلیت نداری؛ با بازی کردن بلیت بگیر.";return;}
-if(!free)data.tickets--;else data.lastSpin=now;
-spinning=true;save();const wheel=document.getElementById("wheel");const extra=1800+Math.floor(Math.random()*360);
-wheel.style.transform=`rotate(${extra+360*5}deg)`;
-document.getElementById("spin").disabled=true;
-setTimeout(()=>{const prizes=[10,15,20,25,30,40,50,1];const prize=prizes[Math.floor(Math.random()*prizes.length)];if(prize===1){data.tickets++;document.getElementById("wheelResult").textContent="🎟️ یک بلیت جایزه گرفتی!";}else{data.coins+=prize;document.getElementById("wheelResult").textContent=`🎉 ${prize} سکه برنده شدی!`;}save();spinning=false;document.getElementById("spin").disabled=false;updateCooldown();},4100);
+function checkAnswer(i){
+ const l=lessons[current],buttons=document.querySelectorAll('#opts button');
+ if(document.getElementById('feedback').dataset.done)return;
+ document.getElementById('feedback').dataset.done='1';
+ buttons.forEach((b,j)=>{if(j===l[10-0]?.[99]){}});
+ const correct=l[9];
+ buttons[correct].classList.add('correct');
+ if(i===correct){score+=10;document.getElementById('feedback').textContent='آفرین! پاسخ درست است. '+l[10][0];}
+ else{buttons[i].classList.add('wrong');document.getElementById('feedback').textContent='پاسخ درست مشخص شد. '+l[10][0];}
+ done++;updateStats();
 }
-document.getElementById("spin").addEventListener("click",spinWheel);
-function updateCooldown(){
-const remaining=7200000-(Date.now()-data.lastSpin);
-const b=document.getElementById("spin"),c=document.getElementById("cooldown");
-if(remaining<=0){c.textContent="چرخش رایگان آماده است.";b.textContent="چرخاندن رایگان";}else{const mins=Math.ceil(remaining/60000);c.textContent=`چرخش رایگان بعدی: ${Math.floor(mins/60)} ساعت و ${mins%60} دقیقه دیگر`;b.textContent=data.tickets>0?"چرخاندن با یک بلیت":"بلیت لازم داری";}
+function playGame(){
+ const l=lessons[current];
+ document.getElementById('gameResult').innerHTML=`<div class="step">${l[6]}<div id="gameOptions"></div><div id="gameFeedback"></div></div>`;
+ document.getElementById('gameOptions').innerHTML=[l[7],l[8],l[9]].map((x,i)=>`<button class="option" onclick="gameCheck(${i})">${x}</button>`).join('');
 }
-renderStats();renderShop();
+function gameCheck(i){
+ const l=lessons[current],correct=l[9],buttons=document.querySelectorAll('#gameOptions button');
+ if(document.getElementById('gameFeedback').dataset.done)return;
+ document.getElementById('gameFeedback').dataset.done='1';
+ buttons[correct].classList.add('correct');
+ if(i===correct){score+=15;document.getElementById('gameFeedback').textContent='آفرین! ۱۵ امتیاز گرفتی.';}
+ else{buttons[i].classList.add('wrong');document.getElementById('gameFeedback').textContent='پاسخ درست مشخص شد.';}
+ done++;updateStats();
+}
+function updateStats(){
+ document.getElementById('points').textContent=score;
+ document.getElementById('done').textContent=done;
+}
+render();
 </script>
 </body>
 </html>
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-ظاهر سایت Zor  baş وقتی میری پای بازی خوشگل بیاد داخل مثلا خوشگل بازی نمایش داده بشه. ببین یه جور خیلی اینجوری کارتونی طورا، این فیلم باشه خب. با گرافیک بالاها
-
-فارسی و راست‌چین
-
-۵۰ بازی با کاور اختصاصی
-
-گردونه هر ۲ ساعت + بلیت اضافه
-
-فروشگاه تم و تم‌های شخصی
-
-سکه، موجودی و پروفایل
-
-میان‌بر شناور بازی
-
-طراحی آرکید حرفه‌ای
-
-ذخیره اطلاعات روی مرورگر
-
-باشع
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
