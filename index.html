@@ -3,233 +3,301 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>گیم‌پلاس | کلاس ۷.۲</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101827">
+<title>گیم‌پلاس | سامانه آموزشی کلاس ۷.۲</title>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --bg:#0b1220;--panel:#121d30;--panel2:#18263d;
+  --text:#f4f7ff;--muted:#9baac2;--line:#263650;
+  --blue:#568cff;--cyan:#38c9d8;--green:#42d6a0;
+}
 *{box-sizing:border-box}
-body{margin:0;background:#0b1020;color:#f5f6ff;font-family:Tahoma;line-height:1.9}
-header{padding:22px;background:#151f39;border-bottom:1px solid #34415e;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.logo{font-size:25px;font-weight:bold;color:#9c8cff}
-button{cursor:pointer;border:0;border-radius:12px;padding:11px 17px;background:#7865ed;color:white;font-family:inherit}
-button:hover{filter:brightness(1.15)}
-.container{max-width:1100px;margin:auto;padding:20px}
-.hero{padding:35px 25px;border-radius:22px;background:linear-gradient(120deg,#4939a4,#087c83);margin:20px 0}
-.hero h1{font-size:32px;margin:0}
-.hero p{color:#e3e8ff}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0}
-.stat,.card,.panel{background:#151f36;border:1px solid #34415b;border-radius:17px;padding:17px}
-.stat strong{font-size:25px;display:block;color:#a99cff}
-h2,h3{margin-top:8px}
-.muted{color:#aab5ce}
-.subjects{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.subject{background:#182440;border:1px solid #34415b;border-radius:17px;padding:17px;text-align:right;color:white}
-.subject:hover{border-color:#9b8aff;transform:translateY(-2px)}
-.subject span{font-size:25px;display:block}
-.subject small{color:#aab5ce}
-input{background:#151f36;color:white;border:1px solid #34415b;border-radius:12px;padding:12px;font-family:inherit;width:100%;margin:8px 0}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
-.tab{background:#263451}
-.tab.active{background:#7865ed}
-.hidden{display:none}
-.panel{margin:12px 0}
-.step{background:#202e4b;padding:13px;border-radius:12px;margin:10px 0}
-.option{display:block;width:100%;text-align:right;margin:8px 0;background:#273650}
-.option.correct{background:#147d65}
-.option.wrong{background:#a53c51}
-.notice{padding:14px;background:#42351d;color:#ffe1a0;border-radius:12px;margin:20px 0}
-footer{text-align:center;color:#8996b1;padding:30px}
-@media(max-width:650px){.subjects{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(3,1fr)}.hero h1{font-size:25px}}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:Vazirmatn,Tahoma,sans-serif;min-height:100vh;
+}
+button,input{font:inherit}
+button{cursor:pointer}
+header{
+  position:sticky;top:0;z-index:10;
+  background:#0b1220ed;backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:1200px;margin:auto;padding:15px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:15px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+  width:44px;height:44px;border-radius:14px;
+  display:grid;place-items:center;font-weight:900;font-size:20px;
+  background:linear-gradient(135deg,#568cff,#38c9d8);
+  color:white;box-shadow:0 6px 25px #568cff40;
+}
+.brand-name{font-size:19px;font-weight:900}
+.brand-sub{font-size:11px;color:var(--muted)}
+.class-tag{
+  border:1px solid #38517a;background:#172944;
+  color:#a9c8ff;padding:8px 13px;border-radius:30px;font-size:12px;
+}
+main{max-width:1200px;margin:auto;padding:28px 22px 60px}
+.hero{
+  position:relative;overflow:hidden;padding:36px;
+  border:1px solid #2b4770;border-radius:26px;
+  background:linear-gradient(115deg,#172c4b,#17233b 60%,#123744);
+}
+.hero:before{
+  content:"";position:absolute;width:260px;height:260px;
+  border-radius:50%;background:#568cff20;left:-70px;top:-120px;
+}
+.hero-content{position:relative;z-index:1}
+.eyebrow{color:#7edce7;font-size:12px;font-weight:700}
+.hero h1{font-size:clamp(25px,4vw,39px);margin:12px 0 8px;font-weight:900}
+.hero p{color:#c0cce0;max-width:620px;line-height:2;margin:0}
+.hero-bottom{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}
+.info-chip{
+  background:#ffffff12;border:1px solid #ffffff20;
+  padding:9px 14px;border-radius:12px;font-size:12px;color:#e4edff;
+}
+.section-head{
+  display:flex;align-items:end;justify-content:space-between;
+  gap:15px;margin:32px 0 17px;
+}
+.section-head h2{font-size:21px;margin:0}
+.section-head p{font-size:12px;color:var(--muted);margin:5px 0 0}
+.search{
+  width:min(100%,300px);background:var(--panel);
+  border:1px solid var(--line);border-radius:12px;
+  padding:12px 15px;color:white;outline:none;
+}
+.search:focus{border-color:var(--blue)}
+.subjects{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:15px;
+}
+.subject{
+  text-align:right;color:white;background:var(--panel);
+  border:1px solid var(--line);border-radius:18px;
+  padding:19px;min-height:145px;transition:.2s;
+}
+.subject:hover{
+  transform:translateY(-4px);border-color:#568cff;
+  background:var(--panel2);box-shadow:0 12px 30px #0003;
+}
+.subject-top{display:flex;align-items:center;justify-content:space-between}
+.subject-icon{
+  width:43px;height:43px;border-radius:13px;
+  display:grid;place-items:center;font-size:20px;
+  background:#568cff20;color:#91b5ff;
+}
+.arrow{color:#8295b3;font-size:20px}
+.subject h3{font-size:15px;margin:14px 0 4px}
+.teacher{font-size:11px;color:var(--muted)}
+.count{font-size:10px;color:#78d8df;margin-top:10px}
+.notice{
+  margin-top:27px;padding:17px 19px;border-radius:15px;
+  background:#142b35;border:1px solid #24505a;
+  color:#b9eaf0;font-size:12px;line-height:2;
+}
+footer{
+  border-top:1px solid var(--line);text-align:center;
+  padding:25px;color:#8291a8;font-size:11px;line-height:2;
+}
+.hidden{display:none!important}
+.back{
+  border:1px solid var(--line);background:var(--panel);
+  color:white;border-radius:11px;padding:10px 16px;
+}
+.page-title{
+  margin-top:28px;padding:25px;border-radius:20px;
+  background:linear-gradient(120deg,#172c4b,#142d37);
+  border:1px solid #2b4770;
+}
+.page-title h2{margin:0 0 7px;font-size:25px}
+.page-title p{margin:0;color:#b6c6dc;font-size:13px}
+.lesson-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:14px;margin-top:20px;
+}
+.lesson{
+  text-align:right;padding:19px;border-radius:15px;
+  border:1px solid var(--line);background:var(--panel);color:white;
+}
+.lesson:hover{border-color:var(--cyan);background:var(--panel2)}
+.lesson strong{display:block;margin-bottom:7px}
+.lesson small{color:var(--muted)}
+.empty{
+  margin-top:18px;padding:22px;border:1px dashed #405574;
+  border-radius:15px;color:var(--muted);font-size:13px;line-height:2;
+}
+@media(max-width:850px){.subjects{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){
+  main{padding:18px 14px 40px}
+  .nav{padding:12px 14px}
+  .hero{padding:25px 20px}
+  .subjects{grid-template-columns:repeat(2,1fr);gap:10px}
+  .subject{padding:14px;min-height:135px}
+  .section-head{align-items:stretch;flex-direction:column}
+  .search{width:100%}
+  .lesson-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:370px){
+  .subjects,.lesson-grid{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 
 <header>
- <div>
-  <div class="logo">GAMEPLUS</div>
-  <small>سامانه آموزشی کلاس ۷.۲</small>
- </div>
- <button onclick="home()">صفحه اصلی</button>
+  <div class="nav">
+    <div class="brand">
+      <div class="logo">G+</div>
+      <div>
+        <div class="brand-name">گیم‌پلاس</div>
+        <div class="brand-sub">سامانه هوشمند آموزش</div>
+      </div>
+    </div>
+    <div class="class-tag">مدرسه شهید کلاهدوز | کلاس ۷.۲</div>
+  </div>
 </header>
 
-<div class="container">
-<section id="homePage">
- <div class="hero">
-  <h1>یاد بگیر، تمرین کن، پیشرفت کن!</h1>
-  <p>گیم‌پلاس؛ سامانه آموزشی اختصاصی کلاس ۷.۲ مدرسه شهید کلاهدوز</p>
-  <button onclick="document.getElementById('lessons').scrollIntoView({behavior:'smooth'})">شروع یادگیری</button>
- </div>
+<main>
+  <section id="home">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">سامانه آموزشی اختصاصی کلاس</div>
+        <h1>یادگیری، قدم‌به‌قدم تا موفقیت</h1>
+        <p>
+          به فضای آموزشی کلاس ۷.۲ خوش آمدید.
+          درس موردنظرتان را انتخاب کنید و برای یادگیری،
+          تمرین و آمادگی امتحان آماده شوید.
+        </p>
+        <div class="hero-bottom">
+          <div class="info-chip">مدرسه: شهید کلاهدوز</div>
+          <div class="info-chip">پایه: هفتم</div>
+          <div class="info-chip">کلاس: ۷.۲</div>
+          <div class="info-chip">۱۳ درس آموزشی</div>
+        </div>
+      </div>
+    </div>
 
- <div class="stats">
-  <div class="stat"><strong>۱۳</strong><small>درس آموزشی</small></div>
-  <div class="stat"><strong id="done">۰</strong><small>پاسخ داده‌شده</small></div>
-  <div class="stat"><strong id="points">۰</strong><small>امتیاز</small></div>
- </div>
+    <div class="section-head">
+      <div>
+        <h2>درس‌های کلاس</h2>
+        <p>برای ورود به صفحه هر درس، روی کارت آن بزنید.</p>
+      </div>
+      <input id="search" class="search" placeholder="جست‌وجوی نام درس..." oninput="filterSubjects()">
+    </div>
 
- <h2 id="lessons">درس‌های کلاس ۷.۲</h2>
- <input id="search" placeholder="جست‌وجوی درس..." oninput="render()">
- <div class="subjects" id="subjects"></div>
+    <div class="subjects" id="subjects"></div>
 
- <div class="notice">
-  این سایت نسخه آموزشی آزمایشی است. برای بررسی و پیشنهادهای خود می‌توانید با مدیر سایت در ارتباط باشید.
- </div>
-</section>
+    <div class="notice">
+      راهنمای سامانه: ابتدا درس موردنظر را انتخاب کنید. سپس می‌توانید از بخش درس‌ها،
+      موضوع موردنظر خود را مشخص کنید. محتوای آموزشی هر درس پس از انتخاب درس‌ها تکمیل می‌شود.
+    </div>
+  </section>
 
-<section id="lessonPage" class="hidden">
- <button onclick="home()">← بازگشت به درس‌ها</button>
- <div class="hero">
-  <h1 id="lessonTitle"></h1>
-  <p id="teacher"></p>
- </div>
- <div class="tabs">
-  <button class="tab active" onclick="tab('learn',this)">آموزش</button>
-  <button class="tab" onclick="tab('questions',this)">تمرین</button>
-  <button class="tab" onclick="tab('exam',this)">نمونه‌سؤال</button>
-  <button class="tab" onclick="tab('game',this)">بازی</button>
- </div>
- <div id="learn" class="panel"></div>
- <div id="questions" class="panel hidden"></div>
- <div id="exam" class="panel hidden"></div>
- <div id="game" class="panel hidden"></div>
-</section>
-</div>
+  <section id="subjectPage" class="hidden">
+    <button class="back" onclick="goHome()">← بازگشت به فهرست درس‌ها</button>
+    <div class="page-title">
+      <div class="eyebrow">صفحه اختصاصی درس</div>
+      <h2 id="selectedName"></h2>
+      <p id="selectedTeacher"></p>
+    </div>
+    <div class="section-head">
+      <div>
+        <h2>انتخاب درس</h2>
+        <p>شماره درسی را که می‌خواهید مطالعه کنید انتخاب کنید.</p>
+      </div>
+    </div>
+    <div class="lesson-grid" id="lessonGrid"></div>
+    <div class="empty">
+      محتوای آموزشی، آموزش گام‌به‌گام، تمرین‌های تعاملی و نمونه‌سؤال‌های امتحانی
+      برای این درس در مرحله تکمیل قرار دارد.
+    </div>
+  </section>
+</main>
 
-<footer>گیم‌پلاس | ویژه کلاس ۷.۲ | مدرسه شهید کلاهدوز</footer>
+<footer>
+  گیم‌پلاس | سامانه آموزشی کلاس ۷.۲<br>
+  مدرسه شهید کلاهدوز
+</footer>
 
 <script>
-const lessons=[
-["ریاضی","➗","حیدری","الگوها و عبارت‌های ریاضی",
-["الگو یعنی نظمی که بین عددها یا شکل‌ها تکرار می‌شود.","برای پیدا کردن قانون الگو، اختلاف بین جمله‌ها را بررسی کن.","در عبارت جبری، حروف می‌توانند نماینده عدد باشند."],
-"در الگوی ۳، ۶، ۹، ۱۲ هر بار ۳ واحد اضافه می‌شود؛ عدد بعدی ۱۵ است.",
-["عدد بعدی ۲، ۵، ۸، ۱۱ چیست؟","۱۲","۱۳","۱۴",2,"هر بار سه واحد اضافه می‌شود."],
-["الگوی ۴، ۸، ۱۲ را ادامه بده.","اگر x برابر ۴ باشد، x+3 چند می‌شود؟"]],
-["فارسی","📖","خدایار","درک مطلب و واژه‌آموزی",
-["متن را با دقت بخوان.","واژه‌های ناآشنا را از روی جمله بررسی کن.","پیام متن را با زبان خودت بیان کن."],
-"برای پاسخ به پرسش درک مطلب، به جمله‌های متن توجه کن.",
-["کدام واژه هم‌معنی کوشش است؟","تلاش","آرامش","خاموشی",0,"کوشش و تلاش هم‌معنی هستند."],
-["یک بند درباره دوستی بنویس.","برای واژه دانش یک هم‌خانواده بنویس."]],
-["عربی","🔤","دهگانی","واژه‌های عربی",
-["ابتدا واژه‌های آشنا را پیدا کن.","به ضمیرها توجه کن.","ترجمه را روان بنویس."],
-"أنا یعنی من و هو یعنی او.",
-["معنی أنا چیست؟","تو","من","او",1,"أنا یعنی من."],
-["معنی أنا را بنویس.","معنی أنت را بنویس."]],
-["ورزش","🏃","یوسفی","سلامت و آمادگی جسمانی",
-["پیش از ورزش بدن را گرم کن.","در طول فعالیت آب کافی بنوش.","پس از ورزش بدن را آرام کن."],
-"گرم کردن بدن برای فعالیت ورزشی اهمیت دارد.",
-["پیش از ورزش چه کاری مناسب است؟","گرم کردن","خوابیدن","بی‌حرکت ماندن",0,"گرم کردن بدن را آماده می‌کند."],
-["دو فایده ورزش را بنویس.","چرا گرم کردن مهم است؟"]],
-["دینی","🌙","رستمی","رفتارهای نیک",
-["به پیام اصلی درس توجه کن.","مفهوم درس را با زندگی روزمره مرتبط کن.","برای پاسخ خود دلیل بیاور."],
-"راست‌گویی باعث ایجاد اعتماد می‌شود.",
-["کدام رفتار پسندیده است؟","دروغ‌گویی","راست‌گویی","بدقولی",1,"راست‌گویی رفتار پسندیده‌ای است."],
-["دو رفتار نیک را نام ببر.","چرا راست‌گویی مهم است؟"]],
-["کاروفناوری","💻","طالبی","فناوری و حل مسئله",
-["ابتدا مسئله را بشناس.","راه‌حل‌های مختلف پیشنهاد بده.","بهترین راه‌حل را آزمایش کن."],
-"ساخت یک وسیله با شناخت نیاز و طراحی آغاز می‌شود.",
-["اولین گام حل مسئله چیست؟","تعریف مسئله","ارزیابی نهایی","فراموش کردن مسئله",0,"ابتدا باید مسئله را بشناسیم."],
-["فناوری را تعریف کن.","چرا آزمایش محصول مهم است؟"]],
-["علوم","🔬","صمدی","روش علمی",
-["مشاهده و پرسش را آغاز کن.","یک فرضیه پیشنهاد بده.","با آزمایش فرضیه را بررسی کن."],
-"در یک آزمایش منصفانه، بهتر است فقط عامل مورد بررسی تغییر کند.",
-["کدام مورد از مراحل روش علمی است؟","آزمایش","حدس بدون بررسی","نادیده گرفتن شواهد",0,"آزمایش به بررسی فرضیه کمک می‌کند."],
-["فرضیه چیست؟","سه مرحله روش علمی را بنویس."]],
-["املا و انشا","✍️","پیرای","درست‌نویسی و نوشتن",
-["به شکل درست واژه‌ها توجه کن.","برای انشا ابتدا ایده‌ها را مرتب کن.","نوشته را بازخوانی کن."],
-"یک نوشته منظم معمولاً مقدمه، بدنه و نتیجه‌گیری دارد.",
-["کدام شکل درست است؟","مسعولیت","مسئولیت","مسولیت",1,"شکل درست مسئولیت است."],
-["با مسئولیت یک جمله بنویس.","یک انشای کوتاه درباره کتاب بنویس."]],
-["تفکر","🧠","یامی","تصمیم‌گیری و پرسشگری",
-["اطلاعات را بررسی کن.","پیامد انتخاب‌ها را بسنج.","به نظر دیگران گوش بده."],
-"تفکر نقادانه یعنی بررسی دقیق دلیل‌ها و شواهد.",
-["کدام کار نشانه تفکر نقادانه است؟","بررسی دلیل‌ها","پذیرفتن هر حرف","قضاوت عجولانه",0,"بررسی دلیل‌ها اهمیت دارد."],
-["تفکر نقادانه چیست؟","چرا شنیدن نظر دیگران مفید است؟"]],
-["هنر و طراحی","🎨","شیرعلی‌پور","خط و ترکیب‌بندی",
-["با شکل‌های ساده طراحی را آغاز کن.","از خط‌ها برای ایجاد حس حرکت استفاده کن.","عناصر تصویر را هماهنگ بچین."],
-"ترکیب‌بندی یعنی چیدمان عناصر یک تصویر.",
-["ترکیب‌بندی چیست؟","چیدمان عناصر تصویر","پاک کردن طرح","اندازه کاغذ",0,"ترکیب‌بندی به چیدمان مربوط است."],
-["ترکیب‌بندی را تعریف کن.","دو نوع خط را نام ببر."]],
-["زبان انگلیسی","🌍","بهروزپور","واژگان پایه",
-["واژه و معنی آن را با هم تمرین کن.","ترتیب واژه‌ها در جمله مهم است.","مرور منظم انجام بده."],
-"I am a student یعنی من دانش‌آموز هستم.",
-["معنی Book چیست؟","مداد","کتاب","مدرسه",1,"Book یعنی کتاب."],
-["معنی School چیست؟","با Book یک جمله بساز."]],
-["اجتماعی","🌐","قنبری","جامعه و قانون",
-["جامعه محل زندگی و همکاری انسان‌هاست.","قانون برای حفظ نظم و حقوق افراد است.","شهروند مسئول به حقوق دیگران احترام می‌گذارد."],
-"رعایت نوبت نمونه‌ای از احترام به حقوق دیگران است.",
-["هدف قانون چیست؟","ایجاد نظم","بی‌نظمی","افزایش اختلاف",0,"قانون به حفظ نظم کمک می‌کند."],
-["چرا جامعه به قانون نیاز دارد؟","یک مسئولیت شهروندی بنویس."]],
-["قرآن","📗","نام دبیر مشخص نشده","آداب خواندن و فهم پیام",
-["با توجه و آرامش قرآن بخوان.","به معنی واژه‌ها توجه کن.","پیام آیه را در زندگی به کار ببر."],
-"فهم معنی و پیام آیات به درک بهتر قرآن کمک می‌کند.",
-["هنگام خواندن قرآن چه چیزی اهمیت دارد؟","توجه و درست‌خوانی","شتاب‌زدگی","بی‌دقتی",0,"توجه و درست‌خوانی اهمیت دارد."],
-["دو مورد از آداب خواندن قرآن را بنویس.","چرا فهم معنی آیات مهم است؟"]]
+const subjects = [
+  {name:"ریاضی",teacher:"حیدری",icon:"∑"},
+  {name:"فارسی",teacher:"خدایار",icon:"آ"},
+  {name:"عربی",teacher:"دهگانی",icon:"ع"},
+  {name:"ورزش",teacher:"یوسفی",icon:"⚽"},
+  {name:"دینی",teacher:"رستمی",icon:"✦"},
+  {name:"کار و فناوری",teacher:"طالبی",icon:"⌘"},
+  {name:"علوم تجربی",teacher:"صمدی",icon:"⚗"},
+  {name:"املا و انشا",teacher:"پیرای",icon:"✎"},
+  {name:"تفکر",teacher:"یامی",icon:"؟"},
+  {name:"هنر و طراحی",teacher:"شیرعلی‌پور",icon:"✧"},
+  {name:"زبان انگلیسی",teacher:"بهروزپور",icon:"A"},
+  {name:"مطالعات اجتماعی",teacher:"قنبری",icon:"◎"},
+  {name:"قرآن",teacher:"نام دبیر مشخص نشده",icon:"۞"}
 ];
 
-let current=0,score=0,done=0;
-function render(){
- const q=document.getElementById('search').value.trim();
- document.getElementById('subjects').innerHTML=lessons.map((l,i)=>({l,i}))
- .filter(x=>x.l[0].includes(q)||x.l[2].includes(q))
- .map(x=>`<button class="subject" onclick="openLesson(${x.i})"><span>${x.l[1]}</span><b>${x.l[0]}</b><small>دبیر: ${x.l[2]}</small></button>`).join('');
+const subjectBox=document.getElementById("subjects");
+
+function renderSubjects(list){
+  subjectBox.innerHTML="";
+  list.forEach((s)=>{
+    const card=document.createElement("button");
+    card.className="subject";
+    card.innerHTML=`
+      <div class="subject-top">
+        <div class="subject-icon">${s.icon}</div>
+        <span class="arrow">←</span>
+      </div>
+      <h3>${s.name}</h3>
+      <div class="teacher">دبیر: ${s.teacher}</div>
+      <div class="count">ورود به صفحه درس</div>`;
+    card.onclick=()=>openSubject(s);
+    subjectBox.appendChild(card);
+  });
 }
-function home(){
- document.getElementById('homePage').classList.remove('hidden');
- document.getElementById('lessonPage').classList.add('hidden');
- window.scrollTo(0,0);
+
+function filterSubjects(){
+  const value=document.getElementById("search").value.trim();
+  renderSubjects(subjects.filter(s=>
+    s.name.includes(value)||s.teacher.includes(value)
+  ));
 }
-function openLesson(i){
- current=i;
- const l=lessons[i];
- document.getElementById('homePage').classList.add('hidden');
- document.getElementById('lessonPage').classList.remove('hidden');
- document.getElementById('lessonTitle').textContent=l[0];
- document.getElementById('teacher').textContent='مدرسه شهید کلاهدوز | کلاس ۷.۲ | دبیر: '+l[2];
- document.getElementById('learn').innerHTML='<h2>آموزش گام‌به‌گام</h2>'+l[4].map((s,i)=>`<div class="step"><b>گام ${i+1}</b><br>${s}</div>`).join('')+`<div class="step"><b>مثال</b><br>${l[5]}</div>`;
- document.getElementById('questions').innerHTML='<h2>تمرین درس</h2><div id="quiz"></div>';
- document.getElementById('exam').innerHTML='<h2>نمونه‌سؤال</h2>'+l[10].map((s,i)=>`<div class="step">سؤال ${i+1}: ${s}</div>`).join('');
- document.getElementById('game').innerHTML=`<h2>بازی آموزشی: ${['الگویاب','واژه‌چین','مترجم کوچک','ورزش‌یار','انتخاب درست','مهندس کوچک','آزمایشگاه‌یار','شکار غلط املایی','کارآگاه فکر','استاد ترکیب‌بندی','واژه‌گردان','شهروند هوشیار','پیام‌یاب قرآنی'][i]}</h2><p>با پاسخ دادن به پرسش این درس امتیاز بگیر.</p><button onclick="playGame()">شروع بازی</button><div id="gameResult"></div>`;
- showTab('learn',document.querySelector('.tab'));
+
+function openSubject(subject){
+  document.getElementById("home").classList.add("hidden");
+  document.getElementById("subjectPage").classList.remove("hidden");
+  document.getElementById("selectedName").textContent=subject.name;
+  document.getElementById("selectedTeacher").textContent="دبیر: "+subject.teacher;
+
+  const grid=document.getElementById("lessonGrid");
+  grid.innerHTML="";
+  for(let i=1;i<=12;i++){
+    const item=document.createElement("button");
+    item.className="lesson";
+    item.innerHTML=`<strong>درس ${toPersian(i)}</strong><small>برای انتخاب این درس بزنید</small>`;
+    item.onclick=()=>alert("درس "+toPersian(i)+" از "+subject.name+" انتخاب شد. محتوای این درس باید تکمیل شود.");
+    grid.appendChild(item);
+  }
+  window.scrollTo({top:0,behavior:"smooth"});
 }
-function tab(id,btn){
- document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
- btn.classList.add('active');
- ['learn','questions','exam','game'].forEach(x=>document.getElementById(x).classList.toggle('hidden',x!==id));
- if(id==='questions')makeQuiz();
+
+function goHome(){
+  document.getElementById("subjectPage").classList.add("hidden");
+  document.getElementById("home").classList.remove("hidden");
+  window.scrollTo({top:0,behavior:"smooth"});
 }
-function makeQuiz(){
- const l=lessons[current];
- document.getElementById('quiz').innerHTML=`<div class="step"><b>${l[6]}</b><div id="opts"></div><div id="feedback"></div></div>`;
- document.getElementById('opts').innerHTML=[l[7],l[8],l[9]].map((x,i)=>`<button class="option" onclick="checkAnswer(${i})">${x}</button>`).join('');
+
+function toPersian(number){
+  return String(number).replace(/\d/g,d=>"۰۱۲۳۴۵۶۷۸۹"[d]);
 }
-function checkAnswer(i){
- const l=lessons[current],buttons=document.querySelectorAll('#opts button');
- if(document.getElementById('feedback').dataset.done)return;
- document.getElementById('feedback').dataset.done='1';
- buttons.forEach((b,j)=>{if(j===l[10-0]?.[99]){}});
- const correct=l[9];
- buttons[correct].classList.add('correct');
- if(i===correct){score+=10;document.getElementById('feedback').textContent='آفرین! پاسخ درست است. '+l[10][0];}
- else{buttons[i].classList.add('wrong');document.getElementById('feedback').textContent='پاسخ درست مشخص شد. '+l[10][0];}
- done++;updateStats();
-}
-function playGame(){
- const l=lessons[current];
- document.getElementById('gameResult').innerHTML=`<div class="step">${l[6]}<div id="gameOptions"></div><div id="gameFeedback"></div></div>`;
- document.getElementById('gameOptions').innerHTML=[l[7],l[8],l[9]].map((x,i)=>`<button class="option" onclick="gameCheck(${i})">${x}</button>`).join('');
-}
-function gameCheck(i){
- const l=lessons[current],correct=l[9],buttons=document.querySelectorAll('#gameOptions button');
- if(document.getElementById('gameFeedback').dataset.done)return;
- document.getElementById('gameFeedback').dataset.done='1';
- buttons[correct].classList.add('correct');
- if(i===correct){score+=15;document.getElementById('gameFeedback').textContent='آفرین! ۱۵ امتیاز گرفتی.';}
- else{buttons[i].classList.add('wrong');document.getElementById('gameFeedback').textContent='پاسخ درست مشخص شد.';}
- done++;updateStats();
-}
-function updateStats(){
- document.getElementById('points').textContent=score;
- document.getElementById('done').textContent=done;
-}
-render();
+
+renderSubjects(subjects);
 </script>
 </body>
 </html>
